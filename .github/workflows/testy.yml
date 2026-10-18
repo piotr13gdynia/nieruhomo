@@ -26,6 +26,7 @@ jobs:
   dostep-do-portali:
     # Jedno zapytanie do każdego portalu z serwerów GitHuba. Nie zapisuje danych
     # i nie blokuje testów, tylko pokazuje w logu, czy portal odpowiada.
+    if: github.event_name != 'pull_request'   # raz na zmianę, nie drugi raz dla pull requesta
     runs-on: ubuntu-latest
     timeout-minutes: 5
     continue-on-error: true
