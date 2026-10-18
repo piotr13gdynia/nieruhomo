@@ -1,0 +1,1 @@
+import{cL as a,bV as r,bk as d}from"./yXZNkKbm.js";const n=a("modals",()=>{const e=r(!1),o=t=>{e.value=t},s=d(()=>e.value);return{sendReportModal:e,isSendReportModalVisible:s,toggleSendReportModal:o}});export{n as u};

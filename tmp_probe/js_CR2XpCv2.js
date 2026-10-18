@@ -1,0 +1,1 @@
+import{fK as i,bA as f,b8 as c,fL as A,bD as h}from"./yXZNkKbm.js";const T=i(async(k,o)=>{let e,t;const s=f(),{accessToken:r,isBailiffRefreshToken:a,refreshToken:n}=s.getAuthTokens(),{$routeNames:u}=c();if(n&&a)return r||([e,t]=A(()=>s.refreshTokenAction()),await e,t()),h({name:u.bailiff.context,query:o.query})});export{T as default};

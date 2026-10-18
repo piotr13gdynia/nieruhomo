@@ -1,0 +1,1 @@
+function t(n,e){const r=n==null?void 0:n.trim(),s=e==null?void 0:e.trim();return s&&r?`${r}/${s}`:s||r}function f(n){const e=[];return n.forEach(r=>{r&&(typeof r=="string"?e.push(r):typeof r=="object"&&"separator"in r&&e.length&&(e[e.length-1]+=r.value))}),e.join(" ")}export{f as a,t as f};

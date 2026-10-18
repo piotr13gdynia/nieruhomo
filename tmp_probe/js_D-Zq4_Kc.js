@@ -1,0 +1,1 @@
+import{fK as o,b8 as r,bD as s}from"./yXZNkKbm.js";const i=o(e=>{var t,a;if(!((t=e.query)!=null&&t.token)&&typeof((a=e.query)==null?void 0:a.token)!="string"){const{$routeNames:n}=r();return s({name:n.index})}});export{i as default};
