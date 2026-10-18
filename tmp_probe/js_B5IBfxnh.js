@@ -1,1 +1,0 @@
-import{fK as o,b8 as a,bA as u,bE as d,bD as s}from"./yXZNkKbm.js";const h=o(e=>{const{$routeNames:t}=a(),i=u(),{refreshToken:r,isBailiffRefreshToken:n}=i.getAuthTokens();if(r){if(r&&n)return s({name:t.index})}else return e.meta.redirectToLogin?d(e.fullPath):s({name:t.index})});export{h as default};

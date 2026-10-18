@@ -1,1 +1,0 @@
-import{c1 as t}from"./yXZNkKbm.js";function e(){let r=null;function o(){r!==null&&(r.abort(t.ABORT_ERROR),r=null)}function n(){return r!==null&&r.abort(t.ABORT_ERROR),r=new AbortController,r.signal}return{abortRequest:o,registerAbort:n}}export{e as u};

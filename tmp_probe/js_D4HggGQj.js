@@ -1,1 +1,0 @@
-import{b7 as a,ba as n,bs as o,by as t,bl as l}from"./yXZNkKbm.js";const s=["innerHTML"],c=a({__name:"LabelComponent",props:{label:{}},setup(e){return(b,r)=>e.label?(n(),o("label",{key:0,class:"label",innerHTML:e.label},null,8,s)):t("",!0)}}),_=l(c,[["__scopeId","data-v-b00d4a6c"]]);export{_ as L};

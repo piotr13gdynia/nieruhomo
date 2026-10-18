@@ -1,1 +1,0 @@
-import{b7 as p,b8 as s,bz as e,bh as i,bi as r}from"./yXZNkKbm.js";const d=o=>{const n=r(o);return p({inheritAttrs:!1,setup(a,{attrs:t}){return s().isHydrating?()=>e("div",[e(i,void 0,{default:()=>e(n,t)})]):()=>e(n,t)}})};export{d as createClientPage};

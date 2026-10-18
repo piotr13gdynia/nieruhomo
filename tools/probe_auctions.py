@@ -1,5 +1,5 @@
-"""TYMCZASOWE: zapisuje surowe strony serwisu licytacji do analizy (uruchamiane w GitHub Actions)."""
-import re
+"""TYMCZASOWE: zapytania do API serwisu licytacji (uruchamiane w GitHub Actions)."""
+import json
 import time
 from pathlib import Path
 
@@ -8,22 +8,37 @@ from curl_cffi import requests as creq
 out = Path("tmp_probe")
 out.mkdir(exist_ok=True)
 s = creq.Session(impersonate="chrome")
-H = {"Accept-Language": "pl-PL,pl;q=0.9"}
-
-
-def save(name, url, **kw):
+BASE = "https://licytacje.komornik.pl/services/item-back/rest/item/"
+H = {"Accept-Language": "pl-PL,pl;q=0.9", "Accept": "application/json", "Content-Type": "application/json",
+     "Origin": "https://licytacje.komornik.pl", "Referer": "https://licytacje.komornik.pl/wyszukiwarka-licytacji"}
+RE = {"field": "mainCategory", "value": ["REAL_ESTATE"]}
+MAZ = {"field": "province", "value": ["MAZOWIECKIE"]}
+bodies = {
+    "aggs": {"aggregations": ["category", "subCategory", "province", "auctionType", "eauction"], "limit": 0, "termFilters": [RE]},
+    "maz": {"orderByField": "startAuctionAt", "orderBy": "ASC", "limit": 30, "offset": 0, "termFilters": [RE, MAZ]},
+    "maz_joinable": {"orderByField": "startAuctionAt", "orderBy": "ASC", "limit": 30, "offset": 0,
+                     "termFilters": [RE, MAZ, {"field": "joinable", "value": ["true"]}]},
+}
+first_id = None
+for name, body in bodies.items():
     try:
-        r = s.get(url, headers=H, timeout=40, **kw)
-        (out / name).write_bytes(r.content)
-        print(name, r.status_code, len(r.content), r.url)
-        return r
+        r = s.post(BASE + "search", headers=H, data=json.dumps(body), timeout=40)
+        (out / f"{name}.json").write_text(r.text, encoding="utf-8")
+        print(name, r.status_code, len(r.text), r.text[:300])
+        if name == "maz" and r.status_code == 200:
+            data = r.json()
+            items = data.get("items") or data.get("content") or data.get("results") or []
+            if isinstance(items, list) and items:
+                first_id = items[0].get("id") or items[0].get("itemId")
     except Exception as e:
-        print(name, "ERR", str(e)[:200])
-    finally:
+        print(name, "ERR", str(e)[:300])
+    time.sleep(3)
+if first_id:
+    for name, url in {"item": f"{BASE}{first_id}", "page": f"https://licytacje.komornik.pl/licytacje/{first_id}"}.items():
+        try:
+            r = s.get(url, headers={"Accept-Language": "pl-PL"}, timeout=40)
+            (out / f"{name}.{'json' if name == 'item' else 'html'}").write_text(r.text, encoding="utf-8")
+            print(name, r.status_code, len(r.text), r.url)
+        except Exception as e:
+            print(name, "ERR", str(e)[:300])
         time.sleep(3)
-
-
-home = save("home.html", "https://licytacje.komornik.pl/")
-if home is not None:
-    for i, src in enumerate(sorted(set(re.findall(r'(/_nuxt/[\w.-]+\.js)', home.text)))):
-        save(f"js_{src.split('/')[-1]}", "https://licytacje.komornik.pl" + src)
