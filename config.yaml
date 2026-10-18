@@ -1,0 +1,38 @@
+# KONFIGURACJA MONITORA OGŁOSZEŃ
+#
+# Jak dodać wyszukiwanie:
+# 1. Wejdź na portal, ustaw filtry (miasto, cena, metraż, typ) i sortowanie od najnowszych.
+# 2. Skopiuj adres z paska przeglądarki i wklej poniżej w "adresy".
+# 3. Opcjonalnie dopisz własne filtry. Działają na wszystkich portalach jednakowo,
+#    więc możesz dać na portalu szerszy zakres, a doprecyzować tutaj.
+#
+# Obsługiwane portale: otodom.pl, olx.pl, gratka.pl, morizon.pl
+
+# Ile stron wyników pobierać z każdego adresu (przy uruchomieniu co 2 godziny wystarczy 1).
+strony: 1
+
+# Po ilu dniach od ostatniego pojawienia się ogłoszenie znika z listy.
+ukryj_po_dniach: 3
+
+wyszukiwania:
+  - nazwa: Mieszkania
+    adresy:
+      - https://www.otodom.pl/pl/wyniki/sprzedaz/mieszkanie/mazowieckie/warszawa/warszawa/warszawa?priceMax=800000&by=LATEST&direction=DESC
+      - https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Bfilter_float_price%3Ato%5D=800000&search%5Border%5D=created_at%3Adesc
+      - https://gratka.pl/nieruchomosci/mieszkania/warszawa?cena-calkowita%3Amax=800000&sort=newest
+      - https://www.morizon.pl/mieszkania/warszawa/?ps%5Bprice_to%5D=800000
+    filtry:
+      cena_min: 400000
+      cena_max: 800000
+      metraz_min: 45
+      cena_za_m2_max: 17000
+      pokoje_min: 2
+      wykluczone_slowa: [udział, licytacja, komornicza, tbs]
+
+  - nazwa: Domy
+    adresy:
+      - https://www.otodom.pl/pl/wyniki/sprzedaz/dom/mazowieckie/warszawa/warszawa/warszawa?priceMax=1500000&by=LATEST&direction=DESC
+    filtry:
+      cena_max: 1500000
+      metraz_min: 100
+      wykluczone_slowa: [udział, licytacja]

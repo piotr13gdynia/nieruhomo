@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Oferty nieruchomości</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: light;
+  --bg: #edf0ee;
+  --surface: #ffffff;
+  --ink: #18221f;
+  --muted: #5c6b66;
+  --line: #d3dad6;
+  --accent: #0e5e50;
+  --accent-soft: #d7ebe5;
+  --drop: #a64b0a;
+  --drop-soft: #f6e3d3;
+  --new: #2547a8;
+  --new-soft: #dfe6f8;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "Instrument Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #131a18;
+    --surface: #1b2421;
+    --ink: #e4ebe8;
+    --muted: #93a39d;
+    --line: #2d3934;
+    --accent: #6fd0ba;
+    --accent-soft: #1e3b34;
+    --drop: #f0a15c;
+    --drop-soft: #3d2a1a;
+    --new: #9db2f4;
+    --new-soft: #222d4d;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 15px/1.5 var(--body);
+  padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px);
+}
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 20px 64px; }
+
+header h1 {
+  font: 700 clamp(34px, 6vw, 56px)/1 var(--display);
+  letter-spacing: -0.025em;
+  margin: 0 0 12px;
+}
+.summary { font-size: 17px; color: var(--muted); margin: 0; max-width: 62ch; }
+.summary strong { color: var(--ink); font-weight: 600; }
+
+.warn {
+  margin: 20px 0 0;
+  border-left: 3px solid var(--drop);
+  background: var(--drop-soft);
+  padding: 10px 14px;
+  border-radius: 0 6px 6px 0;
+}
+.warn summary { cursor: pointer; font-weight: 600; }
+.warn ul { margin: 8px 0 2px; padding-left: 18px; }
+.warn li { margin: 4px 0; }
+.warn a { color: inherit; }
+
+.toolbar {
+  position: sticky; top: 0; z-index: 5;
+  background: var(--bg);
+  margin: 28px -20px 0; padding: 12px 20px;
+  display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center;
+  border-bottom: 1px solid var(--line);
+}
+.tabs { display: flex; gap: 4px; flex-wrap: wrap; }
+.tabs button, .chip {
+  font: 500 14px/1 var(--body);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  padding: 8px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.tabs button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.chip[aria-pressed="false"] { color: var(--muted); background: transparent; text-decoration: line-through; }
+.chips { display: flex; gap: 4px; flex-wrap: wrap; }
+.toolbar label { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--muted); }
+.toolbar select {
+  font: 500 14px var(--body); color: var(--ink); background: var(--surface);
+  border: 1px solid var(--line); border-radius: 6px; padding: 7px 8px;
+}
+.spacer { flex: 1; }
+button:focus-visible, select:focus-visible, a:focus-visible, input:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px;
+}
+
+.list { list-style: none; margin: 0; padding: 0; }
+.row {
+  display: grid;
+  grid-template-columns: 176px minmax(0, 1fr) 220px;
+  gap: 18px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+.row.visited .title { color: var(--muted); }
+.thumb {
+  width: 176px; aspect-ratio: 4 / 3; border-radius: 6px; overflow: hidden;
+  background: var(--line); display: block;
+}
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.title {
+  font: 600 16px/1.35 var(--body); color: var(--ink); text-decoration: none;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.title:hover { text-decoration: underline; }
+.loc { color: var(--muted); margin: 4px 0 8px; font-size: 14px; }
+.facts { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 14px; }
+.badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.badge { font-size: 12.5px; font-weight: 600; padding: 3px 8px; border-radius: 4px; }
+.badge.new { background: var(--new-soft); color: var(--new); }
+.badge.drop { background: var(--drop-soft); color: var(--drop); }
+.badge.src { background: transparent; border: 1px solid var(--line); color: var(--muted); font-weight: 500; text-decoration: none; }
+.badge.src:hover { color: var(--ink); }
+
+.money { text-align: right; }
+.price {
+  font: 700 28px/1.05 var(--display);
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.old { color: var(--muted); text-decoration: line-through; font-size: 14px; margin-top: 2px; }
+.ppm { margin-top: 8px; font-size: 14px; font-variant-numeric: tabular-nums; }
+.scale { height: 6px; background: var(--line); border-radius: 3px; margin-top: 6px; position: relative; }
+.scale i {
+  position: absolute; top: -3px; width: 12px; height: 12px; border-radius: 50%;
+  background: var(--accent); border: 2px solid var(--surface); transform: translateX(-50%);
+}
+.scale-cap { display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); margin-top: 3px; }
+.seen { font-size: 12.5px; color: var(--muted); margin-top: 8px; }
+
+.empty { padding: 48px 0; color: var(--muted); font-size: 17px; max-width: 52ch; }
+
+@media (max-width: 760px) {
+  .wrap { padding-top: 20px; }
+  .row { grid-template-columns: 112px minmax(0, 1fr); gap: 12px; }
+  .thumb { width: 112px; }
+  .money { grid-column: 1 / -1; text-align: left; display: grid; grid-template-columns: auto 1fr; gap: 0 16px; align-items: end; }
+  .money .ppm, .money .seen { grid-column: 1 / -1; }
+  .price { font-size: 24px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .row.fresh { animation: flash 1.6s ease-out 1; }
+  @keyframes flash { from { background: var(--new-soft); } to { background: transparent; } }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Oferty</h1>
+    <p class="summary" id="summary"></p>
+    <div id="warnings"></div>
+  </header>
+
+  <div class="toolbar" role="toolbar" aria-label="Filtry listy">
+    <div class="tabs" id="tabs"></div>
+    <div class="chips" id="chips" aria-label="Portale"></div>
+    <span class="spacer"></span>
+    <label><input type="checkbox" id="onlyNew"> tylko nowe</label>
+    <label>Sortuj
+      <select id="sort">
+        <option value="new">od najnowszych</option>
+        <option value="price">cena rosnąco</option>
+        <option value="ppm">cena za m² rosnąco</option>
+        <option value="drop">największe obniżki</option>
+      </select>
+    </label>
+  </div>
+
+  <ul class="list" id="list"></ul>
+</div>
+
+<script>
+const DATA = /*__DATA__*/null;
+const SOURCE_NAMES = { otodom: "Otodom", olx: "OLX", gratka: "Gratka", morizon: "Morizon" };
+
+function store(key, fallback) {
+  try { const v = localStorage.getItem(key); return v === null ? fallback : JSON.parse(v); } catch (e) { return fallback; }
+}
+function save(key, value) { try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) {} }
+
+const previousVisit = store("lastVisit", null);
+const visited = new Set(store("visited", []));
+save("lastVisit", DATA.run_at);
+
+const state = {
+  search: store("search", "all"),
+  sources: new Set(store("sources", Object.keys(SOURCE_NAMES))),
+  sort: store("sort", "new"),
+  onlyNew: false,
+};
+if (state.search !== "all" && !DATA.searches.includes(state.search)) state.search = "all";
+
+const zl = new Intl.NumberFormat("pl-PL", { maximumFractionDigits: 0 });
+const m2 = new Intl.NumberFormat("pl-PL", { maximumFractionDigits: 1 });
+const dateFmt = new Intl.DateTimeFormat("pl-PL", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
+
+function isNew(item) {
+  if (previousVisit) return item.first_seen > previousVisit;
+  return Date.parse(DATA.run_at) - Date.parse(item.first_seen) < 24 * 3600 * 1000;
+}
+function dropPct(item) {
+  if (!item.price || !item.first_price || item.price >= item.first_price) return 0;
+  return Math.round((1 - item.price / item.first_price) * 100);
+}
+function ppm(item) { return item.price && item.area ? item.price / item.area : null; }
+function plural(n, one, few, many) {
+  const mod10 = n % 10, mod100 = n % 100;
+  if (n === 1) return one;
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return few;
+  return many;
+}
+function el(tag, attrs, ...children) {
+  const node = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (v === null || v === undefined || v === false) continue;
+    if (k === "class") node.className = v; else node.setAttribute(k, v);
+  }
+  for (const c of children.flat()) if (c !== null && c !== undefined && c !== false) node.append(c);
+  return node;
+}
+
+function renderSummary() {
+  const items = DATA.items;
+  const fresh = items.filter(isNew).length;
+  const drops = items.filter(i => dropPct(i) > 0).length;
+  const s = document.getElementById("summary");
+  s.replaceChildren(
+    el("strong", {}, `${items.length} ${plural(items.length, "oferta", "oferty", "ofert")}`),
+    previousVisit ? `, w tym ${fresh} ${plural(fresh, "nowa", "nowe", "nowych")} od Twojej ostatniej wizyty` : `, w tym ${fresh} z ostatniej doby`,
+    drops ? ` i ${drops} ${plural(drops, "obniżka", "obniżki", "obniżek")} ceny.` : ".",
+    ` Ostatnie sprawdzenie: ${dateFmt.format(new Date(DATA.run_at))}.`
+  );
+
+  const bad = DATA.sources.filter(x => x.error);
+  if (bad.length) {
+    document.getElementById("warnings").replaceChildren(el("details", { class: "warn" },
+      el("summary", {}, `${bad.length} ${plural(bad.length, "wyszukiwanie nie zadziałało", "wyszukiwania nie zadziałały", "wyszukiwań nie zadziałało")} w ostatnim przebiegu`),
+      el("ul", {}, bad.map(x => el("li", {},
+        `${SOURCE_NAMES[x.source] || "Nieznany portal"}, ${x.search}: ${x.error} `,
+        el("a", { href: x.url, target: "_blank", rel: "noopener" }, "Otwórz wyszukiwanie")
+      )))
+    ));
+  }
+}
+
+function renderToolbar() {
+  const tabs = document.getElementById("tabs");
+  const names = ["all", ...DATA.searches];
+  tabs.replaceChildren(...(DATA.searches.length > 1 ? names : []).map(n => {
+    const b = el("button", { type: "button", "aria-pressed": String(state.search === n) }, n === "all" ? "Wszystkie" : n);
+    b.onclick = () => { state.search = n; save("search", n); renderToolbar(); renderList(); };
+    return b;
+  }));
+
+  const present = [...new Set(DATA.items.flatMap(i => [i.source, ...i.others.map(o => o.source)]))];
+  const chips = document.getElementById("chips");
+  chips.replaceChildren(...present.map(src => {
+    const b = el("button", { type: "button", class: "chip", "aria-pressed": String(state.sources.has(src)) }, SOURCE_NAMES[src] || src);
+    b.onclick = () => {
+      state.sources.has(src) ? state.sources.delete(src) : state.sources.add(src);
+      save("sources", [...state.sources]); renderToolbar(); renderList();
+    };
+    return b;
+  }));
+
+  const sort = document.getElementById("sort");
+  sort.value = state.sort;
+  sort.onchange = () => { state.sort = sort.value; save("sort", sort.value); renderList(); };
+  const onlyNew = document.getElementById("onlyNew");
+  onlyNew.onchange = () => { state.onlyNew = onlyNew.checked; renderList(); };
+}
+
+function renderList() {
+  let items = DATA.items.filter(i =>
+    (state.search === "all" || i.search === state.search) &&
+    [i.source, ...i.others.map(o => o.source)].some(s => state.sources.has(s)) &&
+    (!state.onlyNew || isNew(i))
+  );
+  const sorters = {
+    new: (a, b) => b.first_seen.localeCompare(a.first_seen),
+    price: (a, b) => (a.price ?? Infinity) - (b.price ?? Infinity),
+    ppm: (a, b) => (ppm(a) ?? Infinity) - (ppm(b) ?? Infinity),
+    drop: (a, b) => dropPct(b) - dropPct(a) || b.first_seen.localeCompare(a.first_seen),
+  };
+  items.sort(sorters[state.sort]);
+
+  const ppms = items.map(ppm).filter(Boolean);
+  const lo = Math.min(...ppms), hi = Math.max(...ppms);
+
+  const list = document.getElementById("list");
+  if (!items.length) {
+    list.replaceChildren(el("li", { class: "empty" },
+      DATA.items.length
+        ? "Żadna oferta nie spełnia wybranych filtrów. Włącz pozostałe portale albo odznacz „tylko nowe”."
+        : "Lista jest pusta. Sprawdź adresy wyszukiwań w config.yaml i uruchom monitor ręcznie w zakładce Actions."
+    ));
+    return;
+  }
+
+  list.replaceChildren(...items.map(i => {
+    const fresh = isNew(i), drop = dropPct(i), unit = ppm(i);
+    const open = () => { visited.add(i.url); save("visited", [...visited]); row.classList.add("visited"); };
+    const facts = [
+      i.area ? `${m2.format(i.area)} m²` : null,
+      i.rooms ? `${i.rooms} ${plural(i.rooms, "pokój", "pokoje", "pokoi")}` : null,
+    ].filter(Boolean);
+    let pos = null;
+    if (unit && hi > lo) pos = ((unit - lo) / (hi - lo)) * 100;
+
+    const row = el("li", { class: `row${fresh ? " fresh" : ""}${visited.has(i.url) ? " visited" : ""}` },
+      el("a", { class: "thumb", href: i.url, target: "_blank", rel: "noopener", tabindex: "-1", "aria-hidden": "true" },
+        i.image ? el("img", { src: i.image, alt: "", loading: "lazy", referrerpolicy: "no-referrer" }) : null),
+      el("div", {},
+        el("a", { class: "title", href: i.url, target: "_blank", rel: "noopener" }, i.title),
+        i.location ? el("p", { class: "loc" }, i.location) : el("p", { class: "loc" }, i.search),
+        facts.length ? el("div", { class: "facts" }, facts.map(f => el("span", {}, f))) : null,
+        el("div", { class: "badges" },
+          fresh ? el("span", { class: "badge new" }, "Nowa") : null,
+          drop ? el("span", { class: "badge drop" }, `Taniej o ${drop}%`) : null,
+          el("a", { class: "badge src", href: i.url, target: "_blank", rel: "noopener" }, SOURCE_NAMES[i.source] || i.source),
+          i.others.map(o => el("a", { class: "badge src", href: o.url, target: "_blank", rel: "noopener" }, `też ${SOURCE_NAMES[o.source] || o.source}`))
+        )
+      ),
+      el("div", { class: "money" },
+        el("div", {},
+          el("div", { class: "price" }, i.price ? `${zl.format(i.price)} zł` : "Cena do ustalenia"),
+          drop ? el("div", { class: "old" }, `${zl.format(i.first_price)} zł`) : null
+        ),
+        unit ? el("div", { class: "ppm" },
+          `${zl.format(unit)} zł/m²`,
+          pos !== null ? el("div", { class: "scale", title: "Pozycja ceny za m² na tle widocznej listy" },
+            el("i", { style: `left:${pos.toFixed(1)}%` })) : null,
+          pos !== null ? el("div", { class: "scale-cap" }, el("span", {}, zl.format(lo)), el("span", {}, zl.format(hi))) : null
+        ) : null,
+        el("div", { class: "seen" }, `Dodana do listy ${dateFmt.format(new Date(i.first_seen))}`)
+      )
+    );
+    row.querySelectorAll("a").forEach(a => a.addEventListener("click", open));
+    return row;
+  }));
+}
+
+document.addEventListener("error", e => { if (e.target.tagName === "IMG") e.target.remove(); }, true);
+
+renderSummary();
+renderToolbar();
+renderList();
+</script>
+</body>
+</html>
