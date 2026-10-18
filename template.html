@@ -127,6 +127,9 @@ button:focus-visible, select:focus-visible, a:focus-visible, input:focus-visible
 .badge { font-size: 12.5px; font-weight: 600; padding: 3px 8px; border-radius: 4px; }
 .badge.new { background: var(--new-soft); color: var(--new); }
 .badge.drop { background: var(--drop-soft); color: var(--drop); }
+.badge.deal { background: var(--accent); color: var(--surface); }
+.dev { font-size: 13px; margin-top: 4px; color: var(--muted); }
+.dev.below { color: var(--accent); font-weight: 600; }
 .badge.src { background: transparent; border: 1px solid var(--line); color: var(--muted); font-weight: 500; text-decoration: none; }
 .badge.src:hover { color: var(--ink); }
 
@@ -150,6 +153,21 @@ button:focus-visible, select:focus-visible, a:focus-visible, input:focus-visible
 
 .empty { padding: 48px 0; color: var(--muted); font-size: 17px; max-width: 52ch; }
 
+.section { margin-top: 48px; }
+.section h2 { font: 700 clamp(24px, 4vw, 32px)/1.1 var(--display); letter-spacing: -0.02em; margin: 0 0 6px; }
+.section .lead { color: var(--muted); margin: 0 0 12px; max-width: 70ch; }
+.auction {
+  display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 18px;
+  padding: 14px 0; border-bottom: 1px solid var(--line);
+}
+.auction .when { font-weight: 600; }
+.health { width: 100%; border-collapse: collapse; font-size: 14px; }
+.health th, .health td { text-align: left; padding: 8px 10px 8px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.health th { color: var(--muted); font-weight: 500; }
+.health .bad { color: var(--drop); font-weight: 600; }
+.health .ok { color: var(--accent); font-weight: 600; }
+.table-wrap { overflow-x: auto; }
+
 @media (max-width: 760px) {
   .wrap { padding-top: 20px; }
   .row { grid-template-columns: 112px minmax(0, 1fr); gap: 12px; }
@@ -157,6 +175,8 @@ button:focus-visible, select:focus-visible, a:focus-visible, input:focus-visible
   .money { grid-column: 1 / -1; text-align: left; display: grid; grid-template-columns: auto 1fr; gap: 0 16px; align-items: end; }
   .money .ppm, .money .seen { grid-column: 1 / -1; }
   .price { font-size: 24px; }
+  .auction { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .auction .money { text-align: left; }
 }
 @media (prefers-reduced-motion: no-preference) {
   .row.fresh { animation: flash 1.6s ease-out 1; }
@@ -176,6 +196,7 @@ button:focus-visible, select:focus-visible, a:focus-visible, input:focus-visible
     <div class="tabs" id="tabs"></div>
     <div class="chips" id="chips" aria-label="Portale"></div>
     <span class="spacer"></span>
+    <label><input type="checkbox" id="onlyDeals"> tylko okazje</label>
     <label><input type="checkbox" id="onlyNew"> tylko nowe</label>
     <label>Sortuj
       <select id="sort">
@@ -183,11 +204,24 @@ button:focus-visible, select:focus-visible, a:focus-visible, input:focus-visible
         <option value="price">cena rosnąco</option>
         <option value="ppm">cena za m² rosnąco</option>
         <option value="drop">największe obniżki</option>
+        <option value="deal">najtańsze względem mediany</option>
       </select>
     </label>
   </div>
 
   <ul class="list" id="list"></ul>
+
+  <section class="section" id="auctionsSection" hidden>
+    <h2>Licytacje komornicze</h2>
+    <p class="lead" id="auctionsLead"></p>
+    <div id="auctions"></div>
+  </section>
+
+  <section class="section" id="healthSection" hidden>
+    <h2>Stan źródeł</h2>
+    <p class="lead">Kiedy każde źródło ostatnio zwróciło wyniki. Czerwony wpis oznacza, że źródło od ponad doby nie działa.</p>
+    <div class="table-wrap"><table class="health" id="health"></table></div>
+  </section>
 </div>
 
 <script>
@@ -208,6 +242,7 @@ const state = {
   sources: new Set(store("sources", Object.keys(SOURCE_NAMES))),
   sort: store("sort", "new"),
   onlyNew: false,
+  onlyDeals: false,
 };
 if (state.search !== "all" && !DATA.searches.includes(state.search)) state.search = "all";
 
@@ -224,6 +259,13 @@ function dropPct(item) {
   return Math.round((1 - item.price / item.first_price) * 100);
 }
 function ppm(item) { return item.price && item.area ? item.price / item.area : null; }
+function devPct(item) { return typeof item.deviation === "number" ? Math.round(item.deviation * 100) : null; }
+function floorText(item) {
+  if (item.floor === undefined || item.floor === null) return null;
+  const f = item.floor === 0 ? "parter" : item.floor < 0 ? "suterena" : item.floor > 10 && !item.floors_total ? "piętro powyżej 10" : `piętro ${item.floor}`;
+  return item.floors_total ? `${f} z ${item.floors_total}` : f;
+}
+const ADVERTISER = { prywatny: "oferta prywatna", biuro: "biuro nieruchomości", deweloper: "deweloper" };
 function plural(n, one, few, many) {
   const mod10 = n % 10, mod100 = n % 100;
   if (n === 1) return one;
@@ -244,12 +286,18 @@ function renderSummary() {
   const items = DATA.items;
   const fresh = items.filter(isNew).length;
   const drops = items.filter(i => dropPct(i) > 0).length;
+  const dealCount = items.filter(i => i.deal).length;
   const s = document.getElementById("summary");
   s.replaceChildren(
     el("strong", {}, `${items.length} ${plural(items.length, "oferta", "oferty", "ofert")}`),
     previousVisit ? `, w tym ${fresh} ${plural(fresh, "nowa", "nowe", "nowych")} od Twojej ostatniej wizyty` : `, w tym ${fresh} z ostatniej doby`,
     drops ? ` i ${drops} ${plural(drops, "obniżka", "obniżki", "obniżek")} ceny.` : ".",
-    ` Ostatnie sprawdzenie: ${dateFmt.format(new Date(DATA.run_at))}.`
+    dealCount ? el("strong", {}, ` Okazje: ${dealCount}.`) : null,
+    ` Ostatnie sprawdzenie: ${dateFmt.format(new Date(DATA.run_at))}.`,
+    el("br"),
+    DATA.groups_rated
+      ? `Okazja to oferta tańsza za m² o co najmniej ${DATA.deal_threshold}% od mediany podobnych ofert (ta sama dzielnica, typ i przedział metrażu). Mediany liczone z ${DATA.market_size} ofert w ${DATA.groups_rated} ${plural(DATA.groups_rated, "grupie", "grupach", "grupach")}.`
+      : `Okazje pojawią się, gdy w bazie zbierze się co najmniej kilkanaście podobnych ofert w danej dzielnicy (teraz w bazie: ${DATA.market_size}).`
   );
 
   const bad = DATA.sources.filter(x => x.error);
@@ -287,6 +335,8 @@ function renderToolbar() {
   const sort = document.getElementById("sort");
   sort.value = state.sort;
   sort.onchange = () => { state.sort = sort.value; save("sort", sort.value); renderList(); };
+  const onlyDeals = document.getElementById("onlyDeals");
+  onlyDeals.onchange = () => { state.onlyDeals = onlyDeals.checked; renderList(); };
   const onlyNew = document.getElementById("onlyNew");
   onlyNew.onchange = () => { state.onlyNew = onlyNew.checked; renderList(); };
 }
@@ -295,13 +345,15 @@ function renderList() {
   let items = DATA.items.filter(i =>
     (state.search === "all" || i.search === state.search) &&
     [i.source, ...i.others.map(o => o.source)].some(s => state.sources.has(s)) &&
-    (!state.onlyNew || isNew(i))
+    (!state.onlyNew || isNew(i)) &&
+    (!state.onlyDeals || i.deal)
   );
   const sorters = {
     new: (a, b) => b.first_seen.localeCompare(a.first_seen),
     price: (a, b) => (a.price ?? Infinity) - (b.price ?? Infinity),
     ppm: (a, b) => (ppm(a) ?? Infinity) - (ppm(b) ?? Infinity),
     drop: (a, b) => dropPct(b) - dropPct(a) || b.first_seen.localeCompare(a.first_seen),
+    deal: (a, b) => (a.deviation ?? Infinity) - (b.deviation ?? Infinity),
   };
   items.sort(sorters[state.sort]);
 
@@ -312,7 +364,7 @@ function renderList() {
   if (!items.length) {
     list.replaceChildren(el("li", { class: "empty" },
       DATA.items.length
-        ? "Żadna oferta nie spełnia wybranych filtrów. Włącz pozostałe portale albo odznacz „tylko nowe”."
+        ? "Żadna oferta nie spełnia wybranych filtrów. Włącz pozostałe portale albo odznacz „tylko nowe” i „tylko okazje”."
         : "Lista jest pusta. Sprawdź adresy wyszukiwań w config.yaml i uruchom monitor ręcznie w zakładce Actions."
     ));
     return;
@@ -324,7 +376,12 @@ function renderList() {
     const facts = [
       i.area ? `${m2.format(i.area)} m²` : null,
       i.rooms ? `${i.rooms} ${plural(i.rooms, "pokój", "pokoje", "pokoi")}` : null,
+      floorText(i),
+      i.build_year ? `rok budowy ${i.build_year}` : null,
+      i.market ? `rynek ${i.market}` : null,
+      i.advertiser ? ADVERTISER[i.advertiser] || i.advertiser : null,
     ].filter(Boolean);
+    const dev = devPct(i);
     let pos = null;
     if (unit && hi > lo) pos = ((unit - lo) / (hi - lo)) * 100;
 
@@ -336,6 +393,8 @@ function renderList() {
         i.location ? el("p", { class: "loc" }, i.location) : el("p", { class: "loc" }, i.search),
         facts.length ? el("div", { class: "facts" }, facts.map(f => el("span", {}, f))) : null,
         el("div", { class: "badges" },
+          i.deal ? el("span", { class: "badge deal" }, `Okazja: ${Math.abs(dev)}% poniżej mediany`) : null,
+          i.suspicious ? el("span", { class: "badge drop", title: "Tak duża różnica to często błąd w metrażu lub cenie, udział w nieruchomości albo cena za część lokalu." }, "Sprawdź metraż i cenę") : null,
           fresh ? el("span", { class: "badge new" }, "Nowa") : null,
           drop ? el("span", { class: "badge drop" }, `Taniej o ${drop}%`) : null,
           el("a", { class: "badge src", href: i.url, target: "_blank", rel: "noopener" }, SOURCE_NAMES[i.source] || i.source),
@@ -351,7 +410,11 @@ function renderList() {
           `${zl.format(unit)} zł/m²`,
           pos !== null ? el("div", { class: "scale", title: "Pozycja ceny za m² na tle widocznej listy" },
             el("i", { style: `left:${pos.toFixed(1)}%` })) : null,
-          pos !== null ? el("div", { class: "scale-cap" }, el("span", {}, zl.format(lo)), el("span", {}, zl.format(hi))) : null
+          pos !== null ? el("div", { class: "scale-cap" }, el("span", {}, zl.format(lo)), el("span", {}, zl.format(hi))) : null,
+          dev !== null ? el("div", {
+            class: `dev${dev < 0 ? " below" : ""}`,
+            title: `Mediana ${zl.format(i.median_ppm)} zł/m² z ${i.group_size} ofert: ${i.group}`
+          }, dev === 0 ? "równo z medianą" : `${Math.abs(dev)}% ${dev < 0 ? "poniżej" : "powyżej"} mediany (${zl.format(i.median_ppm)} zł/m²)`) : null
         ) : null,
         el("div", { class: "seen" }, `Dodana do listy ${dateFmt.format(new Date(i.first_seen))}`)
       )
@@ -363,9 +426,58 @@ function renderList() {
 
 document.addEventListener("error", e => { if (e.target.tagName === "IMG") e.target.remove(); }, true);
 
+function renderAuctions() {
+  const list = DATA.auctions || [];
+  if (!list.length) return;
+  document.getElementById("auctionsSection").hidden = false;
+  document.getElementById("auctionsLead").textContent =
+    `${list.length} ${plural(list.length, "licytacja", "licytacje", "licytacji")} z serwisu Krajowej Rady Komorniczej, od najbliższego terminu. Cena wywołania to kwota, od której zaczyna się licytacja.`;
+  const fmtDay = new Intl.DateTimeFormat("pl-PL", { weekday: "short", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" });
+  document.getElementById("auctions").replaceChildren(...list.map(a => el("div", { class: "auction" },
+    el("div", {},
+      el("a", { class: "title", href: a.url, target: "_blank", rel: "noopener" }, a.title),
+      el("p", { class: "loc" }, [a.address, a.category].filter(Boolean).join(" · ")),
+      el("div", { class: "when" }, a.date ? `Licytacja: ${fmtDay.format(new Date(a.date))}` : "Termin w obwieszczeniu"),
+      el("div", { class: "badges" },
+        a.is_new ? el("span", { class: "badge new" }, "Nowa") : null,
+        el("span", { class: "badge src" }, a.electronic ? "e-licytacja" : "licytacja w kancelarii lub sądzie"),
+        a.share ? el("span", { class: "badge drop" }, "udział w nieruchomości") : null
+      )
+    ),
+    el("div", { class: "money" },
+      el("div", { class: "price" }, a.price ? `${zl.format(a.price)} zł` : "brak ceny"),
+      el("div", { class: "seen" }, "cena wywołania"),
+      a.estimate ? el("div", { class: "ppm" }, `suma oszacowania ${zl.format(a.estimate)} zł`) : null
+    )
+  )));
+}
+
+function renderHealth() {
+  const rows = DATA.health || [];
+  if (!rows.length) return;
+  document.getElementById("healthSection").hidden = false;
+  const ago = iso => {
+    if (!iso) return "jeszcze nigdy";
+    const h = (Date.parse(DATA.run_at) - Date.parse(iso)) / 3600000;
+    if (h < 0.5) return "w ostatnim przebiegu";
+    if (h < 48) return `${Math.round(h)} godz. temu`;
+    return `${Math.round(h / 24)} dni temu`;
+  };
+  document.getElementById("health").replaceChildren(
+    el("tr", {}, el("th", {}, "Źródło"), el("th", {}, "Ostatnio z wynikami"), el("th", {}, "Ostatni przebieg")),
+    ...rows.map(r => el("tr", {},
+      el("td", {}, r.name),
+      el("td", { class: r.stale ? "bad" : "ok" }, ago(r.last_ok)),
+      el("td", {}, r.last_error ? r.last_error : `${r.last_found} ${plural(r.last_found, "wynik", "wyniki", "wyników")}`)
+    ))
+  );
+}
+
 renderSummary();
 renderToolbar();
 renderList();
+renderAuctions();
+renderHealth();
 </script>
 </body>
 </html>

@@ -16,15 +16,20 @@ from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
 import yaml
 from bs4 import BeautifulSoup
 
+import deals
+from details import (
+    DETAIL_SOURCES, kind_from_text, parse_details, normalize_advertiser, normalize_floor, normalize_market, parse_floor_formatted,
+)
+from monitor_common import (  # noqa: F401  (udostępniane dalej, m.in. dla testów)
+    join_location, ld_json_offers, next_data, nuxt_data, prerendered_state, rooms_num, to_num, walk,
+)
+
 ROOT = Path(__file__).resolve().parent
 OFFERS_FILE = ROOT / "data" / "offers.json"
 STATUS_FILE = ROOT / "data" / "status.json"
+MARKET_FILE = ROOT / "data" / "market.json"
 KEEP_DAYS = 60  # po tylu dniach nieobecności oferta jest usuwana z historii
 
-ROOMS_WORDS = {
-    "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6,
-    "seven": 7, "eight": 8, "nine": 9, "ten": 10, "more": 10,
-}
 
 OFFER_LINK = {
     "otodom": re.compile(r"/pl/oferta/[^/?#]+"),
@@ -111,39 +116,6 @@ def detect_source(url):
 
 # ---------- pomocnicze ----------
 
-def to_num(value):
-    if value is None:
-        return None
-    if isinstance(value, (int, float)):
-        return float(value)
-    s = str(value).replace("\xa0", "").replace("\u202f", "").replace(" ", "").replace(",", ".")
-    m = re.search(r"\d+(?:\.\d+)?", s)
-    return float(m.group()) if m else None
-
-
-def rooms_num(value):
-    if value is None:
-        return None
-    if isinstance(value, (int, float)):
-        return int(value)
-    s = str(value).strip().lower()
-    if s in ROOMS_WORDS:
-        return ROOMS_WORDS[s]
-    m = re.search(r"\d+", s)
-    return int(m.group()) if m else None
-
-
-def walk(obj):
-    """Przechodzi rekurencyjnie po JSON i zwraca wszystkie słowniki."""
-    stack = [obj]
-    while stack:
-        cur = stack.pop()
-        if isinstance(cur, dict):
-            yield cur
-            stack.extend(reversed(list(cur.values())))  # kolejność jak w dokumencie
-        elif isinstance(cur, list):
-            stack.extend(reversed(cur))
-
 
 PRICE_RE = re.compile(r"(\d{1,3}(?:[ \xa0\u202f]?\d{3})+(?:[.,]\d+)?|\d{4,})\s*zł(?!\s*/\s*m)", re.I)
 AREA_RE = re.compile(r"(\d{1,4}(?:[.,]\d{1,2})?)\s*(?:m²|m2|m\s*kw)", re.I)
@@ -176,106 +148,6 @@ def offer_id_from_url(source, url):
 
 
 # ---------- dane strukturalne osadzone w stronach ----------
-
-def next_data(html):
-    """JSON z <script id="__NEXT_DATA__"> (Otodom)."""
-    m = re.search(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', html, re.S)
-    if not m:
-        return None
-    try:
-        return json.loads(m.group(1))
-    except json.JSONDecodeError:
-        return None
-
-
-def prerendered_state(html):
-    """Stan z window.__PRERENDERED_STATE__ (OLX). To napis JSON zapisany jako napis JS."""
-    m = re.search(r'window\.__PRERENDERED_STATE__\s*=\s*("(?:[^"\\]|\\.)*")', html)
-    if not m:
-        return None
-    try:
-        return json.loads(json.loads(m.group(1)))
-    except (json.JSONDecodeError, TypeError):
-        return None
-
-
-_NUXT_WRAPPERS = {"ShallowReactive", "Reactive", "Ref", "ShallowRef", "EmptyRef", "EmptyShallowRef"}
-
-
-def nuxt_data(html):
-    """Dane z <script id="__NUXT_DATA__"> (Gratka, Morizon).
-
-    Nuxt zapisuje je w formacie "devalue": płaska tablica, w której obiekty
-    i listy zamiast wartości trzymają indeksy innych elementów tablicy.
-    """
-    m = re.search(r'<script[^>]*id="__NUXT_DATA__"[^>]*>(.*?)</script>', html, re.S)
-    if not m:
-        return None
-    try:
-        flat = json.loads(m.group(1))
-    except json.JSONDecodeError:
-        return None
-    if not isinstance(flat, list) or not flat:
-        return None
-    cache = {}
-
-    def hydrate(i):
-        if not isinstance(i, int) or i < 0 or i >= len(flat):
-            return None  # liczby ujemne oznaczają undefined, NaN itp.
-        if i in cache:
-            return cache[i]
-        v = flat[i]
-        if isinstance(v, list):
-            if v and isinstance(v[0], str):
-                tag = v[0]
-                if tag in _NUXT_WRAPPERS:
-                    out = hydrate(v[1]) if len(v) > 1 else None
-                elif tag == "Date":
-                    out = v[1] if len(v) > 1 else None
-                elif tag == "Set":
-                    out = [hydrate(x) for x in v[1:]]
-                elif tag in ("Map", "null", "BigInt", "RegExp", "Error", "URL", "NuxtError", "Island"):
-                    out = None
-                else:
-                    out = [hydrate(x) for x in v]
-            else:
-                out = [hydrate(x) for x in v]
-        elif isinstance(v, dict):
-            out = {}
-            cache[i] = out  # zabezpieczenie przed cyklami
-            for k, x in v.items():
-                out[k] = hydrate(x)
-            return out
-        else:
-            out = v
-        cache[i] = out
-        return out
-
-    return hydrate(0)
-
-
-def ld_json_offers(html):
-    """Oferty z bloków JSON-LD (schema.org Offer). Zapasowe dane strukturalne."""
-    out = []
-    for m in re.finditer(r'<script[^>]*type="application/ld\+json"[^>]*>(.*?)</script>', html, re.S):
-        try:
-            data = json.loads(m.group(1))
-        except json.JSONDecodeError:
-            continue
-        for d in walk(data):
-            if d.get("@type") == "Offer" and d.get("url"):
-                out.append(d)
-    return out
-
-
-def join_location(*parts):
-    seen, out = set(), []
-    for p in parts:
-        p = (p or "").strip()
-        if p and p.lower() not in seen:
-            seen.add(p.lower())
-            out.append(p)
-    return ", ".join(out)
 
 
 # ---------- parsery portali ----------
@@ -333,10 +205,26 @@ def parse_otodom(html, base):
             "rooms": rooms_num(d.get("roomsNumber")),
             "city": city,
             "district": district,
+            "subdistrict": levels.get("residential") or "",
             "location": join_location(street, levels.get("residential"), district, city),
             "image": image,
+            "kind": {"FLAT": "mieszkanie", "HOUSE": "dom", "TERRAIN": "działka"}.get(d.get("estate"))
+                    or kind_from_text(slug),
+            "floor": normalize_floor(d.get("floorNumber")),
+            "advertiser": _otodom_advertiser(d),
         })
     return out
+
+
+def _otodom_advertiser(d):
+    if d.get("isPrivateOwner"):
+        return "prywatny"
+    if d.get("development") or d.get("developmentId"):
+        return "deweloper"
+    agency = d.get("agency") if isinstance(d.get("agency"), dict) else None
+    if agency:
+        return normalize_advertiser(agency.get("type")) or "biuro"
+    return None
 
 
 def _olx_image(ad):
@@ -370,7 +258,7 @@ def parse_olx(html, base):
         p = ad.get("price") or {}
         if isinstance(p.get("regularPrice"), dict):
             price = p["regularPrice"].get("value")
-        area = rooms = None
+        area = rooms = floor = market = None
         for param in ad.get("params") or []:
             key = param.get("key")
             val = param.get("normalizedValue") or param.get("value")
@@ -378,6 +266,10 @@ def parse_olx(html, base):
                 area = to_num(val)
             elif key == "rooms":
                 rooms = rooms_num(val)
+            elif key == "floor_select":
+                floor = normalize_floor(val)
+            elif key == "market":
+                market = normalize_market(val)
         loc = ad.get("location") or {}
         city, district = loc.get("cityName") or "", loc.get("districtName") or ""
         out.append({
@@ -391,6 +283,11 @@ def parse_olx(html, base):
             "district": district,
             "location": join_location(district, city),
             "image": _olx_image(ad),
+            "floor": floor,
+            "market": market,
+            "advertiser": "biuro" if ad.get("isBusiness") else ("prywatny" if ad.get("isBusiness") is False else None),
+            # OLX nie ma osobnych stron szczegółów z dodatkowymi danymi, więc lista wystarcza
+            "details_checked": True,
         })
     return out
 
@@ -413,6 +310,16 @@ def _nuxt_listing_nodes(data):
             if d.get("idOnFrontend") and d.get("url") and "price" in d:
                 nodes.append(d)
     return nodes
+
+
+def _nuxt_advertiser(contact):
+    company = contact.get("company") if isinstance(contact.get("company"), dict) else None
+    person = contact.get("person") if isinstance(contact.get("person"), dict) else None
+    if company:
+        return normalize_advertiser(company.get("type")) or "biuro"
+    if person and str(person.get("type", "")).upper() in ("OWNER", "PRIVATE"):
+        return "prywatny"
+    return None
 
 
 def parse_nuxt_portal(html, base, source):
@@ -448,6 +355,8 @@ def parse_nuxt_portal(html, base, source):
         if photos and isinstance(photos[0], dict) and photos[0].get("id"):
             image = NUXT_THUMB.format(id=photos[0]["id"], name=photos[0].get("name") or "zdjecie")
         title = (n.get("advertisementText") or n.get("title") or "").strip()
+        floor, floors_total = parse_floor_formatted(n.get("floorFormatted"))
+        contact = n.get("contact") if isinstance(n.get("contact"), dict) else {}
         out.append({
             "native_id": native_id,
             "url": url,
@@ -457,8 +366,13 @@ def parse_nuxt_portal(html, base, source):
             "rooms": rooms_num(n.get("numberOfRooms")),
             "city": city,
             "district": district,
+            "subdistrict": sub,
             "location": join_location(street, sub, district, city),
             "image": image,
+            "kind": kind_from_text(urlparse(url).path),
+            "floor": floor,
+            "floors_total": floors_total,
+            "advertiser": _nuxt_advertiser(contact),
         })
     return out
 
@@ -598,87 +512,211 @@ def load_json(path, default):
     return default
 
 
-UPDATED_FIELDS = ("title", "price", "area", "rooms", "city", "district", "location", "image", "url")
+UPDATED_FIELDS = ("title", "price", "area", "rooms", "city", "district", "subdistrict", "location", "image",
+                  "url", "kind", "floor", "floors_total", "market", "advertiser")
+DETAIL_FIELDS = ("floor", "floors_total", "build_year", "market", "advertiser", "district", "subdistrict")
+
+# Ogłoszenia, które zaburzałyby medianę: udziały, licytacje, TBS.
+MARKET_EXCLUDED = ("udział", "udzial", "licytac", "komornicz", "tbs", "1/2 ", "1/3 ", "1/4 ", "prawo do lokalu")
 
 
-def run(config, offers, run_at, fetch_fn=None, sleep=None):
-    """Jeden przebieg: pobiera wyszukiwania, filtruje i aktualizuje słownik ofert.
+def default_sleep():
+    time.sleep(random.uniform(3, 7))
 
-    Zwraca (offers, status). Nie zapisuje plików, więc da się go testować
-    z podmienioną funkcją pobierania.
+
+class Fetcher:
+    """Pobieranie z przerwą 3 do 7 sekund przed każdym zapytaniem oprócz pierwszego."""
+
+    def __init__(self, fetch_fn, sleep):
+        self.fetch_fn, self.sleep, self.count = fetch_fn, sleep, 0
+
+    def __call__(self, url):
+        if self.count:
+            self.sleep()
+        self.count += 1
+        return self.fetch_fn(url)
+
+
+def market_ok(o):
+    title = (o.get("title") or "").lower()
+    if any(w in title for w in MARKET_EXCLUDED):
+        return False
+    ppm = o["price"] / o["area"] if o.get("price") and o.get("area") else None
+    return ppm is not None and 1_000 <= ppm <= 100_000
+
+
+def scan(url, pages, source, get, run_iso, market, default_kind):
+    """Pobiera strony wyników jednego adresu. Zwraca (oferty, wpis do status.json)."""
+    found_all = []
+    entry = {"source": source, "url": url, "found": 0, "matched": 0, "error": None}
+    if not source:
+        entry["error"] = "Nieobsługiwany portal. Obsługiwane są otodom.pl, olx.pl, gratka.pl i morizon.pl."
+        return found_all, entry
+    try:
+        for page in range(1, pages + 1):
+            page_url = with_page(url, page)
+            found = parse_page(source, get(page_url), page_url)
+            for o in found:
+                o.setdefault("kind", None)
+                if not o["kind"]:
+                    o["kind"] = default_kind
+            entry["found"] += len(found)
+            found_all += found
+            deals.update_market(market, source, [o for o in found if market_ok(o)], run_iso)
+            if not found:
+                break
+        if entry["found"] == 0:
+            entry["error"] = ("Nie znaleziono ogłoszeń na stronie. Portal mógł zablokować zapytanie "
+                              "albo zmienić wygląd strony.")
+    except FetchError as exc:
+        entry["error"] = str(exc)
+    except Exception as exc:  # noqa: BLE001
+        entry["error"] = f"Nieoczekiwany błąd: {exc}"
+    return found_all, entry
+
+
+def run(config, offers, run_at, fetch_fn=None, sleep=None, market=None):
+    """Jeden przebieg monitora. Nie zapisuje plików, więc da się go testować z podmienionym pobieraniem.
+
+    Zmienia na miejscu słownik market (baza rynkowa do median). Zwraca (offers, status).
     """
-    fetch_fn = fetch_fn or fetch
-    sleep = sleep or (lambda: time.sleep(random.uniform(3, 7)))
+    get = Fetcher(fetch_fn or fetch, sleep or default_sleep)
+    market = {} if market is None else market
+    run_iso = iso(run_at)
     pages = int(config.get("strony", 1))
-    status = {"run_at": iso(run_at), "sources": [], "new": 0, "drops": 0}
-    first = True
+    status = {"run_at": run_iso, "sources": [], "new": 0, "drops": 0,
+              "new_keys": [], "drop_events": [], "new_deals": [], "details": {"checked": 0, "errors": 0}}
+    seen_now = set()
 
+    # 1. wyszukiwania użytkownika
     for search in config.get("wyszukiwania") or []:
         name = search.get("nazwa", "Wyszukiwanie")
         filters = search.get("filtry") or {}
         for url in search.get("adresy") or []:
             source = detect_source(url)
-            entry = {"search": name, "source": source, "url": url, "found": 0, "matched": 0, "error": None}
-            if not source:
-                entry["error"] = "Nieobsługiwany portal. Obsługiwane są otodom.pl, olx.pl, gratka.pl i morizon.pl."
-                status["sources"].append(entry)
-                continue
-            try:
-                for page in range(1, pages + 1):
-                    if not first:
-                        sleep()  # przerwa między zapytaniami, żeby nie obciążać portali
-                    first = False
-                    page_url = with_page(url, page)
-                    html = fetch_fn(page_url)
-                    found = parse_page(source, html, page_url)
-                    entry["found"] += len(found)
-                    for o in found:
-                        if not o.get("url") or not passes(o, filters):
-                            continue
-                        entry["matched"] += 1
-                        key = f"{source}:{o['native_id']}"
-                        old = offers.get(key)
-                        if old is None:
-                            status["new"] += 1
-                            offers[key] = {
-                                **o, "source": source, "search": name,
-                                "first_seen": iso(run_at), "last_seen": iso(run_at),
-                                "price_history": [{"date": iso(run_at), "price": o.get("price")}],
-                            }
-                            continue
-                        if o.get("price") and old.get("price") and o["price"] != old["price"]:
-                            old.setdefault("price_history", []).append({"date": iso(run_at), "price": o["price"]})
-                            if o["price"] < old["price"]:
-                                status["drops"] += 1
-                        for field in UPDATED_FIELDS:
-                            if o.get(field):
-                                old[field] = o[field]
-                        old["last_seen"] = iso(run_at)
-                if entry["found"] == 0:
-                    entry["error"] = ("Nie znaleziono ogłoszeń na stronie. Portal mógł zablokować zapytanie "
-                                      "albo zmienić wygląd strony.")
-            except FetchError as exc:
-                entry["error"] = str(exc)
-            except Exception as exc:  # noqa: BLE001
-                entry["error"] = f"Nieoczekiwany błąd: {exc}"
+            found, entry = scan(url, pages, source, get, run_iso, market, kind_from_text(url) or kind_from_text(name))
+            entry["search"] = name
+            for o in found:
+                if not o.get("url") or not passes(o, filters):
+                    continue
+                entry["matched"] += 1
+                key = f"{source}:{o['native_id']}"
+                seen_now.add(key)
+                old = offers.get(key)
+                if old is None:
+                    status["new"] += 1
+                    status["new_keys"].append(key)
+                    offers[key] = {
+                        **o, "source": source, "search": name,
+                        "first_seen": run_iso, "last_seen": run_iso,
+                        "price_history": [{"date": run_iso, "price": o.get("price")}],
+                    }
+                    continue
+                if o.get("price") and old.get("price") and o["price"] != old["price"]:
+                    old.setdefault("price_history", []).append({"date": run_iso, "price": o["price"]})
+                    if o["price"] < old["price"]:
+                        status["drops"] += 1
+                        status["drop_events"].append({"key": key, "old": old["price"], "new": o["price"]})
+                for field in UPDATED_FIELDS:
+                    if o.get(field) not in (None, ""):
+                        old[field] = o[field]
+                old["last_seen"] = run_iso
             status["sources"].append(entry)
-            print(f"[{source}] {name}: znaleziono {entry['found']}, pasuje {entry['matched']}"
-                  + (f" | {entry['error']}" if entry["error"] else ""))
+            log_entry(entry)
+
+    # 2. adresy rynku: tylko do liczenia median
+    ok = deals.settings(config)
+    start_pages = int(ok.get("strony_na_start") or 1)
+    start_threshold = int(ok.get("baza_na_start") or 2000)
+    for url in ok.get("adresy_rynku") or []:
+        source = detect_source(url)
+        n = start_pages if len(market) < start_threshold else 1
+        _, entry = scan(url, max(n, 1), source, get, run_iso, market, kind_from_text(url))
+        entry["search"] = "Rynek (do median)"
+        entry["market_only"] = True
+        status["sources"].append(entry)
+        log_entry(entry)
+
+    # 3. ocena okazji
+    assess_all(offers, market, config, run_iso, status)
+
+    # 4. szczegóły nowych ofert, zaczynając od największych okazji
+    fetch_details(offers, config, get, run_at, status)
+    assess_all(offers, market, config, run_iso, status)
 
     cutoff = run_at - timedelta(days=KEEP_DAYS)
     offers = {k: v for k, v in offers.items() if datetime.fromisoformat(v["last_seen"]) >= cutoff}
+    for k in [k for k, v in market.items() if datetime.fromisoformat(v["last_seen"]) < cutoff]:
+        del market[k]
+    status["market_size"] = len(market)
+    status["requests"] = get.count
     return offers, status
+
+
+def assess_all(offers, market, config, run_iso, status):
+    med = deals.medians(market, config)
+    status["groups_rated"] = len(med)
+    for key, o in offers.items():
+        was_deal = bool(o.get("deal"))
+        deals.assess(o, med, config)
+        if o.get("deal") and not was_deal and o.get("last_seen") == run_iso:
+            o.setdefault("deal_since", run_iso)
+            if key not in status["new_deals"]:
+                status["new_deals"].append(key)
+        if not o.get("deal"):
+            o.pop("deal_since", None)
+    # oferta, która przestała być okazją przy drugiej ocenie, nie trafia do powiadomień
+    status["new_deals"] = [k for k in status["new_deals"] if offers.get(k, {}).get("deal")]
+
+
+def fetch_details(offers, config, get, run_at, status):
+    limit = int(config.get("szczegoly_na_przebieg", 10) or 0)
+    if limit <= 0:
+        return
+    recent = run_at - timedelta(days=2)
+    todo = [(k, o) for k, o in offers.items()
+            if o.get("source") in DETAIL_SOURCES and not o.get("details_checked")
+            and datetime.fromisoformat(o["first_seen"]) >= recent]
+    todo.sort(key=lambda ko: (not ko[1].get("deal"), ko[1].get("deviation", 0), ko[1]["first_seen"]))
+    for key, o in todo[:limit]:
+        try:
+            info = parse_details(o["source"], get(o["url"]))
+        except FetchError as exc:
+            o["details_attempts"] = o.get("details_attempts", 0) + 1
+            o["details_error"] = str(exc)
+            if o["details_attempts"] >= 3:
+                o["details_checked"] = True
+            status["details"]["errors"] += 1
+            continue
+        for field in DETAIL_FIELDS:
+            if info.get(field) not in (None, ""):
+                o[field] = info[field]
+        o["details_checked"] = True
+        o.pop("details_error", None)
+        status["details"]["checked"] += 1
+    if todo:
+        print(f"Szczegóły: sprawdzono {status['details']['checked']}, błędów {status['details']['errors']}, "
+              f"w kolejce {max(len(todo) - limit, 0)}")
+
+
+def log_entry(entry):
+    print(f"[{entry['source']}] {entry['search']}: znaleziono {entry['found']}, pasuje {entry['matched']}"
+          + (f" | {entry['error']}" if entry["error"] else ""))
 
 
 def main():
     config = yaml.safe_load((ROOT / "config.yaml").read_text(encoding="utf-8")) or {}
     offers = load_json(OFFERS_FILE, {})
-    offers, status = run(config, offers, now_utc())
+    market = load_json(MARKET_FILE, {})
+    offers, status = run(config, offers, now_utc(), market=market)
 
     OFFERS_FILE.parent.mkdir(parents=True, exist_ok=True)
     OFFERS_FILE.write_text(json.dumps(offers, ensure_ascii=False, indent=1), encoding="utf-8")
+    MARKET_FILE.write_text(json.dumps(market, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     STATUS_FILE.write_text(json.dumps(status, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"Nowych ofert: {status['new']}, obniżek: {status['drops']}, w bazie: {len(offers)}")
+    deals_now = sum(1 for o in offers.values() if o.get("deal"))
+    print(f"Nowych ofert: {status['new']}, obniżek: {status['drops']}, okazji: {deals_now}, "
+          f"w bazie: {len(offers)}, w bazie rynkowej: {len(market)}, zapytań: {status['requests']}")
 
     from page import render
     render(config, offers, status)

@@ -21,6 +21,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
+import details  # noqa: E402
 import monitor  # noqa: E402
 
 FIXTURES = ROOT / "tests" / "fixtures"
@@ -36,17 +37,38 @@ PAGES = {
 PHONE_RE = re.compile(r"(?<![\w/=.-])(?:\+48[ -]?)?(?:\d{3}[ -]?\d{3}[ -]?\d{3}|\d{2}[ -]\d{3}[ -]\d{2}[ -]\d{2})(?![\w/=.-])")
 EMAIL_RE = re.compile(r"[\w.+-]+@[\w-]+\.[\w.-]+")
 PRIVATE_KEYS = {"contact", "user", "description", "phone", "phones", "email", "person", "seller",
-                "unconfirmedUserAuthToken", "userSessionId", "currentUser"}
+                "unconfirmedUserAuthToken", "userSessionId", "currentUser", "owner", "contactDetails",
+                "userAdverts", "advertOwner", "salesManagoData", "similarProperties", "advertiserProperties"}
+
+# Strony pojedynczych ofert (obszar 2: szczegóły ogłoszenia).
+DETAIL_PAGES = {
+    "otodom_oferta": "https://www.otodom.pl/pl/oferta/metro-plocka-41-m-w-powojennej-kamienicy-z-winda-na-woli-ID4DAtK",
+    "otodom_oferta2": "https://www.otodom.pl/pl/oferta/mieszkanie-47m2-balkon-i-piwnica-ID4DAr8",
+    "gratka_oferta": "https://gratka.pl/nieruchomosci/mieszkanie-warszawa-bemowo-doroszewskiego/ob/49336685",
+    "morizon_oferta": "https://www.morizon.pl/oferta/sprzedaz-mieszkanie-warszawa-bemowo-doroszewskiego-68m2-mzn2048236679",
+}
 
 
 def scrub_text(s):
     return EMAIL_RE.sub("anonim@example.com", PHONE_RE.sub("000000000", s))
 
 
+def contact_types(contact):
+    """Z danych kontaktowych zostaje tylko typ oferenta (np. AGENCY, SALES_OFFICE, PRIVATE)."""
+    if not isinstance(contact, dict):
+        return None
+    return {k: {"type": v.get("type")} for k, v in contact.items() if isinstance(v, dict) and v.get("type")}
+
+
 def prune(obj):
     """Usuwa klucze z danymi kontaktowymi i anonimizuje napisy."""
     if isinstance(obj, dict):
-        return {k: prune(v) for k, v in obj.items() if k not in PRIVATE_KEYS}
+        out = {k: prune(v) for k, v in obj.items() if k not in PRIVATE_KEYS}
+        if "contact" in obj and contact_types(obj["contact"]):
+            out["contact"] = contact_types(obj["contact"])
+        if isinstance(obj.get("agency"), dict):
+            out["agency"] = {"type": obj["agency"].get("type")}  # bez nazwy i telefonów biura
+        return out
     if isinstance(obj, list):
         return [prune(v) for v in obj]
     if isinstance(obj, str):
@@ -129,6 +151,20 @@ def trim(source, html):
             + "\n".join(blocks) + "\n</head>\n<body>\n" + body + "\n</body>\n</html>\n")
 
 
+def trim_detail(source, html):
+    if source == "otodom":
+        ad = monitor.next_data(html)["props"]["pageProps"]["ad"]
+        keep = {"props": {"pageProps": {"ad": prune(ad)}}}
+        block = ('<script id="__NEXT_DATA__" type="application/json">'
+                 + json.dumps(keep, ensure_ascii=False).replace("</", "<\\/") + "</script>")
+    else:
+        data = monitor.nuxt_data(html)
+        keep = {"pinia": {"details": {"propertyData": data["pinia"]["details"]["propertyData"]}}}
+        block = ('<script type="application/json" data-nuxt-data="nuxt-app" data-ssr="true" id="__NUXT_DATA__">'
+                 + json.dumps(devalue_encode(prune(keep)), ensure_ascii=False).replace("</", "<\\/") + "</script>")
+    return "<!doctype html>\n<html lang=\"pl\">\n<head>\n<meta charset=\"utf-8\">\n" + block + "\n</head>\n<body></body>\n</html>\n"
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--z-katalogu", dest="src_dir", help="katalog z wcześniej pobranymi stronami <nazwa>.html")
@@ -148,6 +184,18 @@ def main():
         found = monitor.parse_page(source, out, url)
         (FIXTURES / f"{name}.html").write_text(out, encoding="utf-8")
         print(f"{name}: {len(html) // 1024} KB -> {len(out) // 1024} KB, ofert: {len(found)}")
+        lines.append(f"* `{name}.html`: {url}")
+    lines += ["", "Strony pojedynczych ofert:", ""]
+    for name, url in DETAIL_PAGES.items():
+        source = name.split("_")[0]
+        if args.src_dir:
+            html = (Path(args.src_dir) / f"{name}.html").read_text(encoding="utf-8")
+        else:
+            time.sleep(random.uniform(3, 7))
+            html = monitor.fetch(url)
+        out = trim_detail(source, html)
+        (FIXTURES / f"{name}.html").write_text(out, encoding="utf-8")
+        print(f"{name}: {len(html) // 1024} KB -> {len(out) // 1024} KB, szczegóły: {details.parse_details(source, out)}")
         lines.append(f"* `{name}.html`: {url}")
     (FIXTURES / "README.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 

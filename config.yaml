@@ -14,6 +14,37 @@ strony: 1
 # Po ilu dniach od ostatniego pojawienia się ogłoszenie znika z listy.
 ukryj_po_dniach: 3
 
+# Ile nowych ogłoszeń na przebieg sprawdzać dokładniej (piętro, rok budowy, rynek, oferent).
+# Każde to jedno dodatkowe zapytanie do portalu. 0 wyłącza. Najpierw sprawdzane są największe okazje.
+szczegoly_na_przebieg: 10
+
+# WYKRYWANIE OKAZJI
+# Okazja to oferta, której cena za m² jest niższa od mediany podobnych ofert o podany procent.
+# Podobne oferty: to samo miasto, dzielnica, typ (mieszkanie, dom) i przedział metrażu.
+okazje:
+  prog_procent: 10            # o ile procent taniej od mediany
+  min_ofert_w_grupie: 15      # mniej podobnych ofert = brak oceny
+  przedzialy_metrazu: [35, 50, 70, 100]   # granice w m²: do 35, 35-50, 50-70, 70-100, 100+
+  # Dodatkowe wyszukiwania tylko do liczenia median (bez limitu ceny, żeby mediana nie była zaniżona).
+  # Nie trafiają na listę ofert. Każdy adres to jedno zapytanie na przebieg.
+  adresy_rynku:
+    - https://www.otodom.pl/pl/wyniki/sprzedaz/mieszkanie/mazowieckie/warszawa/warszawa/warszawa?by=LATEST&direction=DESC
+    - https://www.otodom.pl/pl/wyniki/sprzedaz/dom/mazowieckie/warszawa/warszawa/warszawa?by=LATEST&direction=DESC
+    - https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Border%5D=created_at%3Adesc
+    - https://www.morizon.pl/mieszkania/warszawa/
+  # Na start, dopóki baza ma mniej niż baza_na_start ofert, z adresów rynku pobieranych jest
+  # strony_na_start stron zamiast jednej. Dzięki temu okazje widać od pierwszego dnia.
+  strony_na_start: 10
+  baza_na_start: 2000
+
+# POWIADOMIENIA
+# Jedna zbiorcza wiadomość na przebieg: nowe okazje i obniżki cen o co najmniej obnizka_procent.
+# Telegram wymaga sekretów TELEGRAM_TOKEN i TELEGRAM_CHAT_ID, e-mail sekretów SMTP_* (instrukcja w README).
+powiadomienia:
+  telegram: false
+  email: false
+  obnizka_procent: 5
+
 wyszukiwania:
   - nazwa: Mieszkania
     adresy:
