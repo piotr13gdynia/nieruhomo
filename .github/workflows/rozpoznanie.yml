@@ -6,7 +6,7 @@ on:
     paths: [tools/probe_auctions.py, .github/workflows/rozpoznanie.yml]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   rozpoznanie:
@@ -19,3 +19,10 @@ jobs:
           python-version: "3.12"
       - run: pip install curl_cffi
       - run: python tools/probe_auctions.py
+      - name: Zapisz pliki do gałęzi
+        run: |
+          git config user.name "rozpoznanie"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tmp_probe
+          git commit -m "Tymczasowe pliki rozpoznania licytacji [skip ci]" || true
+          git push
