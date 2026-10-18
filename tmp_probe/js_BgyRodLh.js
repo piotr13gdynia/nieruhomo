@@ -1,0 +1,1 @@
+function u(n){if(typeof n!="string")return!1;const i=n.split(":");if(i.length!==2)return!1;const[e,s]=i;if(e.length!==1&&e.length!==2||s.length!==2)return!1;const t=Number(e),r=Number(s);return!Number.isInteger(t)||!Number.isInteger(r)?!1:t>=0&&t<=23&&r>=0&&r<=59}export{u as i};

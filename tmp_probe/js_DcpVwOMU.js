@@ -1,0 +1,1 @@
+function c(r,o={behavior:"smooth"}){const t=r==null?void 0:r.querySelector(".v-input--error");if(!t)return;t.scrollIntoView(o);const e=t.querySelector("input, textarea, select");e&&setTimeout(()=>{e&&e.focus()},o&&typeof o=="object"&&o.behavior==="smooth"?300:0)}export{c as s};

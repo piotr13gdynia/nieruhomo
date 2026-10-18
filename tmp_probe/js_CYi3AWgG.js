@@ -1,0 +1,1 @@
+import{o as u}from"./D_OLqiQd.js";import{bK as a,bV as n}from"./yXZNkKbm.js";function f(o,p=!0){const i=n(p);a(i,async t=>{t||(await u(),o("hide"))});function e(){i.value=!1}return{popupVisibility:i,hidePopup:e}}export{f as u};
