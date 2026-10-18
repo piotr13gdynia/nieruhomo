@@ -1,0 +1,40 @@
+name: Testy
+
+on:
+  push:
+    branches-ignore: [main]   # na main commituje monitor, tam testy nie są potrzebne co 2 godziny
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  testy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt -r requirements-dev.txt
+      - name: Testy parserów i przebiegu
+        run: python -m pytest -v
+
+  dostep-do-portali:
+    # Jedno zapytanie do każdego portalu z serwerów GitHuba. Nie zapisuje danych
+    # i nie blokuje testów, tylko pokazuje w logu, czy portal odpowiada.
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Sprawdź portale
+        run: python tools/check_portals.py
