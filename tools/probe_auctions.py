@@ -1,5 +1,6 @@
-"""TYMCZASOWE: zapytania do API serwisu licytacji (uruchamiane w GitHub Actions)."""
+"""TYMCZASOWE: sprawdzenie stronicowania i strony licytacji (uruchamiane w GitHub Actions)."""
 import json
+import re
 import time
 from pathlib import Path
 
@@ -8,44 +9,25 @@ from curl_cffi import requests as creq
 out = Path("tmp_probe")
 out.mkdir(exist_ok=True)
 s = creq.Session(impersonate="chrome")
-BASE = "https://licytacje.komornik.pl/services/item-back/rest/item/"
-H = {"Accept-Language": "pl-PL,pl;q=0.9", "Accept": "application/json", "Content-Type": "application/json",
-     "Origin": "https://licytacje.komornik.pl", "Referer": "https://licytacje.komornik.pl/wyszukiwarka-licytacji"}
-RE = {"field": "mainCategory", "value": ["REAL_ESTATE"]}
-MAZ = {"field": "province", "value": ["mazowieckie"]}
-bodies = {
-    "all_re": {"orderByField": "dateCreated", "orderBy": "DESC", "limit": 100, "offset": 0, "termFilters": [RE]},
-    "waw": {"orderByField": "startAuctionAt", "orderBy": "ASC", "limit": 50, "offset": 0,
-            "termFilters": [RE, MAZ, {"field": "city", "value": ["Warszawa"]}]},
-    "maz": {"orderByField": "startAuctionAt", "orderBy": "ASC", "limit": 100, "offset": 0, "termFilters": [RE, MAZ]},
-    "maz_joinable": {"orderByField": "startAuctionAt", "orderBy": "ASC", "limit": 30, "offset": 0,
-                     "termFilters": [RE, MAZ, {"field": "joinable", "value": ["true"]}]},
-}
-first_id = None
-for name, body in bodies.items():
-    try:
-        r = s.post(BASE + "search", headers=H, data=json.dumps(body), timeout=40)
-        (out / f"{name}.json").write_text(r.text, encoding="utf-8")
-        print(name, r.status_code, len(r.text), r.text[:300])
-        if name == "maz" and r.status_code == 200:
-            data = r.json()
-            items = data.get("items") or data.get("content") or data.get("results") or []
-            if isinstance(items, list) and items:
-                first_id = items[0].get("id") or items[0].get("itemId")
-    except Exception as e:
-        print(name, "ERR", str(e)[:300])
+URL = "https://licytacje.komornik.pl/services/item-back/rest/item/search"
+H = {"Accept-Language": "pl-PL,pl;q=0.9", "Accept": "application/json", "Content-Type": "application/json"}
+F = [{"field": "mainCategory", "value": ["REAL_ESTATE"]}, {"field": "province", "value": ["mazowieckie"]},
+     {"field": "joinable", "value": ["true"]}]
+ids = {}
+for name, extra in {"p0": {"offset": 0}, "p1": {"offset": 5}, "pn1": {"pageNumber": 1}}.items():
+    body = {"orderByField": "dateCreated", "orderBy": "DESC", "limit": 5, "termFilters": F, **extra}
+    r = s.post(URL, headers=H, data=json.dumps(body), timeout=60)
+    items = r.json().get("items", [])
+    ids[name] = [i["id"] for i in items]
+    for i in items:
+        i["mainPhoto"] = i["mainPhoto"][:40]
+    (out / f"{name}.json").write_text(json.dumps(r.json(), ensure_ascii=False), encoding="utf-8")
+    print(name, r.status_code, ids[name], r.json().get("count"))
     time.sleep(3)
-if first_id:
-    for name, url in {"item": f"{BASE}{first_id}", "page": f"https://licytacje.komornik.pl/licytacje/{first_id}",
-                      "item_ui": f"https://licytacje.komornik.pl/items/{first_id}"}.items():
-        try:
-            r = s.get(url, headers={"Accept-Language": "pl-PL"}, timeout=40)
-            (out / f"{name}.{'json' if name == 'item' else 'html'}").write_text(r.text, encoding="utf-8")
-            if name != "item":
-                import re as _re
-                t = _re.search(r"<title>(.*?)</title>", r.text, _re.S)
-                print("   TITLE", t and t.group(1)[:150])
-            print(name, r.status_code, len(r.text), r.url)
-        except Exception as e:
-            print(name, "ERR", str(e)[:300])
-        time.sleep(3)
+first = ids["p0"][0]
+for name, url in {"licytacje": f"https://licytacje.komornik.pl/licytacje/{first}",
+                  "items": f"https://licytacje.komornik.pl/items/{first}"}.items():
+    r = s.get(url, headers={"Accept-Language": "pl-PL"}, timeout=60)
+    t = re.search(r"<title>(.*?)</title>", r.text, re.S)
+    print(name, r.status_code, r.url, len(r.text), "TITLE:", t and t.group(1)[:200], "| 404 w treści:", "404" in r.text[:5000])
+    time.sleep(3)
