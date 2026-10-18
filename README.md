@@ -29,7 +29,7 @@ Swoje wyszukiwania i filtry zmieniasz w `config.yaml` (ikona ołówka w repozyto
 
 ## Zmiany
 
-* **Inne wyszukiwanie lub filtry:** edytujesz `config.yaml`, zmiana działa od następnego przebiegu. Wszystkie ustawienia są opisane w komentarzach pliku.
+* **Inne wyszukiwanie lub filtry:** edytujesz `config.yaml` na gałęzi `main`. Zapisanie zmiany od razu uruchamia monitor, nowa lista jest na stronie po kilku minutach. Wszystkie ustawienia są opisane w komentarzach pliku.
 * **Częstotliwość:** linia `cron` w `.github/workflows/monitor.yml`. `17 */2 * * *` oznacza co 2 godziny, `17 7-21 * * *` co godzinę w dzień (czas UTC, czyli 1 do 2 godzin mniej niż w Polsce). Częściej niż co godzinę nie warto, portale szybciej zaczną blokować.
 * **Próg okazji:** `okazje: prog_procent` w `config.yaml` (domyślnie 10).
 * **Licytacje z innego miasta lub województwa:** sekcja `licytacje` w `config.yaml`.

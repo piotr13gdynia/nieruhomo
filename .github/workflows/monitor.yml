@@ -4,6 +4,14 @@ on:
   schedule:
     - cron: "17 */2 * * *"   # co 2 godziny (czas UTC)
   workflow_dispatch:          # przycisk "Run workflow" do ręcznego uruchomienia
+  push:                       # od razu po zmianie ustawień lub kodu na gałęzi main
+    branches: [main]
+    paths:
+      - config.yaml
+      - "*.py"
+      - template.html
+      - requirements.txt
+      - .github/workflows/monitor.yml
 
 permissions:
   contents: write
@@ -45,4 +53,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data docs
           git diff --staged --quiet || git commit -m "Aktualizacja ofert $(date -u '+%Y-%m-%d %H:%M')"
-          git push
+          git pull --rebase origin "${GITHUB_REF_NAME}"   # gdyby w trakcie przebiegu ktoś zmienił config.yaml
+          git push origin "HEAD:${GITHUB_REF_NAME}"
