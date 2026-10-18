@@ -1,0 +1,21 @@
+name: Rozpoznanie licytacji (tymczasowe)
+
+on:
+  push:
+    branches: [claude/new-session-tbgro0]
+    paths: [tools/probe_auctions.py, .github/workflows/rozpoznanie.yml]
+
+permissions:
+  contents: read
+
+jobs:
+  rozpoznanie:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install curl_cffi
+      - run: python tools/probe_auctions.py
