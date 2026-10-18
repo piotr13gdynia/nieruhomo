@@ -66,6 +66,7 @@ def render(config, offers, status, auctions=None, health=None):
         "deal_threshold": deals_cfg.get("prog_procent", 10),
         "market_size": status.get("market_size", 0),
         "groups_rated": status.get("groups_rated", 0),
+        "notifications": status.get("notifications") or {},
         "auctions": auctions or [],
         "health": health or [],
     }
@@ -73,4 +74,5 @@ def render(config, offers, status, auctions=None, health=None):
     html = TEMPLATE.read_text(encoding="utf-8").replace("/*__DATA__*/null", data)
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(html, encoding="utf-8")
-    print(f"Strona zapisana: {OUTPUT.relative_to(ROOT)} ({len(payload['items'])} ofert)")
+    name = OUTPUT.relative_to(ROOT) if OUTPUT.is_relative_to(ROOT) else OUTPUT
+    print(f"Strona zapisana: {name} ({len(payload['items'])} ofert, {len(payload['auctions'])} licytacji)")

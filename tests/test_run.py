@@ -3,6 +3,7 @@ import json
 import re
 from datetime import datetime, timedelta, timezone
 
+import maintenance
 import monitor
 import page
 from conftest import load_fixture
@@ -149,11 +150,12 @@ def test_przerwy_miedzy_zapytaniami():
     assert len(pauses) == 3, "przerwa przed każdym zapytaniem oprócz pierwszego"
 
 
-def test_stare_oferty_sa_usuwane_z_historii():
+def test_stare_oferty_trafiaja_do_archiwum():
     offers, _ = monitor.run(CONFIG, {}, T1, fetch_fn=make_fetch(), sleep=no_sleep)
-    later = T1 + timedelta(days=monitor.KEEP_DAYS + 1)
-    offers, _ = monitor.run({"wyszukiwania": []}, offers, later, fetch_fn=make_fetch(), sleep=no_sleep)
-    assert offers == {}
+    later = T1 + timedelta(days=maintenance.KEEP_DAYS + 1)
+    active, archive, moved = maintenance.rotate(offers, {}, later)
+    assert active == {} and moved == len(offers) == len(archive)
+    assert archive["otodom:68540364"]["archived"] == later.isoformat(timespec="seconds")
 
 
 def test_main_zapisuje_pliki_i_strone(tmp_path, monkeypatch):
@@ -161,7 +163,9 @@ def test_main_zapisuje_pliki_i_strone(tmp_path, monkeypatch):
     monkeypatch.setattr(monitor, "ROOT", tmp_path)
     monkeypatch.setattr(monitor, "OFFERS_FILE", tmp_path / "data" / "offers.json")
     monkeypatch.setattr(monitor, "STATUS_FILE", tmp_path / "data" / "status.json")
-    monkeypatch.setattr(monitor, "MARKET_FILE", tmp_path / "data" / "market.json")
+    for name in ("MARKET_FILE", "ARCHIVE_FILE", "HEALTH_FILE", "AUCTIONS_FILE"):
+        monkeypatch.setattr(monitor, name, tmp_path / "data" / getattr(monitor, name).name)
+    monkeypatch.setattr(monitor, "post_json", lambda url, body: {"items": []})
     monkeypatch.setattr(page, "OUTPUT", tmp_path / "docs" / "index.html")
     monkeypatch.setattr(page, "ROOT", tmp_path)
     monkeypatch.setattr(monitor, "fetch", make_fetch())
@@ -173,9 +177,13 @@ def test_main_zapisuje_pliki_i_strone(tmp_path, monkeypatch):
     status = json.loads((tmp_path / "data" / "status.json").read_text(encoding="utf-8"))
     html = (tmp_path / "docs" / "index.html").read_text(encoding="utf-8")
     assert len(offers) > 100
-    assert len(status["sources"]) == 4
+    assert [x["source"] for x in status["sources"]] == ["otodom", "olx", "gratka", "morizon", "komornik"]
     assert "/*__DATA__*/null" not in html
     assert "Metro Płocka" in html
+    health = json.loads((tmp_path / "data" / "health.json").read_text(encoding="utf-8"))
+    assert health["otodom"]["last_ok"] == status["run_at"] and health["otodom"]["last_found"] == 36
+    assert (tmp_path / "data" / "auctions.json").exists()
+    assert (tmp_path / "data" / "market.json").exists()
 
 
 # ---------- obszar 2 i 3: okazje i szczegóły w pełnym przebiegu ----------

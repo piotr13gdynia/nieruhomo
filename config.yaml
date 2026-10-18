@@ -45,6 +45,18 @@ powiadomienia:
   email: false
   obnizka_procent: 5
 
+# LICYTACJE KOMORNICZE
+# Obwieszczenia z portalu Krajowej Rady Komorniczej (licytacje.komornik.pl), osobna sekcja na stronie.
+licytacje:
+  wlaczone: true
+  wojewodztwo: mazowieckie     # małymi literami, np. pomorskie, małopolskie
+  miasto: Warszawa             # usuń tę linię, żeby widzieć całe województwo
+  cena_max: 1500000            # najwyższa cena wywołania
+  pomin_udzialy: false         # true ukrywa licytacje udziałów (np. 1/2 mieszkania)
+
+# Adres Twojej strony z ofertami (pojawi się w powiadomieniach jako link). Opcjonalny.
+adres_strony: https://piotr13gdynia.github.io/nieruhomo/
+
 wyszukiwania:
   - nazwa: Mieszkania
     adresy:

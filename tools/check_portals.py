@@ -34,6 +34,17 @@ def main():
             print(f"{source:8} OK   ofert: {len(offers)}, z ceną i metrażem: {full}")
         except monitor.FetchError as exc:
             print(f"{source:8} BŁĄD {exc}")
+    # licytacje komornicze: jedna strona wyników
+    from datetime import datetime, timezone
+
+    import auctions
+    time.sleep(random.uniform(3, 7))
+    stored, entry = auctions.update({**config, "licytacje": {**(config.get("licytacje") or {}), "strony_na_start": 1}},
+                                    {}, datetime.now(timezone.utc))
+    if entry and entry["error"]:
+        print(f"komornik BŁĄD {entry['error']}")
+    elif entry:
+        print(f"komornik OK   licytacji w województwie: {entry['found']}, pasuje do filtrów: {entry['matched']}")
 
 
 if __name__ == "__main__":

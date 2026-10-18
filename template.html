@@ -226,7 +226,7 @@ button:focus-visible, select:focus-visible, a:focus-visible, input:focus-visible
 
 <script>
 const DATA = /*__DATA__*/null;
-const SOURCE_NAMES = { otodom: "Otodom", olx: "OLX", gratka: "Gratka", morizon: "Morizon" };
+const SOURCE_NAMES = { otodom: "Otodom", olx: "OLX", gratka: "Gratka", morizon: "Morizon", komornik: "Licytacje komornicze" };
 
 function store(key, fallback) {
   try { const v = localStorage.getItem(key); return v === null ? fallback : JSON.parse(v); } catch (e) { return fallback; }
@@ -248,7 +248,7 @@ if (state.search !== "all" && !DATA.searches.includes(state.search)) state.searc
 
 const zl = new Intl.NumberFormat("pl-PL", { maximumFractionDigits: 0 });
 const m2 = new Intl.NumberFormat("pl-PL", { maximumFractionDigits: 1 });
-const dateFmt = new Intl.DateTimeFormat("pl-PL", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
+const dateFmt = new Intl.DateTimeFormat("pl-PL", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", timeZone: "Europe/Warsaw" });
 
 function isNew(item) {
   if (previousVisit) return item.first_seen > previousVisit;
@@ -301,15 +301,24 @@ function renderSummary() {
   );
 
   const bad = DATA.sources.filter(x => x.error);
+  const notifyErrors = Object.entries(DATA.notifications || {}).filter(([, v]) => String(v).startsWith("Błąd"));
+  const warnings = [];
   if (bad.length) {
-    document.getElementById("warnings").replaceChildren(el("details", { class: "warn" },
+    warnings.push(el("details", { class: "warn" },
       el("summary", {}, `${bad.length} ${plural(bad.length, "wyszukiwanie nie zadziałało", "wyszukiwania nie zadziałały", "wyszukiwań nie zadziałało")} w ostatnim przebiegu`),
       el("ul", {}, bad.map(x => el("li", {},
-        `${SOURCE_NAMES[x.source] || "Nieznany portal"}, ${x.search}: ${x.error} `,
-        el("a", { href: x.url, target: "_blank", rel: "noopener" }, "Otwórz wyszukiwanie")
+        `${SOURCE_NAMES[x.source] || x.source || "Nieznane źródło"}, ${x.search}: ${x.error} `,
+        x.url ? el("a", { href: x.url, target: "_blank", rel: "noopener" }, "Otwórz wyszukiwanie") : null
       )))
     ));
   }
+  if (notifyErrors.length) {
+    warnings.push(el("details", { class: "warn" },
+      el("summary", {}, "Powiadomienia nie zostały wysłane"),
+      el("ul", {}, notifyErrors.map(([k, v]) => el("li", {}, `${k === "telegram" ? "Telegram" : "E-mail"}: ${v}`)))
+    ));
+  }
+  document.getElementById("warnings").replaceChildren(...warnings);
 }
 
 function renderToolbar() {
@@ -412,7 +421,7 @@ function renderList() {
             el("i", { style: `left:${pos.toFixed(1)}%` })) : null,
           pos !== null ? el("div", { class: "scale-cap" }, el("span", {}, zl.format(lo)), el("span", {}, zl.format(hi))) : null,
           dev !== null ? el("div", {
-            class: `dev${dev < 0 ? " below" : ""}`,
+            class: `dev${i.deal ? " below" : ""}`,
             title: `Mediana ${zl.format(i.median_ppm)} zł/m² z ${i.group_size} ofert: ${i.group}`
           }, dev === 0 ? "równo z medianą" : `${Math.abs(dev)}% ${dev < 0 ? "poniżej" : "powyżej"} mediany (${zl.format(i.median_ppm)} zł/m²)`) : null
         ) : null,
@@ -432,7 +441,7 @@ function renderAuctions() {
   document.getElementById("auctionsSection").hidden = false;
   document.getElementById("auctionsLead").textContent =
     `${list.length} ${plural(list.length, "licytacja", "licytacje", "licytacji")} z serwisu Krajowej Rady Komorniczej, od najbliższego terminu. Cena wywołania to kwota, od której zaczyna się licytacja.`;
-  const fmtDay = new Intl.DateTimeFormat("pl-PL", { weekday: "short", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" });
+  const fmtDay = new Intl.DateTimeFormat("pl-PL", { weekday: "short", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit", timeZone: "Europe/Warsaw" });
   document.getElementById("auctions").replaceChildren(...list.map(a => el("div", { class: "auction" },
     el("div", {},
       el("a", { class: "title", href: a.url, target: "_blank", rel: "noopener" }, a.title),

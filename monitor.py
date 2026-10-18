@@ -16,7 +16,10 @@ from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
 import yaml
 from bs4 import BeautifulSoup
 
+import auctions
 import deals
+import maintenance
+import notify
 from details import (
     DETAIL_SOURCES, kind_from_text, parse_details, normalize_advertiser, normalize_floor, normalize_market, parse_floor_formatted,
 )
@@ -28,7 +31,9 @@ ROOT = Path(__file__).resolve().parent
 OFFERS_FILE = ROOT / "data" / "offers.json"
 STATUS_FILE = ROOT / "data" / "status.json"
 MARKET_FILE = ROOT / "data" / "market.json"
-KEEP_DAYS = 60  # po tylu dniach nieobecności oferta jest usuwana z historii
+ARCHIVE_FILE = ROOT / "data" / "archive.json"
+HEALTH_FILE = ROOT / "data" / "health.json"
+AUCTIONS_FILE = ROOT / "data" / "auctions.json"
 
 
 OFFER_LINK = {
@@ -95,6 +100,22 @@ def fetch(url):
                    else f"Portal odrzucił zapytanie (HTTP {resp.status_code}).")
         raise FetchError(msg)
     return resp.text
+
+
+def post_json(url, body):
+    """Zapytanie POST z treścią JSON (interfejs portalu licytacji). Zwraca odpowiedź jako słownik."""
+    headers = {"Accept-Language": "pl-PL,pl;q=0.9", "Accept": "application/json",
+               "Content-Type": "application/json"}
+    try:
+        resp = get_session().post(url, headers=headers, data=json.dumps(body), timeout=40)
+    except Exception as exc:  # noqa: BLE001
+        raise FetchError(f"Nie udało się połączyć z portalem ({str(exc).split('.')[0][:120]}).") from exc
+    if resp.status_code >= 400:
+        raise FetchError(HTTP_MESSAGES.get(resp.status_code) or f"Portal odrzucił zapytanie (HTTP {resp.status_code}).")
+    try:
+        return resp.json()
+    except ValueError as exc:
+        raise FetchError("Portal zwrócił odpowiedź, której nie da się odczytać.") from exc
 
 
 def with_page(url, page):
@@ -644,10 +665,7 @@ def run(config, offers, run_at, fetch_fn=None, sleep=None, market=None):
     fetch_details(offers, config, get, run_at, status)
     assess_all(offers, market, config, run_iso, status)
 
-    cutoff = run_at - timedelta(days=KEEP_DAYS)
-    offers = {k: v for k, v in offers.items() if datetime.fromisoformat(v["last_seen"]) >= cutoff}
-    for k in [k for k, v in market.items() if datetime.fromisoformat(v["last_seen"]) < cutoff]:
-        del market[k]
+    maintenance.prune_market(market, run_at)
     status["market_size"] = len(market)
     status["requests"] = get.count
     return offers, status
@@ -704,22 +722,48 @@ def log_entry(entry):
           + (f" | {entry['error']}" if entry["error"] else ""))
 
 
+def write_json(path, data, compact=False):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    text = json.dumps(data, ensure_ascii=False, separators=(",", ":")) if compact else \
+        json.dumps(data, ensure_ascii=False, indent=1)
+    path.write_text(text, encoding="utf-8")
+
+
 def main():
     config = yaml.safe_load((ROOT / "config.yaml").read_text(encoding="utf-8")) or {}
+    run_at = now_utc()
     offers = load_json(OFFERS_FILE, {})
     market = load_json(MARKET_FILE, {})
-    offers, status = run(config, offers, now_utc(), market=market)
+    offers, status = run(config, offers, run_at, market=market)
 
-    OFFERS_FILE.parent.mkdir(parents=True, exist_ok=True)
-    OFFERS_FILE.write_text(json.dumps(offers, ensure_ascii=False, indent=1), encoding="utf-8")
-    MARKET_FILE.write_text(json.dumps(market, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    STATUS_FILE.write_text(json.dumps(status, ensure_ascii=False, indent=1), encoding="utf-8")
+    # licytacje komornicze: osobne źródło, jego awaria nie zatrzymuje reszty
+    auction_list, auction_entry = auctions.update(config, load_json(AUCTIONS_FILE, {}), run_at)
+    if auction_entry:
+        status["sources"].append(auction_entry)
+        log_entry(auction_entry)
+
+    status["notifications"] = notify.send_all(offers, status, config)
+
+    offers, archive, moved = maintenance.rotate(offers, load_json(ARCHIVE_FILE, {}), run_at)
+    health = maintenance.update_health(load_json(HEALTH_FILE, {}), status, run_at)
+
+    write_json(OFFERS_FILE, offers)
+    write_json(MARKET_FILE, market, compact=True)
+    write_json(STATUS_FILE, status)
+    write_json(HEALTH_FILE, health)
+    if auction_list is not None:
+        write_json(AUCTIONS_FILE, auction_list)
+    if moved:
+        write_json(ARCHIVE_FILE, archive, compact=True)
     deals_now = sum(1 for o in offers.values() if o.get("deal"))
     print(f"Nowych ofert: {status['new']}, obniżek: {status['drops']}, okazji: {deals_now}, "
-          f"w bazie: {len(offers)}, w bazie rynkowej: {len(market)}, zapytań: {status['requests']}")
+          f"w bazie: {len(offers)}, w bazie rynkowej: {len(market)}, do archiwum: {moved}, "
+          f"zapytań: {status['requests']}")
 
     from page import render
-    render(config, offers, status)
+    render(config, offers, status,
+           auctions=auctions.for_page(load_json(AUCTIONS_FILE, {}), run_at),
+           health=maintenance.health_rows(health, run_at))
 
 
 if __name__ == "__main__":
