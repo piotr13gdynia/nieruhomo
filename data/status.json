@@ -1,5 +1,5 @@
 {
- "run_at": "2026-10-19T00:12:23+00:00",
+ "run_at": "2026-10-19T04:38:52+00:00",
  "sources": [
   {
    "source": "otodom",
@@ -12,8 +12,8 @@
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Bfilter_float_price%3Ato%5D=800000&search%5Border%5D=created_at%3Adesc",
-   "found": 51,
-   "matched": 15,
+   "found": 47,
+   "matched": 14,
    "error": null,
    "search": "Mieszkania"
   },
@@ -86,13 +86,9 @@
    "error": null
   }
  ],
- "new": 3,
+ "new": 0,
  "drops": 0,
- "new_keys": [
-  "olx:1100176808",
-  "olx:1064168917",
-  "olx:1105477118"
- ],
+ "new_keys": [],
  "drop_events": [],
  "new_deals": [],
  "details": {
@@ -100,7 +96,7 @@
   "errors": 0
  },
  "groups_rated": 26,
- "market_size": 1497,
+ "market_size": 1501,
  "requests": 55,
  "notifications": {}
 }
