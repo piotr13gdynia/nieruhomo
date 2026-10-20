@@ -1,35 +1,35 @@
 {
- "run_at": "2026-10-20T04:48:11+00:00",
+ "run_at": "2026-10-20T11:34:01+00:00",
  "sources": [
   {
    "source": "otodom",
    "url": "https://www.otodom.pl/pl/wyniki/sprzedaz/mieszkanie/mazowieckie/warszawa/warszawa/warszawa?priceMax=800000&by=LATEST&direction=DESC",
    "found": 36,
-   "matched": 12,
+   "matched": 9,
    "error": null,
    "search": "Mieszkania"
   },
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Bfilter_float_price%3Ato%5D=800000&search%5Border%5D=created_at%3Adesc",
-   "found": 50,
-   "matched": 20,
+   "found": 52,
+   "matched": 8,
    "error": null,
    "search": "Mieszkania"
   },
   {
    "source": "gratka",
    "url": "https://gratka.pl/nieruchomosci/mieszkania/warszawa?cena-calkowita%3Amax=800000&sort=newest",
-   "found": 34,
-   "matched": 13,
+   "found": 35,
+   "matched": 9,
    "error": null,
    "search": "Mieszkania"
   },
   {
    "source": "morizon",
    "url": "https://www.morizon.pl/mieszkania/warszawa/?ps%5Bprice_to%5D=800000",
-   "found": 37,
-   "matched": 14,
+   "found": 35,
+   "matched": 10,
    "error": null,
    "search": "Mieszkania"
   },
@@ -37,7 +37,7 @@
    "source": "otodom",
    "url": "https://www.otodom.pl/pl/wyniki/sprzedaz/dom/mazowieckie/warszawa/warszawa/warszawa?priceMax=1500000&by=LATEST&direction=DESC",
    "found": 36,
-   "matched": 22,
+   "matched": 23,
    "error": null,
    "search": "Domy"
   },
@@ -62,7 +62,7 @@
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Border%5D=created_at%3Adesc",
-   "found": 52,
+   "found": 50,
    "matched": 0,
    "error": null,
    "search": "Rynek (do median)",
@@ -71,7 +71,7 @@
   {
    "source": "morizon",
    "url": "https://www.morizon.pl/mieszkania/warszawa/",
-   "found": 37,
+   "found": 35,
    "matched": 0,
    "error": null,
    "search": "Rynek (do median)",
@@ -81,26 +81,79 @@
    "source": "komornik",
    "search": "Licytacje komornicze",
    "url": "https://licytacje.komornik.pl/wyszukiwarka-licytacji",
-   "found": 311,
+   "found": 314,
    "matched": 56,
    "error": null
   }
  ],
- "new": 1,
- "drops": 0,
+ "new": 29,
+ "drops": 1,
  "new_keys": [
-  "olx:1100291634"
+  "otodom:68546791",
+  "otodom:68546760",
+  "otodom:68546501",
+  "otodom:68546414",
+  "otodom:68546363",
+  "otodom:68546286",
+  "otodom:68546114",
+  "otodom:68546015",
+  "otodom:68545813",
+  "olx:1104554915",
+  "olx:1104298063",
+  "olx:1106013350",
+  "gratka:49354363",
+  "gratka:49354205",
+  "gratka:49187837",
+  "gratka:49131449",
+  "gratka:49122159",
+  "gratka:47041125",
+  "gratka:42031201",
+  "morizon:mzn2048168746",
+  "morizon:mzn2048241809",
+  "morizon:mzn2048241760",
+  "morizon:mzn2048238275",
+  "morizon:mzn2048110349",
+  "morizon:mzn2048116348",
+  "morizon:mzn2045726028",
+  "morizon:mzn2047976054",
+  "otodom:68546636",
+  "otodom:68544932"
  ],
- "drop_events": [],
+ "drop_events": [
+  {
+   "key": "olx:1099797862",
+   "old": 750000.0,
+   "new": 699000.0
+  }
+ ],
  "new_deals": [
-  "olx:1100291634"
+  "otodom:68546791",
+  "otodom:68546760",
+  "otodom:68546501",
+  "otodom:68546286",
+  "otodom:68546114",
+  "otodom:68546015",
+  "otodom:68545813",
+  "olx:1104554915",
+  "gratka:49354363",
+  "gratka:49354205",
+  "gratka:49187837",
+  "gratka:49131449",
+  "gratka:49122159",
+  "gratka:47041125",
+  "morizon:mzn2048168746",
+  "morizon:mzn2048241809",
+  "morizon:mzn2048241760",
+  "morizon:mzn2048238275",
+  "morizon:mzn2048110349",
+  "morizon:mzn2048116348"
  ],
  "details": {
   "checked": 10,
   "errors": 0
  },
- "groups_rated": 47,
- "market_size": 2394,
+ "groups_rated": 50,
+ "market_size": 2586,
  "requests": 19,
  "notifications": {}
 }
