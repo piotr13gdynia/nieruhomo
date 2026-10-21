@@ -1,11 +1,11 @@
 {
- "run_at": "2026-10-21T18:37:55+00:00",
+ "run_at": "2026-10-21T23:18:02+00:00",
  "sources": [
   {
    "source": "otodom",
    "url": "https://www.otodom.pl/pl/wyniki/sprzedaz/mieszkanie/mazowieckie/warszawa/warszawa/warszawa?priceMax=800000&by=LATEST&direction=DESC",
    "found": 36,
-   "matched": 8,
+   "matched": 11,
    "error": null,
    "search": "Mieszkania"
   },
@@ -13,7 +13,7 @@
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Bfilter_float_price%3Ato%5D=800000&search%5Border%5D=created_at%3Adesc",
    "found": 52,
-   "matched": 19,
+   "matched": 18,
    "error": null,
    "search": "Mieszkania"
   },
@@ -62,7 +62,7 @@
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Border%5D=created_at%3Adesc",
-   "found": 52,
+   "found": 50,
    "matched": 0,
    "error": null,
    "search": "Rynek (do median)",
@@ -81,49 +81,43 @@
    "source": "komornik",
    "search": "Licytacje komornicze",
    "url": "https://licytacje.komornik.pl/wyszukiwarka-licytacji",
-   "found": 319,
-   "matched": 52,
+   "found": 320,
+   "matched": 53,
    "error": null
   }
  ],
- "new": 17,
+ "new": 11,
  "drops": 0,
  "new_keys": [
-  "otodom:68552583",
-  "otodom:68552580",
-  "otodom:68552203",
-  "otodom:68552125",
-  "otodom:68552002",
-  "otodom:68551897",
-  "olx:1106556933",
-  "olx:1084249139",
-  "olx:1044881749",
-  "olx:1106525360",
-  "olx:1102159358",
-  "olx:1106513498",
-  "olx:1106508438",
-  "gratka:49367461",
-  "gratka:49367443",
-  "morizon:mzn2048248934",
-  "morizon:mzn2048248924"
+  "otodom:68553161",
+  "otodom:68553102",
+  "otodom:68553052",
+  "otodom:68553008",
+  "otodom:68552975",
+  "otodom:68552954",
+  "olx:1104649501",
+  "olx:1096348816",
+  "olx:1106638987",
+  "olx:1089766589",
+  "olx:1106616667"
  ],
  "drop_events": [],
  "new_deals": [
-  "otodom:68552580",
-  "otodom:68552125",
-  "otodom:68551897",
-  "olx:1084249139",
-  "olx:1102159358",
-  "olx:1106508438",
-  "gratka:49367461",
-  "morizon:mzn2048248934"
+  "otodom:68553161",
+  "otodom:68553102",
+  "otodom:68553052",
+  "otodom:68553008",
+  "otodom:68552975",
+  "otodom:68552954",
+  "olx:1096348816",
+  "olx:1106638987"
  ],
  "details": {
   "checked": 10,
   "errors": 0
  },
  "groups_rated": 56,
- "market_size": 3350,
+ "market_size": 3408,
  "requests": 19,
  "notifications": {}
 }
