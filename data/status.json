@@ -1,18 +1,18 @@
 {
- "run_at": "2026-10-21T23:18:02+00:00",
+ "run_at": "2026-10-22T04:41:52+00:00",
  "sources": [
   {
    "source": "otodom",
    "url": "https://www.otodom.pl/pl/wyniki/sprzedaz/mieszkanie/mazowieckie/warszawa/warszawa/warszawa?priceMax=800000&by=LATEST&direction=DESC",
    "found": 36,
-   "matched": 11,
+   "matched": 12,
    "error": null,
    "search": "Mieszkania"
   },
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Bfilter_float_price%3Ato%5D=800000&search%5Border%5D=created_at%3Adesc",
-   "found": 52,
+   "found": 49,
    "matched": 18,
    "error": null,
    "search": "Mieszkania"
@@ -81,43 +81,26 @@
    "source": "komornik",
    "search": "Licytacje komornicze",
    "url": "https://licytacje.komornik.pl/wyszukiwarka-licytacji",
-   "found": 320,
+   "found": 315,
    "matched": 53,
    "error": null
   }
  ],
- "new": 11,
+ "new": 1,
  "drops": 0,
  "new_keys": [
-  "otodom:68553161",
-  "otodom:68553102",
-  "otodom:68553052",
-  "otodom:68553008",
-  "otodom:68552975",
-  "otodom:68552954",
-  "olx:1104649501",
-  "olx:1096348816",
-  "olx:1106638987",
-  "olx:1089766589",
-  "olx:1106616667"
+  "otodom:68553281"
  ],
  "drop_events": [],
  "new_deals": [
-  "otodom:68553161",
-  "otodom:68553102",
-  "otodom:68553052",
-  "otodom:68553008",
-  "otodom:68552975",
-  "otodom:68552954",
-  "olx:1096348816",
-  "olx:1106638987"
+  "otodom:68553281"
  ],
  "details": {
   "checked": 10,
   "errors": 0
  },
  "groups_rated": 56,
- "market_size": 3408,
+ "market_size": 3411,
  "requests": 19,
  "notifications": {}
 }
