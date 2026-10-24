@@ -1,5 +1,5 @@
 {
- "run_at": "2026-10-24T04:34:25+00:00",
+ "run_at": "2026-10-24T10:56:54+00:00",
  "sources": [
   {
    "source": "otodom",
@@ -13,7 +13,7 @@
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Bfilter_float_price%3Ato%5D=800000&search%5Border%5D=created_at%3Adesc",
    "found": 52,
-   "matched": 18,
+   "matched": 21,
    "error": null,
    "search": "Mieszkania"
   },
@@ -29,7 +29,7 @@
    "source": "morizon",
    "url": "https://www.morizon.pl/mieszkania/warszawa/?ps%5Bprice_to%5D=800000",
    "found": 37,
-   "matched": 13,
+   "matched": 12,
    "error": null,
    "search": "Mieszkania"
   },
@@ -86,27 +86,44 @@
    "error": null
   }
  ],
- "new": 6,
+ "new": 18,
  "drops": 0,
  "new_keys": [
-  "otodom:68561282",
-  "olx:1107284878",
-  "gratka:49394063",
-  "gratka:49394057",
-  "morizon:mzn2048259105",
-  "morizon:mzn2048259002"
+  "otodom:68561753",
+  "otodom:68561601",
+  "olx:1107304929",
+  "olx:1087733410",
+  "olx:1099871897",
+  "olx:1098611502",
+  "olx:1098611505",
+  "olx:1098587092",
+  "olx:1098587091",
+  "olx:1076269018",
+  "olx:1076234820",
+  "olx:1076055028",
+  "olx:1107299442",
+  "olx:1107299439",
+  "olx:1107299457",
+  "olx:1107299339",
+  "morizon:mzn2047828753",
+  "otodom:68561488"
  ],
  "drop_events": [],
  "new_deals": [
-  "otodom:68561282",
-  "olx:1107284878"
+  "gratka:49394063",
+  "morizon:mzn2048259105",
+  "otodom:68561753",
+  "olx:1107304929",
+  "olx:1087733410",
+  "olx:1107299339",
+  "morizon:mzn2047828753"
  ],
  "details": {
   "checked": 9,
   "errors": 1
  },
  "groups_rated": 64,
- "market_size": 4443,
+ "market_size": 4560,
  "requests": 19,
  "notifications": {}
 }
