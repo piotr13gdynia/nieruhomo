@@ -1,19 +1,19 @@
 {
- "run_at": "2026-10-23T23:08:01+00:00",
+ "run_at": "2026-10-24T04:34:25+00:00",
  "sources": [
   {
    "source": "otodom",
    "url": "https://www.otodom.pl/pl/wyniki/sprzedaz/mieszkanie/mazowieckie/warszawa/warszawa/warszawa?priceMax=800000&by=LATEST&direction=DESC",
    "found": 36,
-   "matched": 9,
+   "matched": 10,
    "error": null,
    "search": "Mieszkania"
   },
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Bfilter_float_price%3Ato%5D=800000&search%5Border%5D=created_at%3Adesc",
-   "found": 51,
-   "matched": 16,
+   "found": 52,
+   "matched": 18,
    "error": null,
    "search": "Mieszkania"
   },
@@ -21,7 +21,7 @@
    "source": "gratka",
    "url": "https://gratka.pl/nieruchomosci/mieszkania/warszawa?cena-calkowita%3Amax=800000&sort=newest",
    "found": 37,
-   "matched": 8,
+   "matched": 9,
    "error": null,
    "search": "Mieszkania"
   },
@@ -62,7 +62,7 @@
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Border%5D=created_at%3Adesc",
-   "found": 51,
+   "found": 52,
    "matched": 0,
    "error": null,
    "search": "Rynek (do median)",
@@ -86,32 +86,27 @@
    "error": null
   }
  ],
- "new": 7,
+ "new": 6,
  "drops": 0,
  "new_keys": [
-  "olx:1107277732",
-  "olx:1107273196",
-  "olx:1107244576",
-  "gratka:49390565",
-  "gratka:49390317",
-  "morizon:mzn2048258111",
-  "morizon:mzn2048258023"
+  "otodom:68561282",
+  "olx:1107284878",
+  "gratka:49394063",
+  "gratka:49394057",
+  "morizon:mzn2048259105",
+  "morizon:mzn2048259002"
  ],
  "drop_events": [],
  "new_deals": [
-  "olx:1107273196",
-  "olx:1107244576",
-  "gratka:49390565",
-  "gratka:49390317",
-  "morizon:mzn2048258111",
-  "morizon:mzn2048258023"
+  "otodom:68561282",
+  "olx:1107284878"
  ],
  "details": {
-  "checked": 10,
-  "errors": 0
+  "checked": 9,
+  "errors": 1
  },
  "groups_rated": 64,
- "market_size": 4413,
+ "market_size": 4443,
  "requests": 19,
  "notifications": {}
 }
