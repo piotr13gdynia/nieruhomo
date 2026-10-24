@@ -1,19 +1,19 @@
 {
- "run_at": "2026-10-24T15:55:42+00:00",
+ "run_at": "2026-10-24T18:47:09+00:00",
  "sources": [
   {
    "source": "otodom",
    "url": "https://www.otodom.pl/pl/wyniki/sprzedaz/mieszkanie/mazowieckie/warszawa/warszawa/warszawa?priceMax=800000&by=LATEST&direction=DESC",
    "found": 36,
-   "matched": 11,
+   "matched": 12,
    "error": null,
    "search": "Mieszkania"
   },
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Bfilter_float_price%3Ato%5D=800000&search%5Border%5D=created_at%3Adesc",
-   "found": 51,
-   "matched": 18,
+   "found": 49,
+   "matched": 17,
    "error": null,
    "search": "Mieszkania"
   },
@@ -29,7 +29,7 @@
    "source": "morizon",
    "url": "https://www.morizon.pl/mieszkania/warszawa/?ps%5Bprice_to%5D=800000",
    "found": 37,
-   "matched": 10,
+   "matched": 16,
    "error": null,
    "search": "Mieszkania"
   },
@@ -62,7 +62,7 @@
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Border%5D=created_at%3Adesc",
-   "found": 52,
+   "found": 51,
    "matched": 0,
    "error": null,
    "search": "Rynek (do median)",
@@ -86,55 +86,24 @@
    "error": null
   }
  ],
- "new": 23,
+ "new": 4,
  "drops": 0,
  "new_keys": [
-  "otodom:68562235",
-  "otodom:68562150",
-  "otodom:68562056",
-  "otodom:68562007",
-  "otodom:68561957",
-  "otodom:68561853",
-  "olx:1096349179",
-  "olx:1107369567",
-  "olx:1065591331",
-  "olx:1107364618",
-  "olx:1107346454",
-  "olx:1107336808",
-  "gratka:49395743",
-  "gratka:49395631",
-  "gratka:49395617",
-  "morizon:mzn2047669122",
-  "morizon:mzn2048104837",
-  "morizon:mzn2048250300",
-  "morizon:mzn2047897484",
-  "morizon:mzn2048208052",
-  "morizon:mzn2048212795",
-  "morizon:mzn2048250369",
-  "morizon:mzn2048250357"
+  "otodom:68562383",
+  "olx:1107419193",
+  "olx:1100668850",
+  "morizon:mzn2048156870"
  ],
  "drop_events": [],
  "new_deals": [
-  "otodom:68562056",
-  "olx:1096349179",
-  "olx:1107369567",
-  "olx:1065591331",
-  "olx:1107336808",
-  "gratka:49395743",
-  "gratka:49395617",
-  "morizon:mzn2047669122",
-  "morizon:mzn2048104837",
-  "morizon:mzn2048250300",
-  "morizon:mzn2048208052",
-  "morizon:mzn2048212795",
-  "morizon:mzn2048250357"
+  "morizon:mzn2048156870"
  ],
  "details": {
   "checked": 10,
   "errors": 0
  },
  "groups_rated": 66,
- "market_size": 4671,
+ "market_size": 4698,
  "requests": 19,
  "notifications": {}
 }
