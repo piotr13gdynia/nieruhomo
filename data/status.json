@@ -1,26 +1,26 @@
 {
- "run_at": "2026-10-25T11:24:50+00:00",
+ "run_at": "2026-10-25T16:15:42+00:00",
  "sources": [
   {
    "source": "otodom",
    "url": "https://www.otodom.pl/pl/wyniki/sprzedaz/mieszkanie/mazowieckie/warszawa/warszawa/warszawa?priceMax=800000&by=LATEST&direction=DESC",
    "found": 36,
-   "matched": 13,
+   "matched": 12,
    "error": null,
    "search": "Mieszkania"
   },
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Bfilter_float_price%3Ato%5D=800000&search%5Border%5D=created_at%3Adesc",
-   "found": 49,
-   "matched": 20,
+   "found": 50,
+   "matched": 19,
    "error": null,
    "search": "Mieszkania"
   },
   {
    "source": "gratka",
    "url": "https://gratka.pl/nieruchomosci/mieszkania/warszawa?cena-calkowita%3Amax=800000&sort=newest",
-   "found": 36,
+   "found": 35,
    "matched": 2,
    "error": null,
    "search": "Mieszkania"
@@ -29,7 +29,7 @@
    "source": "morizon",
    "url": "https://www.morizon.pl/mieszkania/warszawa/?ps%5Bprice_to%5D=800000",
    "found": 37,
-   "matched": 3,
+   "matched": 6,
    "error": null,
    "search": "Mieszkania"
   },
@@ -81,39 +81,46 @@
    "source": "komornik",
    "search": "Licytacje komornicze",
    "url": "https://licytacje.komornik.pl/wyszukiwarka-licytacji",
-   "found": 333,
+   "found": 334,
    "matched": 59,
    "error": null
   }
  ],
- "new": 10,
+ "new": 12,
  "drops": 0,
  "new_keys": [
-  "otodom:68563107",
-  "otodom:68563093",
-  "otodom:68562982",
-  "otodom:68562973",
-  "otodom:68562749",
-  "olx:1107503871",
-  "olx:1107466540",
-  "olx:1044997024",
-  "gratka:49400753",
-  "morizon:mzn2048262833"
+  "otodom:68563665",
+  "otodom:68563388",
+  "otodom:68563185",
+  "olx:1107587530",
+  "olx:1107586415",
+  "olx:1107566864",
+  "olx:1107553476",
+  "olx:1107553685",
+  "olx:1107552775",
+  "olx:1107553220",
+  "olx:1104127771",
+  "olx:1107520476"
  ],
  "drop_events": [],
  "new_deals": [
-  "otodom:68563107",
-  "otodom:68562973",
-  "otodom:68562749",
-  "olx:1107466540",
-  "olx:1044997024"
+  "otodom:68563665",
+  "otodom:68563388",
+  "olx:1107587530",
+  "olx:1107566864",
+  "olx:1107553476",
+  "olx:1107553685",
+  "olx:1107552775",
+  "olx:1107553220",
+  "olx:1104127771",
+  "olx:1107520476"
  ],
  "details": {
   "checked": 10,
   "errors": 0
  },
- "groups_rated": 66,
- "market_size": 4882,
+ "groups_rated": 67,
+ "market_size": 4970,
  "requests": 19,
  "notifications": {}
 }
