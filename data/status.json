@@ -1,27 +1,27 @@
 {
- "run_at": "2026-10-25T16:15:42+00:00",
+ "run_at": "2026-10-25T19:05:01+00:00",
  "sources": [
   {
    "source": "otodom",
    "url": "https://www.otodom.pl/pl/wyniki/sprzedaz/mieszkanie/mazowieckie/warszawa/warszawa/warszawa?priceMax=800000&by=LATEST&direction=DESC",
    "found": 36,
-   "matched": 12,
+   "matched": 11,
    "error": null,
    "search": "Mieszkania"
   },
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Bfilter_float_price%3Ato%5D=800000&search%5Border%5D=created_at%3Adesc",
-   "found": 50,
-   "matched": 19,
-   "error": null,
+   "found": 0,
+   "matched": 0,
+   "error": "Błąd po stronie portalu (HTTP 504).",
    "search": "Mieszkania"
   },
   {
    "source": "gratka",
    "url": "https://gratka.pl/nieruchomosci/mieszkania/warszawa?cena-calkowita%3Amax=800000&sort=newest",
-   "found": 35,
-   "matched": 2,
+   "found": 34,
+   "matched": 1,
    "error": null,
    "search": "Mieszkania"
   },
@@ -62,7 +62,7 @@
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Border%5D=created_at%3Adesc",
-   "found": 51,
+   "found": 52,
    "matched": 0,
    "error": null,
    "search": "Rynek (do median)",
@@ -86,41 +86,24 @@
    "error": null
   }
  ],
- "new": 12,
+ "new": 3,
  "drops": 0,
  "new_keys": [
-  "otodom:68563665",
-  "otodom:68563388",
-  "otodom:68563185",
-  "olx:1107587530",
-  "olx:1107586415",
-  "olx:1107566864",
-  "olx:1107553476",
-  "olx:1107553685",
-  "olx:1107552775",
-  "olx:1107553220",
-  "olx:1104127771",
-  "olx:1107520476"
+  "otodom:68563952",
+  "otodom:68563887",
+  "morizon:mzn2048219042"
  ],
  "drop_events": [],
  "new_deals": [
-  "otodom:68563665",
-  "otodom:68563388",
-  "olx:1107587530",
-  "olx:1107566864",
-  "olx:1107553476",
-  "olx:1107553685",
-  "olx:1107552775",
-  "olx:1107553220",
-  "olx:1104127771",
-  "olx:1107520476"
+  "otodom:68563952",
+  "morizon:mzn2048219042"
  ],
  "details": {
   "checked": 10,
   "errors": 0
  },
  "groups_rated": 67,
- "market_size": 4970,
+ "market_size": 5018,
  "requests": 19,
  "notifications": {}
 }
