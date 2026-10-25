@@ -1,27 +1,27 @@
 {
- "run_at": "2026-10-24T22:28:20+00:00",
+ "run_at": "2026-10-25T04:38:58+00:00",
  "sources": [
   {
    "source": "otodom",
    "url": "https://www.otodom.pl/pl/wyniki/sprzedaz/mieszkanie/mazowieckie/warszawa/warszawa/warszawa?priceMax=800000&by=LATEST&direction=DESC",
    "found": 36,
-   "matched": 11,
+   "matched": 12,
    "error": null,
    "search": "Mieszkania"
   },
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Bfilter_float_price%3Ato%5D=800000&search%5Border%5D=created_at%3Adesc",
-   "found": 50,
-   "matched": 16,
+   "found": 51,
+   "matched": 19,
    "error": null,
    "search": "Mieszkania"
   },
   {
    "source": "gratka",
    "url": "https://gratka.pl/nieruchomosci/mieszkania/warszawa?cena-calkowita%3Amax=800000&sort=newest",
-   "found": 35,
-   "matched": 11,
+   "found": 37,
+   "matched": 0,
    "error": null,
    "search": "Mieszkania"
   },
@@ -29,7 +29,7 @@
    "source": "morizon",
    "url": "https://www.morizon.pl/mieszkania/warszawa/?ps%5Bprice_to%5D=800000",
    "found": 37,
-   "matched": 17,
+   "matched": 1,
    "error": null,
    "search": "Mieszkania"
   },
@@ -81,39 +81,25 @@
    "source": "komornik",
    "search": "Licytacje komornicze",
    "url": "https://licytacje.komornik.pl/wyszukiwarka-licytacji",
-   "found": 334,
+   "found": 333,
    "matched": 59,
    "error": null
   }
  ],
- "new": 4,
- "drops": 1,
+ "new": 2,
+ "drops": 0,
  "new_keys": [
-  "olx:1082345125",
-  "gratka:49396589",
-  "morizon:mzn2048260551",
-  "otodom:68562504"
+  "otodom:68562677",
+  "olx:1104583506"
  ],
- "drop_events": [
-  {
-   "key": "olx:1102534176",
-   "old": 775000.0,
-   "new": 762900.0
-  }
- ],
- "new_deals": [
-  "gratka:49390015",
-  "gratka:49394063",
-  "olx:1082345125",
-  "gratka:49396589",
-  "morizon:mzn2048260551"
- ],
+ "drop_events": [],
+ "new_deals": [],
  "details": {
   "checked": 10,
   "errors": 0
  },
  "groups_rated": 66,
- "market_size": 4717,
+ "market_size": 4805,
  "requests": 19,
  "notifications": {}
 }
