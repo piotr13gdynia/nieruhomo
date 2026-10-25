@@ -1,20 +1,20 @@
 {
- "run_at": "2026-10-25T19:05:01+00:00",
+ "run_at": "2026-10-25T22:32:17+00:00",
  "sources": [
   {
    "source": "otodom",
    "url": "https://www.otodom.pl/pl/wyniki/sprzedaz/mieszkanie/mazowieckie/warszawa/warszawa/warszawa?priceMax=800000&by=LATEST&direction=DESC",
    "found": 36,
-   "matched": 11,
+   "matched": 10,
    "error": null,
    "search": "Mieszkania"
   },
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Bfilter_float_price%3Ato%5D=800000&search%5Border%5D=created_at%3Adesc",
-   "found": 0,
-   "matched": 0,
-   "error": "Błąd po stronie portalu (HTTP 504).",
+   "found": 51,
+   "matched": 17,
+   "error": null,
    "search": "Mieszkania"
   },
   {
@@ -29,7 +29,7 @@
    "source": "morizon",
    "url": "https://www.morizon.pl/mieszkania/warszawa/?ps%5Bprice_to%5D=800000",
    "found": 37,
-   "matched": 6,
+   "matched": 10,
    "error": null,
    "search": "Mieszkania"
   },
@@ -86,24 +86,25 @@
    "error": null
   }
  ],
- "new": 3,
+ "new": 5,
  "drops": 0,
  "new_keys": [
-  "otodom:68563952",
-  "otodom:68563887",
-  "morizon:mzn2048219042"
+  "otodom:68564256",
+  "olx:1097584017",
+  "olx:1107645935",
+  "olx:1107625524",
+  "olx:1042569261"
  ],
  "drop_events": [],
  "new_deals": [
-  "otodom:68563952",
-  "morizon:mzn2048219042"
+  "olx:1042569261"
  ],
  "details": {
-  "checked": 10,
+  "checked": 3,
   "errors": 0
  },
- "groups_rated": 67,
- "market_size": 5018,
- "requests": 19,
+ "groups_rated": 68,
+ "market_size": 5069,
+ "requests": 12,
  "notifications": {}
 }
