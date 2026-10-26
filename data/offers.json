@@ -28,10 +28,10 @@
   "build_year": 1974,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.0987,
+  "median_ppm": 18273.77,
+  "deviation": -0.098,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": false
  },
  "otodom:68540190": {
@@ -297,10 +297,10 @@
   "build_year": 1982,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 17050.01,
-  "deviation": -0.1464,
+  "median_ppm": 17000.0,
+  "deviation": -0.1439,
   "group": "mieszkanie, Ursynów, Warszawa, 50-70 m²",
-  "group_size": 61,
+  "group_size": 62,
   "deal": true
  },
  "olx:1087108352": {
@@ -364,7 +364,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.1272,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "olx:1094209119": {
@@ -413,7 +413,7 @@
   "source": "olx",
   "search": "Mieszkania",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-10-25T16:15:42+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-18T22:59:54+00:00",
@@ -452,10 +452,10 @@
     "price": 780000.0
    }
   ],
-  "median_ppm": 18289.47,
-  "deviation": -0.0987,
+  "median_ppm": 18273.77,
+  "deviation": -0.098,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": false
  },
  "olx:1094622713": {
@@ -587,7 +587,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.196,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "olx:1104771032": {
@@ -616,10 +616,10 @@
     "price": 760000.0
    }
   ],
-  "median_ppm": 17050.01,
-  "deviation": -0.2925,
+  "median_ppm": 17000.0,
+  "deviation": -0.2904,
   "group": "mieszkanie, Ursynów, Warszawa, 50-70 m²",
-  "group_size": 61,
+  "group_size": 62,
   "deal": true
  },
  "olx:1105733186": {
@@ -1078,7 +1078,7 @@
   "source": "morizon",
   "search": "Mieszkania",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-18T22:59:54+00:00",
@@ -1119,7 +1119,7 @@
   "source": "morizon",
   "search": "Mieszkania",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-18T22:59:54+00:00",
@@ -1129,10 +1129,10 @@
   "build_year": 1974,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.0867,
+  "median_ppm": 18273.77,
+  "deviation": -0.0859,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": false
  },
  "morizon:mzn2047910411": {
@@ -1202,7 +1202,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.2306,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "morizon:mzn2047030411": {
@@ -1598,7 +1598,7 @@
   "source": "otodom",
   "search": "Domy",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-18T22:59:54+00:00",
@@ -1627,7 +1627,7 @@
   "source": "otodom",
   "search": "Domy",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-18T22:59:54+00:00",
@@ -1656,7 +1656,7 @@
   "source": "otodom",
   "search": "Domy",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-18T22:59:54+00:00",
@@ -1687,7 +1687,7 @@
   "source": "otodom",
   "search": "Domy",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-18T22:59:54+00:00",
@@ -1723,7 +1723,7 @@
   "source": "otodom",
   "search": "Domy",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-18T22:59:54+00:00",
@@ -1758,7 +1758,7 @@
   "source": "otodom",
   "search": "Domy",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-18T22:59:54+00:00",
@@ -1789,7 +1789,7 @@
   "source": "otodom",
   "search": "Domy",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-18T22:59:54+00:00",
@@ -1820,7 +1820,7 @@
   "source": "otodom",
   "search": "Domy",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-18T22:59:54+00:00",
@@ -1914,7 +1914,7 @@
   "source": "otodom",
   "search": "Domy",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-18T22:59:54+00:00",
@@ -1948,7 +1948,7 @@
   "source": "otodom",
   "search": "Domy",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-18T22:59:54+00:00",
@@ -3024,7 +3024,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.2716,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "otodom:68542251": {
@@ -3163,10 +3163,10 @@
   "build_year": 1999,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 19961.69,
-  "deviation": -0.3329,
+  "median_ppm": 19911.13,
+  "deviation": -0.3312,
   "group": "mieszkanie, Mokotów, Warszawa, 50-70 m²",
-  "group_size": 113,
+  "group_size": 116,
   "deal": true
  },
  "otodom:68542145": {
@@ -3296,10 +3296,10 @@
   "build_year": 1968,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 19500.0,
-  "deviation": -0.138,
+  "median_ppm": 19410.0,
+  "deviation": -0.134,
   "group": "mieszkanie, Bielany, Warszawa, 35-50 m²",
-  "group_size": 85,
+  "group_size": 86,
   "deal": true
  },
  "olx:1096628179": {
@@ -3588,10 +3588,10 @@
     "price": 790000.0
    }
   ],
-  "median_ppm": 19500.0,
-  "deviation": -0.138,
+  "median_ppm": 19410.0,
+  "deviation": -0.134,
   "group": "mieszkanie, Bielany, Warszawa, 35-50 m²",
-  "group_size": 85,
+  "group_size": 86,
   "deal": true
  },
  "olx:1105850343": {
@@ -3757,7 +3757,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.2551,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "gratka:49344155": {
@@ -3790,10 +3790,10 @@
   "build_year": 1999,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 19961.69,
-  "deviation": -0.3329,
+  "median_ppm": 19911.13,
+  "deviation": -0.3312,
   "group": "mieszkanie, Mokotów, Warszawa, 50-70 m²",
-  "group_size": 113,
+  "group_size": 116,
   "deal": true
  },
  "gratka:49343735": {
@@ -3826,10 +3826,10 @@
   "build_year": 1975,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.1255,
+  "median_ppm": 18273.77,
+  "deviation": -0.1248,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": true
  },
  "gratka:49342935": {
@@ -3919,7 +3919,7 @@
   "source": "morizon",
   "search": "Mieszkania",
   "first_seen": "2026-10-19T13:11:10+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-19T13:11:10+00:00",
@@ -4004,7 +4004,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.1631,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "morizon:mzn2046277239": {
@@ -4037,10 +4037,10 @@
   "build_year": 1969,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.1886,
+  "median_ppm": 18273.77,
+  "deviation": -0.1879,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": true
  },
  "morizon:mzn2048174860": {
@@ -4112,7 +4112,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.1606,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "morizon:mzn2048238572": {
@@ -4148,7 +4148,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.2551,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "morizon:mzn2047945942": {
@@ -4419,10 +4419,10 @@
   "build_year": 1974,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.0977,
+  "median_ppm": 18273.77,
+  "deviation": -0.0969,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": false
  },
  "otodom:68544457": {
@@ -4455,10 +4455,10 @@
   "build_year": 1976,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 17050.01,
-  "deviation": -0.2101,
+  "median_ppm": 17000.0,
+  "deviation": -0.2078,
   "group": "mieszkanie, Ursynów, Warszawa, 50-70 m²",
-  "group_size": 61,
+  "group_size": 62,
   "deal": true
  },
  "otodom:68544088": {
@@ -4521,10 +4521,10 @@
   "build_year": 1970,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 19500.0,
-  "deviation": -0.1472,
+  "median_ppm": 19410.0,
+  "deviation": -0.1432,
   "group": "mieszkanie, Bielany, Warszawa, 35-50 m²",
-  "group_size": 85,
+  "group_size": 86,
   "deal": true
  },
  "otodom:68543959": {
@@ -4716,10 +4716,10 @@
     "price": 779050.0
    }
   ],
-  "median_ppm": 18289.47,
-  "deviation": -0.074,
+  "median_ppm": 18273.77,
+  "deviation": -0.0732,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": false
  },
  "otodom:68543321": {
@@ -4880,10 +4880,10 @@
     "price": 750000.0
    }
   ],
-  "median_ppm": 19500.0,
-  "deviation": -0.1472,
+  "median_ppm": 19410.0,
+  "deviation": -0.1432,
   "group": "mieszkanie, Bielany, Warszawa, 35-50 m²",
-  "group_size": 85,
+  "group_size": 86,
   "deal": true
  },
  "olx:1099797862": {
@@ -5007,7 +5007,7 @@
   "source": "olx",
   "search": "Mieszkania",
   "first_seen": "2026-10-19T19:54:53+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-19T19:54:53+00:00",
@@ -5208,10 +5208,10 @@
    }
   ],
   "deal_since": "2026-10-19T19:54:53+00:00",
-  "median_ppm": 19961.69,
-  "deviation": -0.3329,
+  "median_ppm": 19911.13,
+  "deviation": -0.3312,
   "group": "mieszkanie, Mokotów, Warszawa, 50-70 m²",
-  "group_size": 113,
+  "group_size": 116,
   "deal": true
  },
  "olx:1105871436": {
@@ -5340,10 +5340,10 @@
   "build_year": 1974,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.0977,
+  "median_ppm": 18273.77,
+  "deviation": -0.0969,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": false
  },
  "gratka:49347509": {
@@ -5376,10 +5376,10 @@
   "build_year": 1976,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 17050.01,
-  "deviation": -0.2101,
+  "median_ppm": 17000.0,
+  "deviation": -0.2078,
   "group": "mieszkanie, Ursynów, Warszawa, 50-70 m²",
-  "group_size": 61,
+  "group_size": 62,
   "deal": true
  },
  "gratka:49347409": {
@@ -5845,10 +5845,10 @@
   "build_year": 1974,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.0977,
+  "median_ppm": 18273.77,
+  "deviation": -0.0969,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": false
  },
  "morizon:mzn2048239405": {
@@ -5881,10 +5881,10 @@
   "build_year": 1976,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 17050.01,
-  "deviation": -0.2101,
+  "median_ppm": 17000.0,
+  "deviation": -0.2078,
   "group": "mieszkanie, Ursynów, Warszawa, 50-70 m²",
-  "group_size": 61,
+  "group_size": 62,
   "deal": true
  },
  "morizon:mzn2047047704": {
@@ -6244,7 +6244,7 @@
   "source": "otodom",
   "search": "Domy",
   "first_seen": "2026-10-19T19:54:53+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-19T19:54:53+00:00",
@@ -6498,7 +6498,7 @@
   "source": "morizon",
   "search": "Mieszkania",
   "first_seen": "2026-10-19T23:39:36+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-19T23:39:36+00:00",
@@ -6509,10 +6509,10 @@
   "build_year": 1959,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 19500.0,
-  "deviation": -0.2808,
+  "median_ppm": 19410.0,
+  "deviation": -0.2774,
   "group": "mieszkanie, Bielany, Warszawa, 35-50 m²",
-  "group_size": 85,
+  "group_size": 86,
   "deal": true
  },
  "morizon:mzn2048239553": {
@@ -6954,10 +6954,10 @@
   "build_year": 1970,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.1537,
+  "median_ppm": 18273.77,
+  "deviation": -0.153,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": true
  },
  "otodom:68545813": {
@@ -6990,10 +6990,10 @@
   "build_year": 1971,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 19500.0,
-  "deviation": -0.3339,
+  "median_ppm": 19410.0,
+  "deviation": -0.3308,
   "group": "mieszkanie, Bielany, Warszawa, 35-50 m²",
-  "group_size": 85,
+  "group_size": 86,
   "deal": true
  },
  "olx:1104554915": {
@@ -7126,7 +7126,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.2551,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "gratka:49354205": {
@@ -7268,10 +7268,10 @@
   "build_year": 1974,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.204,
+  "median_ppm": 18273.77,
+  "deviation": -0.2033,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": true
  },
  "gratka:47041125": {
@@ -7372,10 +7372,10 @@
   "build_year": 1982,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 17050.01,
-  "deviation": -0.2215,
+  "median_ppm": 17000.0,
+  "deviation": -0.2193,
   "group": "mieszkanie, Ursynów, Warszawa, 50-70 m²",
-  "group_size": 61,
+  "group_size": 62,
   "deal": true
  },
  "morizon:mzn2048241809": {
@@ -7411,7 +7411,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.2551,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "morizon:mzn2048241760": {
@@ -7482,10 +7482,10 @@
   "build_year": 1975,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.1255,
+  "median_ppm": 18273.77,
+  "deviation": -0.1248,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": true
  },
  "morizon:mzn2048110349": {
@@ -7554,10 +7554,10 @@
   "build_year": 1974,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.204,
+  "median_ppm": 18273.77,
+  "deviation": -0.2033,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": true
  },
  "morizon:mzn2045726028": {
@@ -7642,7 +7642,7 @@
   "source": "otodom",
   "search": "Domy",
   "first_seen": "2026-10-20T11:34:01+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-20T11:34:01+00:00",
@@ -7673,7 +7673,7 @@
   "source": "otodom",
   "search": "Domy",
   "first_seen": "2026-10-20T11:34:01+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-20T11:34:01+00:00",
@@ -7747,10 +7747,10 @@
   "build_year": 1987,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 19500.0,
-  "deviation": -0.2245,
+  "median_ppm": 19410.0,
+  "deviation": -0.2209,
   "group": "mieszkanie, Bielany, Warszawa, 35-50 m²",
-  "group_size": 85,
+  "group_size": 86,
   "deal": true
  },
  "otodom:68548126": {
@@ -7917,10 +7917,10 @@
   "build_year": 1990,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 17050.01,
-  "deviation": -0.1851,
+  "median_ppm": 17000.0,
+  "deviation": -0.1827,
   "group": "mieszkanie, Ursynów, Warszawa, 50-70 m²",
-  "group_size": 61,
+  "group_size": 62,
   "deal": true
  },
  "otodom:68547446": {
@@ -8048,10 +8048,10 @@
    }
   ],
   "deal_since": "2026-10-20T17:01:53+00:00",
-  "median_ppm": 18289.47,
-  "deviation": -0.1408,
+  "median_ppm": 18273.77,
+  "deviation": -0.1401,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": true
  },
  "olx:1106172968": {
@@ -8446,10 +8446,10 @@
   "build_year": 1987,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 19500.0,
-  "deviation": -0.2245,
+  "median_ppm": 19410.0,
+  "deviation": -0.2209,
   "group": "mieszkanie, Bielany, Warszawa, 35-50 m²",
-  "group_size": 85,
+  "group_size": 86,
   "deal": true
  },
  "gratka:49356589": {
@@ -8793,10 +8793,10 @@
   "build_year": 1987,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 19500.0,
-  "deviation": -0.2245,
+  "median_ppm": 19410.0,
+  "deviation": -0.2209,
   "group": "mieszkanie, Bielany, Warszawa, 35-50 m²",
-  "group_size": 85,
+  "group_size": 86,
   "deal": true
  },
  "morizon:mzn2048168230": {
@@ -8907,7 +8907,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.1731,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "morizon:mzn2048242558": {
@@ -9092,7 +9092,7 @@
   "source": "otodom",
   "search": "Domy",
   "first_seen": "2026-10-20T17:01:53+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-20T17:01:53+00:00",
@@ -9501,10 +9501,10 @@
   "build_year": 1987,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 19961.69,
-  "deviation": -0.2136,
+  "median_ppm": 19911.13,
+  "deviation": -0.2116,
   "group": "mieszkanie, Mokotów, Warszawa, 50-70 m²",
-  "group_size": 113,
+  "group_size": 116,
   "deal": true
  },
  "gratka:49357799": {
@@ -9642,10 +9642,10 @@
   "build_year": 1987,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 19961.69,
-  "deviation": -0.2136,
+  "median_ppm": 19911.13,
+  "deviation": -0.2116,
   "group": "mieszkanie, Mokotów, Warszawa, 50-70 m²",
-  "group_size": 113,
+  "group_size": 116,
   "deal": true
  },
  "morizon:mzn2048242883": {
@@ -9698,7 +9698,7 @@
   "source": "otodom",
   "search": "Domy",
   "first_seen": "2026-10-20T21:36:06+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-20T21:36:06+00:00",
@@ -9863,10 +9863,10 @@
    }
   ],
   "deal_since": "2026-10-21T07:37:47+00:00",
-  "median_ppm": 18289.47,
-  "deviation": -0.1699,
+  "median_ppm": 18273.77,
+  "deviation": -0.1692,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": true
  },
  "olx:1101944825": {
@@ -9888,7 +9888,7 @@
   "source": "olx",
   "search": "Mieszkania",
   "first_seen": "2026-10-21T07:37:47+00:00",
-  "last_seen": "2026-10-25T16:15:42+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-21T07:37:47+00:00",
@@ -9896,10 +9896,10 @@
    }
   ],
   "deal_since": "2026-10-21T07:37:47+00:00",
-  "median_ppm": 18289.47,
-  "deviation": -0.1727,
+  "median_ppm": 18273.77,
+  "deviation": -0.172,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": true
  },
  "gratka:49364003": {
@@ -11014,10 +11014,10 @@
   "build_year": 1959,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 19961.69,
-  "deviation": -0.2971,
+  "median_ppm": 19911.13,
+  "deviation": -0.2953,
   "group": "mieszkanie, Mokotów, Warszawa, 50-70 m²",
-  "group_size": 113,
+  "group_size": 116,
   "deal": true
  },
  "gratka:49365127": {
@@ -11053,7 +11053,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.1994,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "gratka:49364815": {
@@ -11393,10 +11393,10 @@
   "build_year": 1978,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 19961.69,
-  "deviation": -0.2995,
+  "median_ppm": 19911.13,
+  "deviation": -0.2978,
   "group": "mieszkanie, Mokotów, Warszawa, 50-70 m²",
-  "group_size": 113,
+  "group_size": 116,
   "deal": true
  },
  "morizon:mzn2047024271": {
@@ -11564,10 +11564,10 @@
     "price": 800000.0
    }
   ],
-  "median_ppm": 18289.47,
-  "deviation": -0.0791,
+  "median_ppm": 18273.77,
+  "deviation": -0.0783,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": false
  },
  "otodom:68552580": {
@@ -11599,10 +11599,10 @@
   "build_year": 1980,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 17050.01,
-  "deviation": -0.1258,
+  "median_ppm": 17000.0,
+  "deviation": -0.1232,
   "group": "mieszkanie, Ursynów, Warszawa, 50-70 m²",
-  "group_size": 61,
+  "group_size": 62,
   "deal": true
  },
  "otodom:68552203": {
@@ -11733,10 +11733,10 @@
   "build_year": 1966,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.1868,
+  "median_ppm": 18273.77,
+  "deviation": -0.1861,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": true
  },
  "olx:1106556933": {
@@ -11765,10 +11765,10 @@
     "price": 800000.0
    }
   ],
-  "median_ppm": 18289.47,
-  "deviation": -0.0791,
+  "median_ppm": 18273.77,
+  "deviation": -0.0783,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": false
  },
  "olx:1084249139": {
@@ -11898,7 +11898,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.1327,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "olx:1106513498": {
@@ -11996,10 +11996,10 @@
   "build_year": 1966,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.1868,
+  "median_ppm": 18273.77,
+  "deviation": -0.1861,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": true
  },
  "gratka:49367443": {
@@ -12059,10 +12059,10 @@
   "build_year": 1966,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.1868,
+  "median_ppm": 18273.77,
+  "deviation": -0.1861,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": true
  },
  "morizon:mzn2048248924": {
@@ -12192,10 +12192,10 @@
   "build_year": 1992,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 19961.69,
-  "deviation": -0.3809,
+  "median_ppm": 19911.13,
+  "deviation": -0.3794,
   "group": "mieszkanie, Mokotów, Warszawa, 50-70 m²",
-  "group_size": 113,
+  "group_size": 116,
   "deal": true,
   "suspicious": true
  },
@@ -12229,10 +12229,10 @@
   "build_year": 1970,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.2163,
+  "median_ppm": 18273.77,
+  "deviation": -0.2156,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": true
  },
  "otodom:68552975": {
@@ -12300,10 +12300,10 @@
   "build_year": 1970,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 19961.69,
-  "deviation": -0.3992,
+  "median_ppm": 19911.13,
+  "deviation": -0.3977,
   "group": "mieszkanie, Mokotów, Warszawa, 50-70 m²",
-  "group_size": 113,
+  "group_size": 116,
   "deal": true,
   "suspicious": true
  },
@@ -12336,7 +12336,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.0491,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": false
  },
  "olx:1096348816": {
@@ -12598,10 +12598,10 @@
   "build_year": 1974,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 19961.69,
-  "deviation": -0.3253,
+  "median_ppm": 19911.13,
+  "deviation": -0.3236,
   "group": "mieszkanie, Mokotów, Warszawa, 50-70 m²",
-  "group_size": 113,
+  "group_size": 116,
   "deal": true
  },
  "otodom:68554813": {
@@ -12664,10 +12664,10 @@
     "price": 779000.0
    }
   ],
-  "median_ppm": 18289.47,
-  "deviation": -0.086,
+  "median_ppm": 18273.77,
+  "deviation": -0.0852,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": false
  },
  "otodom:68554736": {
@@ -12765,7 +12765,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.2024,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "otodom:68553812": {
@@ -12923,10 +12923,10 @@
    }
   ],
   "deal_since": "2026-10-22T11:49:45+00:00",
-  "median_ppm": 18289.47,
-  "deviation": -0.1799,
+  "median_ppm": 18273.77,
+  "deviation": -0.1792,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": true
  },
  "olx:1093219743": {
@@ -13116,10 +13116,10 @@
    }
   ],
   "deal_since": "2026-10-22T11:49:45+00:00",
-  "median_ppm": 19961.69,
-  "deviation": -0.2754,
+  "median_ppm": 19911.13,
+  "deviation": -0.2736,
   "group": "mieszkanie, Mokotów, Warszawa, 50-70 m²",
-  "group_size": 113,
+  "group_size": 116,
   "deal": true
  },
  "gratka:49377151": {
@@ -13219,7 +13219,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.2024,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "gratka:49371233": {
@@ -13352,10 +13352,10 @@
   "build_year": 1978,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 17050.01,
-  "deviation": -0.3104,
+  "median_ppm": 17000.0,
+  "deviation": -0.3083,
   "group": "mieszkanie, Ursynów, Warszawa, 50-70 m²",
-  "group_size": 61,
+  "group_size": 62,
   "deal": true
  },
  "gratka:49370319": {
@@ -13460,10 +13460,10 @@
   "build_year": 1970,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.2163,
+  "median_ppm": 18273.77,
+  "deviation": -0.2156,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": true
  },
  "morizon:mzn2048156218": {
@@ -13631,7 +13631,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.2024,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "morizon:mzn2048201773": {
@@ -13700,10 +13700,10 @@
   "build_year": 1962,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.1275,
+  "median_ppm": 18273.77,
+  "deviation": -0.1267,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": true
  },
  "morizon:mzn2048175931": {
@@ -13931,10 +13931,10 @@
   "build_year": 1972,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 19500.0,
-  "deviation": -0.2591,
+  "median_ppm": 19410.0,
+  "deviation": -0.2557,
   "group": "mieszkanie, Bielany, Warszawa, 35-50 m²",
-  "group_size": 85,
+  "group_size": 86,
   "deal": true
  },
  "otodom:68556335": {
@@ -13970,7 +13970,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.2369,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "otodom:68556240": {
@@ -14236,10 +14236,10 @@
   "build_year": 1982,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 17050.01,
-  "deviation": -0.1464,
+  "median_ppm": 17000.0,
+  "deviation": -0.1439,
   "group": "mieszkanie, Ursynów, Warszawa, 50-70 m²",
-  "group_size": 61,
+  "group_size": 62,
   "deal": true
  },
  "otodom:68555619": {
@@ -14311,7 +14311,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.1611,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "otodom:68555433": {
@@ -14470,10 +14470,10 @@
     "price": 775000.0
    }
   ],
-  "median_ppm": 18289.47,
-  "deviation": -0.0768,
+  "median_ppm": 18273.77,
+  "deviation": -0.076,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": false
  },
  "olx:1092952873": {
@@ -14610,7 +14610,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.2369,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "gratka:49378849": {
@@ -15055,10 +15055,10 @@
   "build_year": 1982,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 17050.01,
-  "deviation": -0.1464,
+  "median_ppm": 17000.0,
+  "deviation": -0.1439,
   "group": "mieszkanie, Ursynów, Warszawa, 50-70 m²",
-  "group_size": 61,
+  "group_size": 62,
   "deal": true
  },
  "gratka:49378035": {
@@ -15131,7 +15131,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.1611,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "gratka:48674709": {
@@ -15340,10 +15340,10 @@
   "build_year": 1972,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 19500.0,
-  "deviation": -0.2146,
+  "median_ppm": 19410.0,
+  "deviation": -0.211,
   "group": "mieszkanie, Bielany, Warszawa, 35-50 m²",
-  "group_size": 85,
+  "group_size": 86,
   "deal": true
  },
  "morizon:mzn2048253251": {
@@ -15379,7 +15379,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.2369,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "morizon:mzn2048253214": {
@@ -15706,7 +15706,7 @@
   "source": "morizon",
   "search": "Mieszkania",
   "first_seen": "2026-10-22T17:09:25+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-22T17:09:25+00:00",
@@ -15738,7 +15738,7 @@
   "source": "morizon",
   "search": "Mieszkania",
   "first_seen": "2026-10-22T17:09:25+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-22T17:09:25+00:00",
@@ -15770,7 +15770,7 @@
   "source": "morizon",
   "search": "Mieszkania",
   "first_seen": "2026-10-22T17:09:25+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-22T17:09:25+00:00",
@@ -16034,7 +16034,7 @@
   "source": "otodom",
   "search": "Domy",
   "first_seen": "2026-10-23T00:39:26+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-23T00:39:26+00:00",
@@ -16076,10 +16076,10 @@
   "build_year": 1976,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.074,
+  "median_ppm": 18273.77,
+  "deviation": -0.0732,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": false
  },
  "otodom:68557403": {
@@ -16690,10 +16690,10 @@
   "build_year": 1976,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.074,
+  "median_ppm": 18273.77,
+  "deviation": -0.0732,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": false
  },
  "gratka:49384745": {
@@ -16864,10 +16864,10 @@
   "build_year": 1976,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.074,
+  "median_ppm": 18273.77,
+  "deviation": -0.0732,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": false
  },
  "morizon:mzn2047500967": {
@@ -17339,7 +17339,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.1971,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "otodom:68558518": {
@@ -17371,10 +17371,10 @@
   "build_year": 1974,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.0987,
+  "median_ppm": 18273.77,
+  "deviation": -0.098,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": false
  },
  "otodom:68558498": {
@@ -17457,7 +17457,7 @@
   "source": "olx",
   "search": "Mieszkania",
   "first_seen": "2026-10-23T13:25:10+00:00",
-  "last_seen": "2026-10-24T10:56:54+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-23T13:25:10+00:00",
@@ -17497,10 +17497,10 @@
     "price": 790000.0
    }
   ],
-  "median_ppm": 17050.01,
-  "deviation": -0.1258,
+  "median_ppm": 17000.0,
+  "deviation": -0.1232,
   "group": "mieszkanie, Ursynów, Warszawa, 50-70 m²",
-  "group_size": 61,
+  "group_size": 62,
   "deal": true
  },
  "olx:1107165106": {
@@ -17561,10 +17561,10 @@
     "price": 790600.0
    }
   ],
-  "median_ppm": 18289.47,
-  "deviation": -0.0803,
+  "median_ppm": 18273.77,
+  "deviation": -0.0795,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": false
  },
  "olx:1107161723": {
@@ -17909,7 +17909,7 @@
   "source": "olx",
   "search": "Mieszkania",
   "first_seen": "2026-10-23T13:25:10+00:00",
-  "last_seen": "2026-10-25T16:15:42+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-23T13:25:10+00:00",
@@ -18289,7 +18289,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.1971,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "gratka:49387087": {
@@ -18321,10 +18321,10 @@
   "build_year": 1974,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.0987,
+  "median_ppm": 18273.77,
+  "deviation": -0.098,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": false
  },
  "gratka:49386977": {
@@ -18597,10 +18597,10 @@
   "build_year": 1970,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.086,
+  "median_ppm": 18273.77,
+  "deviation": -0.0852,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": false
  },
  "morizon:mzn2046814702": {
@@ -19016,7 +19016,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.1971,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "otodom:68559020": {
@@ -19037,7 +19037,7 @@
   "source": "otodom",
   "search": "Domy",
   "first_seen": "2026-10-23T13:25:10+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-23T13:25:10+00:00",
@@ -19068,7 +19068,7 @@
   "source": "otodom",
   "search": "Domy",
   "first_seen": "2026-10-23T13:25:10+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-23T13:25:10+00:00",
@@ -19102,7 +19102,7 @@
   "source": "otodom",
   "search": "Domy",
   "first_seen": "2026-10-23T13:25:10+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-23T13:25:10+00:00",
@@ -19150,7 +19150,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.2041,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "otodom:68560307": {
@@ -19184,7 +19184,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.0713,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": false
  },
  "otodom:68560165": {
@@ -19392,10 +19392,10 @@
   "build_year": 1957,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.1254,
+  "median_ppm": 18273.77,
+  "deviation": -0.1246,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": true
  },
  "otodom:68559783": {
@@ -19453,7 +19453,7 @@
   "source": "olx",
   "search": "Mieszkania",
   "first_seen": "2026-10-23T18:19:55+00:00",
-  "last_seen": "2026-10-24T22:28:20+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-23T18:19:55+00:00",
@@ -19495,7 +19495,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.0713,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": false
  },
  "olx:1107212308": {
@@ -19726,10 +19726,10 @@
   "build_year": 1957,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.1254,
+  "median_ppm": 18273.77,
+  "deviation": -0.1246,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": true
  },
  "gratka:49389545": {
@@ -19869,10 +19869,10 @@
   "build_year": 1965,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 19500.0,
-  "deviation": -0.2993,
+  "median_ppm": 19410.0,
+  "deviation": -0.2961,
   "group": "mieszkanie, Bielany, Warszawa, 35-50 m²",
-  "group_size": 85,
+  "group_size": 86,
   "deal": true
  },
  "morizon:mzn2048257803": {
@@ -19940,10 +19940,10 @@
   "build_year": 1980,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 17050.01,
-  "deviation": -0.2359,
+  "median_ppm": 17000.0,
+  "deviation": -0.2336,
   "group": "mieszkanie, Ursynów, Warszawa, 50-70 m²",
-  "group_size": 61,
+  "group_size": 62,
   "deal": true
  },
  "morizon:mzn2048257856": {
@@ -19976,10 +19976,10 @@
   "build_year": 1957,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 18289.47,
-  "deviation": -0.1254,
+  "median_ppm": 18273.77,
+  "deviation": -0.1246,
   "group": "mieszkanie, Mokotów, Warszawa, 35-50 m²",
-  "group_size": 155,
+  "group_size": 156,
   "deal": true
  },
  "morizon:mzn2048257833": {
@@ -20242,7 +20242,7 @@
   "source": "otodom",
   "search": "Domy",
   "first_seen": "2026-10-23T18:19:55+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-23T18:19:55+00:00",
@@ -20419,7 +20419,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.2041,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "morizon:mzn2048258111": {
@@ -20491,7 +20491,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.2041,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "otodom:68561282": {
@@ -20593,10 +20593,10 @@
   "market": "wtórny",
   "details_checked": true,
   "deal_since": "2026-10-24T22:28:20+00:00",
-  "median_ppm": 17050.01,
-  "deviation": -0.1258,
+  "median_ppm": 17000.0,
+  "deviation": -0.1232,
   "group": "mieszkanie, Ursynów, Warszawa, 50-70 m²",
-  "group_size": 61,
+  "group_size": 62,
   "deal": true
  },
  "gratka:49394057": {
@@ -20663,10 +20663,10 @@
   "build_year": 1980,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 17050.01,
-  "deviation": -0.1258,
+  "median_ppm": 17000.0,
+  "deviation": -0.1232,
   "group": "mieszkanie, Ursynów, Warszawa, 50-70 m²",
-  "group_size": 61,
+  "group_size": 62,
   "deal": true
  },
  "morizon:mzn2048259002": {
@@ -21240,7 +21240,7 @@
   "source": "otodom",
   "search": "Domy",
   "first_seen": "2026-10-24T10:56:54+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-24T10:56:54+00:00",
@@ -21493,10 +21493,10 @@
    }
   ],
   "deal_since": "2026-10-24T15:55:42+00:00",
-  "median_ppm": 17050.01,
-  "deviation": -0.1711,
+  "median_ppm": 17000.0,
+  "deviation": -0.1687,
   "group": "mieszkanie, Ursynów, Warszawa, 50-70 m²",
-  "group_size": 61,
+  "group_size": 62,
   "deal": true
  },
  "olx:1107369567": {
@@ -22309,7 +22309,7 @@
   "source": "otodom",
   "search": "Domy",
   "first_seen": "2026-10-24T22:28:20+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-24T22:28:20+00:00",
@@ -22405,7 +22405,7 @@
   "source": "otodom",
   "search": "Mieszkania",
   "first_seen": "2026-10-25T11:24:50+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-25T11:24:50+00:00",
@@ -22441,7 +22441,7 @@
   "source": "otodom",
   "search": "Mieszkania",
   "first_seen": "2026-10-25T11:24:50+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-25T11:24:50+00:00",
@@ -22476,7 +22476,7 @@
   "source": "otodom",
   "search": "Mieszkania",
   "first_seen": "2026-10-25T11:24:50+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-25T11:24:50+00:00",
@@ -22659,7 +22659,7 @@
   "median_ppm": 15722.12,
   "deviation": -0.1996,
   "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
-  "group_size": 69,
+  "group_size": 71,
   "deal": true
  },
  "gratka:49400753": {
@@ -22716,7 +22716,7 @@
   "source": "morizon",
   "search": "Mieszkania",
   "first_seen": "2026-10-25T11:24:50+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-25T11:24:50+00:00",
@@ -22750,7 +22750,7 @@
   "source": "otodom",
   "search": "Mieszkania",
   "first_seen": "2026-10-25T16:15:42+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-25T16:15:42+00:00",
@@ -22785,7 +22785,7 @@
   "source": "otodom",
   "search": "Mieszkania",
   "first_seen": "2026-10-25T16:15:42+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-25T16:15:42+00:00",
@@ -22821,7 +22821,7 @@
   "source": "otodom",
   "search": "Mieszkania",
   "first_seen": "2026-10-25T16:15:42+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-25T16:15:42+00:00",
@@ -22856,7 +22856,7 @@
   "source": "olx",
   "search": "Mieszkania",
   "first_seen": "2026-10-25T16:15:42+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-25T16:15:42+00:00",
@@ -22889,7 +22889,7 @@
   "source": "olx",
   "search": "Mieszkania",
   "first_seen": "2026-10-25T16:15:42+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-25T16:15:42+00:00",
@@ -22921,7 +22921,7 @@
   "source": "olx",
   "search": "Mieszkania",
   "first_seen": "2026-10-25T16:15:42+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-25T16:15:42+00:00",
@@ -22955,7 +22955,7 @@
   "source": "olx",
   "search": "Mieszkania",
   "first_seen": "2026-10-25T16:15:42+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-25T16:15:42+00:00",
@@ -22988,7 +22988,7 @@
   "source": "olx",
   "search": "Mieszkania",
   "first_seen": "2026-10-25T16:15:42+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-25T16:15:42+00:00",
@@ -23022,7 +23022,7 @@
   "source": "olx",
   "search": "Mieszkania",
   "first_seen": "2026-10-25T16:15:42+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-25T16:15:42+00:00",
@@ -23055,7 +23055,7 @@
   "source": "olx",
   "search": "Mieszkania",
   "first_seen": "2026-10-25T16:15:42+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-25T16:15:42+00:00",
@@ -23129,10 +23129,10 @@
    }
   ],
   "deal_since": "2026-10-25T16:15:42+00:00",
-  "median_ppm": 17050.01,
-  "deviation": -0.1464,
+  "median_ppm": 17000.0,
+  "deviation": -0.1439,
   "group": "mieszkanie, Ursynów, Warszawa, 50-70 m²",
-  "group_size": 61,
+  "group_size": 62,
   "deal": true
  },
  "otodom:68563952": {
@@ -23153,7 +23153,7 @@
   "source": "otodom",
   "search": "Mieszkania",
   "first_seen": "2026-10-25T19:05:01+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-25T19:05:01+00:00",
@@ -23165,10 +23165,10 @@
   "build_year": 1956,
   "market": "wtórny",
   "details_checked": true,
-  "median_ppm": 19961.69,
-  "deviation": -0.2533,
+  "median_ppm": 19911.13,
+  "deviation": -0.2514,
   "group": "mieszkanie, Mokotów, Warszawa, 50-70 m²",
-  "group_size": 113,
+  "group_size": 116,
   "deal": true
  },
  "otodom:68563887": {
@@ -23189,7 +23189,7 @@
   "source": "otodom",
   "search": "Mieszkania",
   "first_seen": "2026-10-25T19:05:01+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-25T19:05:01+00:00",
@@ -23225,7 +23225,7 @@
   "source": "morizon",
   "search": "Mieszkania",
   "first_seen": "2026-10-25T19:05:01+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-25T19:05:01+00:00",
@@ -23261,7 +23261,7 @@
   "source": "otodom",
   "search": "Mieszkania",
   "first_seen": "2026-10-25T22:32:17+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-25T22:32:17+00:00",
@@ -23292,7 +23292,7 @@
   "source": "olx",
   "search": "Mieszkania",
   "first_seen": "2026-10-25T22:32:17+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-25T22:32:17+00:00",
@@ -23324,7 +23324,7 @@
   "source": "olx",
   "search": "Mieszkania",
   "first_seen": "2026-10-25T22:32:17+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-25T22:32:17+00:00",
@@ -23351,7 +23351,7 @@
   "source": "olx",
   "search": "Mieszkania",
   "first_seen": "2026-10-25T22:32:17+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-25T22:32:17+00:00",
@@ -23383,7 +23383,7 @@
   "source": "olx",
   "search": "Mieszkania",
   "first_seen": "2026-10-25T22:32:17+00:00",
-  "last_seen": "2026-10-25T22:32:17+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
   "price_history": [
    {
     "date": "2026-10-25T22:32:17+00:00",
@@ -23391,10 +23391,204 @@
    }
   ],
   "deal_since": "2026-10-25T22:32:17+00:00",
-  "median_ppm": 19500.0,
-  "deviation": -0.2123,
+  "median_ppm": 19410.0,
+  "deviation": -0.2086,
   "group": "mieszkanie, Bielany, Warszawa, 35-50 m²",
-  "group_size": 85,
+  "group_size": 86,
+  "deal": true
+ },
+ "otodom:68564486": {
+  "native_id": "68564486",
+  "url": "https://www.otodom.pl/pl/oferta/2-pok-kuchnia-52m2-5p-1994-lukowska-46-wyposazone-praga-pld-k-szembeka-ID4DGKO",
+  "title": "2-pok,kuchnia,52m2,5p,1994,Łukowska 46,wyposażone,Praga-Płd,k/Szembeka",
+  "price": 695000.0,
+  "area": 52.2,
+  "rooms": 2,
+  "city": "Warszawa",
+  "district": "Praga-Południe",
+  "subdistrict": "Grochów",
+  "location": "ul. Łukowska, Grochów, Praga-Południe, Warszawa",
+  "image": "https://ireland.apollo.olxcdn.com/v1/files/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmbiI6ImQ0NHVmbmY5YTR0ay1BUEwiLCJ3IjpbeyJmbiI6ImVudmZxcWUxYXk0azEtQVBMIiwicyI6IjE2IiwiYSI6IjAiLCJwIjoiMTAsLTEwIn1dfQ.qbzPOqF5kEeTEcve8EDyY14izs6kR9TAW-_eZpG4K3w/image;s=655x491;q=80",
+  "kind": "mieszkanie",
+  "floor": 5,
+  "advertiser": "biuro",
+  "source": "otodom",
+  "search": "Mieszkania",
+  "first_seen": "2026-10-26T04:44:31+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
+  "price_history": [
+   {
+    "date": "2026-10-26T04:44:31+00:00",
+    "price": 695000.0
+   }
+  ],
+  "deal_since": "2026-10-26T04:44:31+00:00",
+  "floors_total": 10,
+  "build_year": 1994,
+  "market": "wtórny",
+  "details_checked": true,
+  "median_ppm": 15722.12,
+  "deviation": -0.1532,
+  "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
+  "group_size": 71,
+  "deal": true
+ },
+ "olx:1107673880": {
+  "native_id": "1107673880",
+  "url": "https://www.olx.pl/d/oferta/2-pok-kuchnia-52m2-5p-1994-lukowska-46-wyposazone-praga-pld-k-szembeka-CID3-ID1cXGzK.html",
+  "title": "2-pok,kuchnia,52m2,5p,1994,Łukowska 46,wyposażone,Praga-Płd,k/Szembeka",
+  "price": 695000.0,
+  "area": 52.2,
+  "rooms": 2,
+  "city": "Warszawa",
+  "district": "Praga-Południe",
+  "location": "Praga-Południe, Warszawa",
+  "image": "https://ireland.apollo.olxcdn.com:443/v1/files/mhy1fq851vy93-PL/image;s=516x361",
+  "floor": 5,
+  "market": "wtórny",
+  "advertiser": "biuro",
+  "details_checked": true,
+  "kind": "mieszkanie",
+  "source": "olx",
+  "search": "Mieszkania",
+  "first_seen": "2026-10-26T04:44:31+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
+  "price_history": [
+   {
+    "date": "2026-10-26T04:44:31+00:00",
+    "price": 695000.0
+   }
+  ],
+  "deal_since": "2026-10-26T04:44:31+00:00",
+  "median_ppm": 15722.12,
+  "deviation": -0.1532,
+  "group": "mieszkanie, Praga-Południe, Warszawa, 50-70 m²",
+  "group_size": 71,
+  "deal": true
+ },
+ "gratka:49201737": {
+  "native_id": "49201737",
+  "url": "https://gratka.pl/nieruchomosci/mieszkanie-olawski-olawa-boleslawa-chrobrego/ob/49201737",
+  "title": "Mieszkanie 2 pokoje po remoncie!",
+  "price": 459000.0,
+  "area": 45.02,
+  "rooms": 2,
+  "city": "oławski",
+  "district": "Oława",
+  "subdistrict": "",
+  "location": "Bolesława Chrobrego, Oława, oławski",
+  "image": "https://img1.staticmorizon.com.pl/thumb/aHR0cHM6Ly9kLWdyLmNkbmdyLnBsL2thZHJ5L2svci9nci1vZ2wvYTgvNWMvNDkyMDE3MzdfMTYwNzcyOTQxOV9taWVzemthbmllLW9sYXdhLXVsLWJvbGVzbGF3YS1jaHJvYnJlZ28uanBn/3x2_m:fill_and_crop/mieszkanie-na-sprzedaz-45-m.jpg",
+  "kind": "mieszkanie",
+  "floor": 3,
+  "floors_total": 4,
+  "advertiser": "biuro",
+  "source": "gratka",
+  "search": "Mieszkania",
+  "first_seen": "2026-10-26T04:44:31+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
+  "price_history": [
+   {
+    "date": "2026-10-26T04:44:31+00:00",
+    "price": 459000.0
+   }
+  ],
+  "market": "wtórny",
+  "details_checked": true
+ },
+ "gratka:49141363": {
+  "native_id": "49141363",
+  "url": "https://gratka.pl/nieruchomosci/mieszkanie-olawski-olawa-boleslawa-chrobrego/ob/49141363",
+  "title": "Mieszkanie Oława (4 piętro) – Gotowe do wprowadzenia od zaraz!",
+  "price": 450000.0,
+  "area": 49.3,
+  "rooms": 3,
+  "city": "oławski",
+  "district": "Oława",
+  "subdistrict": "",
+  "location": "Bolesława Chrobrego, Oława, oławski",
+  "image": "https://img1.staticmorizon.com.pl/thumb/aHR0cHM6Ly9kLWdyLmNkbmdyLnBsL2thZHJ5L2svci9nci1vZ2wvNWMvZmEvNDkxNDEzNjNfMTYwMDg1NjkzM19taWVzemthbmllLW9sYXdhLXVsLWNocm9icmVnby5qcGc=/3x2_m:fill_and_crop/mieszkanie-na-sprzedaz-49-m.jpg",
+  "kind": "mieszkanie",
+  "floor": 4,
+  "floors_total": 4,
+  "advertiser": "biuro",
+  "source": "gratka",
+  "search": "Mieszkania",
+  "first_seen": "2026-10-26T04:44:31+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
+  "price_history": [
+   {
+    "date": "2026-10-26T04:44:31+00:00",
+    "price": 450000.0
+   }
+  ],
+  "build_year": 1972,
+  "market": "wtórny",
+  "details_checked": true
+ },
+ "gratka:41952823": {
+  "native_id": "41952823",
+  "url": "https://gratka.pl/nieruchomosci/mieszkanie-olawski-olawa-boleslawa-chrobrego/ob/41952823",
+  "title": "Mieszkanie 3 pokojowe 69m2 Oława Chrobrego",
+  "price": 570000.0,
+  "area": 69.11,
+  "rooms": null,
+  "city": "oławski",
+  "district": "Oława",
+  "subdistrict": "",
+  "location": "Bolesława Chrobrego, Oława, oławski",
+  "image": "https://img1.staticmorizon.com.pl/thumb/aHR0cHM6Ly9kLWdyLmNkbmdyLnBsL2thZHJ5L2svci9nci1vZ2wvMDIvNDkvNDE5NTI4MjNfMTIwOTU0NzcxM19taWVzemthbmllLW9sYXdhLXVsLWJvbGVzbGF3YS1jaHJvYnJlZ28uanBn/3x2_m:fill_and_crop/mieszkanie-na-sprzedaz-69-m.jpg",
+  "kind": "mieszkanie",
+  "floor": 3,
+  "floors_total": 3,
+  "advertiser": "biuro",
+  "source": "gratka",
+  "search": "Mieszkania",
+  "first_seen": "2026-10-26T04:44:31+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
+  "price_history": [
+   {
+    "date": "2026-10-26T04:44:31+00:00",
+    "price": 570000.0
+   }
+  ],
+  "build_year": 1994,
+  "market": "wtórny",
+  "details_checked": true
+ },
+ "morizon:mzn2048263155": {
+  "native_id": "mzn2048263155",
+  "url": "https://www.morizon.pl/oferta/sprzedaz-mieszkanie-warszawa-ursynow-puszczyka-52m2-mzn2048263155",
+  "title": "Ursynów 3 pokoje rozkładowe",
+  "price": 780000.0,
+  "area": 52.8,
+  "rooms": 3,
+  "city": "Warszawa",
+  "district": "Ursynów",
+  "subdistrict": "",
+  "location": "Puszczyka, Ursynów, Warszawa",
+  "image": "https://img1.staticmorizon.com.pl/thumb/aHR0cHM6Ly9kLWdyLmNkbmdyLnBsL2thZHJ5L2svci9nci1vZ2wvMDQvNjAvNDk0MDI0NDFfMTYzMzQ4MTg4OV9taWVzemthbmllLXdhcnN6YXdhLXVyc3lub3ctdWwtcHVzemN6eWthLmpwZw==/3x2_m:fill_and_crop/mieszkanie-na-sprzedaz-52-m.jpg",
+  "kind": "mieszkanie",
+  "floor": 2,
+  "floors_total": 11,
+  "advertiser": "biuro",
+  "source": "morizon",
+  "search": "Mieszkania",
+  "first_seen": "2026-10-26T04:44:31+00:00",
+  "last_seen": "2026-10-26T04:44:31+00:00",
+  "price_history": [
+   {
+    "date": "2026-10-26T04:44:31+00:00",
+    "price": 780000.0
+   }
+  ],
+  "deal_since": "2026-10-26T04:44:31+00:00",
+  "build_year": 1977,
+  "market": "wtórny",
+  "details_checked": true,
+  "median_ppm": 17000.0,
+  "deviation": -0.131,
+  "group": "mieszkanie, Ursynów, Warszawa, 50-70 m²",
+  "group_size": 62,
   "deal": true
  }
 }

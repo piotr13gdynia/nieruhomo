@@ -1,5 +1,5 @@
 {
- "run_at": "2026-10-25T22:32:17+00:00",
+ "run_at": "2026-10-26T04:44:31+00:00",
  "sources": [
   {
    "source": "otodom",
@@ -12,16 +12,16 @@
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Bfilter_float_price%3Ato%5D=800000&search%5Border%5D=created_at%3Adesc",
-   "found": 51,
-   "matched": 17,
+   "found": 52,
+   "matched": 18,
    "error": null,
    "search": "Mieszkania"
   },
   {
    "source": "gratka",
    "url": "https://gratka.pl/nieruchomosci/mieszkania/warszawa?cena-calkowita%3Amax=800000&sort=newest",
-   "found": 34,
-   "matched": 1,
+   "found": 3,
+   "matched": 3,
    "error": null,
    "search": "Mieszkania"
   },
@@ -86,25 +86,28 @@
    "error": null
   }
  ],
- "new": 5,
+ "new": 6,
  "drops": 0,
  "new_keys": [
-  "otodom:68564256",
-  "olx:1097584017",
-  "olx:1107645935",
-  "olx:1107625524",
-  "olx:1042569261"
+  "otodom:68564486",
+  "olx:1107673880",
+  "gratka:49201737",
+  "gratka:49141363",
+  "gratka:41952823",
+  "morizon:mzn2048263155"
  ],
  "drop_events": [],
  "new_deals": [
-  "olx:1042569261"
+  "otodom:68564486",
+  "olx:1107673880",
+  "morizon:mzn2048263155"
  ],
  "details": {
-  "checked": 3,
+  "checked": 5,
   "errors": 0
  },
  "groups_rated": 68,
- "market_size": 5069,
- "requests": 12,
+ "market_size": 5083,
+ "requests": 14,
  "notifications": {}
 }
