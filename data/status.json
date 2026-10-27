@@ -1,5 +1,5 @@
 {
- "run_at": "2026-10-26T23:51:57+00:00",
+ "run_at": "2026-10-27T05:01:33+00:00",
  "sources": [
   {
    "source": "otodom",
@@ -12,8 +12,8 @@
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Bfilter_float_price%3Ato%5D=800000&search%5Border%5D=created_at%3Adesc",
-   "found": 50,
-   "matched": 17,
+   "found": 52,
+   "matched": 16,
    "error": null,
    "search": "Mieszkania"
   },
@@ -21,7 +21,7 @@
    "source": "gratka",
    "url": "https://gratka.pl/nieruchomosci/mieszkania/warszawa?cena-calkowita%3Amax=800000&sort=newest",
    "found": 34,
-   "matched": 3,
+   "matched": 9,
    "error": null,
    "search": "Mieszkania"
   },
@@ -62,7 +62,7 @@
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Border%5D=created_at%3Adesc",
-   "found": 51,
+   "found": 52,
    "matched": 0,
    "error": null,
    "search": "Rynek (do median)",
@@ -81,29 +81,39 @@
    "source": "komornik",
    "search": "Licytacje komornicze",
    "url": "https://licytacje.komornik.pl/wyszukiwarka-licytacji",
-   "found": 344,
-   "matched": 62,
+   "found": 318,
+   "matched": 56,
    "error": null
   }
  ],
- "new": 4,
+ "new": 9,
  "drops": 0,
  "new_keys": [
-  "otodom:68568836",
-  "otodom:68568806",
-  "olx:1107890583",
-  "olx:1088033795"
+  "gratka:49420783",
+  "gratka:49419963",
+  "gratka:49419953",
+  "gratka:49419681",
+  "gratka:49419679",
+  "gratka:49419653",
+  "gratka:49419643",
+  "gratka:49419623",
+  "gratka:49419621"
  ],
  "drop_events": [],
  "new_deals": [
-  "olx:1088033795"
+  "gratka:49420783",
+  "gratka:49419963",
+  "gratka:49419953",
+  "gratka:49419681",
+  "gratka:49419679",
+  "gratka:49419621"
  ],
  "details": {
   "checked": 6,
   "errors": 4
  },
  "groups_rated": 69,
- "market_size": 5464,
+ "market_size": 5498,
  "requests": 19,
  "notifications": {}
 }
