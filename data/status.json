@@ -1,27 +1,27 @@
 {
- "run_at": "2026-10-28T01:20:35+00:00",
+ "run_at": "2026-10-28T08:27:44+00:00",
  "sources": [
   {
    "source": "otodom",
    "url": "https://www.otodom.pl/pl/wyniki/sprzedaz/mieszkanie/mazowieckie/warszawa/warszawa/warszawa?priceMax=800000&by=LATEST&direction=DESC",
    "found": 36,
-   "matched": 12,
+   "matched": 7,
    "error": null,
    "search": "Mieszkania"
   },
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Bfilter_float_price%3Ato%5D=800000&search%5Border%5D=created_at%3Adesc",
-   "found": 49,
-   "matched": 17,
+   "found": 51,
+   "matched": 20,
    "error": null,
    "search": "Mieszkania"
   },
   {
    "source": "gratka",
    "url": "https://gratka.pl/nieruchomosci/mieszkania/warszawa?cena-calkowita%3Amax=800000&sort=newest",
-   "found": 36,
-   "matched": 10,
+   "found": 37,
+   "matched": 1,
    "error": null,
    "search": "Mieszkania"
   },
@@ -29,7 +29,7 @@
    "source": "morizon",
    "url": "https://www.morizon.pl/mieszkania/warszawa/?ps%5Bprice_to%5D=800000",
    "found": 37,
-   "matched": 7,
+   "matched": 1,
    "error": null,
    "search": "Mieszkania"
   },
@@ -81,22 +81,33 @@
    "source": "komornik",
    "search": "Licytacje komornicze",
    "url": "https://licytacje.komornik.pl/wyszukiwarka-licytacji",
-   "found": 336,
-   "matched": 58,
+   "found": 330,
+   "matched": 56,
    "error": null
   }
  ],
- "new": 0,
+ "new": 5,
  "drops": 0,
- "new_keys": [],
+ "new_keys": [
+  "otodom:68573500",
+  "otodom:68573496",
+  "otodom:68573479",
+  "olx:1103711702",
+  "morizon:mzn2048163237"
+ ],
  "drop_events": [],
- "new_deals": [],
+ "new_deals": [
+  "otodom:68548667",
+  "otodom:68569168",
+  "olx:1103711702",
+  "morizon:mzn2048163237"
+ ],
  "details": {
   "checked": 10,
   "errors": 0
  },
- "groups_rated": 71,
- "market_size": 5942,
+ "groups_rated": 72,
+ "market_size": 6076,
  "requests": 19,
  "notifications": {}
 }
