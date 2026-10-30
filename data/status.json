@@ -1,5 +1,5 @@
 {
- "run_at": "2026-10-29T23:56:23+00:00",
+ "run_at": "2026-10-30T05:45:50+00:00",
  "sources": [
   {
    "source": "otodom",
@@ -12,7 +12,7 @@
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Bfilter_float_price%3Ato%5D=800000&search%5Border%5D=created_at%3Adesc",
-   "found": 50,
+   "found": 51,
    "matched": 12,
    "error": null,
    "search": "Mieszkania"
@@ -28,7 +28,7 @@
   {
    "source": "morizon",
    "url": "https://www.morizon.pl/mieszkania/warszawa/?ps%5Bprice_to%5D=800000",
-   "found": 36,
+   "found": 37,
    "matched": 13,
    "error": null,
    "search": "Mieszkania"
@@ -71,7 +71,7 @@
   {
    "source": "morizon",
    "url": "https://www.morizon.pl/mieszkania/warszawa/",
-   "found": 37,
+   "found": 35,
    "matched": 0,
    "error": null,
    "search": "Rynek (do median)",
@@ -81,30 +81,22 @@
    "source": "komornik",
    "search": "Licytacje komornicze",
    "url": "https://licytacje.komornik.pl/wyszukiwarka-licytacji",
-   "found": 347,
+   "found": 346,
    "matched": 57,
    "error": null
   }
  ],
- "new": 3,
+ "new": 0,
  "drops": 0,
- "new_keys": [
-  "olx:1102800400",
-  "gratka:49468217",
-  "morizon:mzn2048298275"
- ],
+ "new_keys": [],
  "drop_events": [],
- "new_deals": [
-  "olx:1102800400",
-  "gratka:49468217",
-  "morizon:mzn2048298275"
- ],
+ "new_deals": [],
  "details": {
   "checked": 10,
   "errors": 0
  },
  "groups_rated": 75,
- "market_size": 6890,
+ "market_size": 6898,
  "requests": 19,
  "notifications": {}
 }
