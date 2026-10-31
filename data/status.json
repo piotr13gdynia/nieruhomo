@@ -1,19 +1,19 @@
 {
- "run_at": "2026-10-31T12:25:11+00:00",
+ "run_at": "2026-10-31T18:33:14+00:00",
  "sources": [
   {
    "source": "otodom",
    "url": "https://www.otodom.pl/pl/wyniki/sprzedaz/mieszkanie/mazowieckie/warszawa/warszawa/warszawa?priceMax=800000&by=LATEST&direction=DESC",
    "found": 36,
-   "matched": 13,
+   "matched": 5,
    "error": null,
    "search": "Mieszkania"
   },
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Bfilter_float_price%3Ato%5D=800000&search%5Border%5D=created_at%3Adesc",
-   "found": 52,
-   "matched": 16,
+   "found": 49,
+   "matched": 12,
    "error": null,
    "search": "Mieszkania"
   },
@@ -21,7 +21,7 @@
    "source": "gratka",
    "url": "https://gratka.pl/nieruchomosci/mieszkania/warszawa?cena-calkowita%3Amax=800000&sort=newest",
    "found": 36,
-   "matched": 12,
+   "matched": 13,
    "error": null,
    "search": "Mieszkania"
   },
@@ -29,7 +29,7 @@
    "source": "morizon",
    "url": "https://www.morizon.pl/mieszkania/warszawa/?ps%5Bprice_to%5D=800000",
    "found": 37,
-   "matched": 18,
+   "matched": 10,
    "error": null,
    "search": "Mieszkania"
   },
@@ -62,7 +62,7 @@
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Border%5D=created_at%3Adesc",
-   "found": 51,
+   "found": 49,
    "matched": 0,
    "error": null,
    "search": "Rynek (do median)",
@@ -86,46 +86,25 @@
    "error": null
   }
  ],
- "new": 19,
+ "new": 5,
  "drops": 0,
  "new_keys": [
-  "otodom:68585087",
-  "otodom:68584914",
-  "otodom:68584844",
-  "olx:1109003614",
-  "olx:1086498378",
-  "olx:1101627020",
-  "olx:1077082652",
-  "olx:1095444718",
-  "olx:1088860095",
-  "olx:1095674805",
-  "olx:1089263959",
-  "olx:1059680972",
-  "olx:1108965541",
-  "olx:1108965572",
-  "gratka:49490233",
-  "gratka:49490165",
-  "morizon:mzn2048306096",
-  "morizon:mzn2048222913",
-  "morizon:mzn2048306077"
+  "olx:1101973314",
+  "gratka:49490463",
+  "morizon:mzn2048306155",
+  "otodom:68585543",
+  "otodom:68585258"
  ],
  "drop_events": [],
  "new_deals": [
-  "otodom:68584914",
-  "otodom:68584844",
-  "olx:1109003614",
-  "olx:1086498378",
-  "gratka:49490233",
-  "gratka:49490165",
-  "morizon:mzn2048306096",
-  "morizon:mzn2048306077"
+  "otodom:68585543"
  ],
  "details": {
   "checked": 10,
   "errors": 0
  },
  "groups_rated": 76,
- "market_size": 7391,
+ "market_size": 7470,
  "requests": 19,
  "notifications": {}
 }
