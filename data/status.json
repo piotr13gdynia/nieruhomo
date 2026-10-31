@@ -1,5 +1,5 @@
 {
- "run_at": "2026-10-30T23:44:39+00:00",
+ "run_at": "2026-10-31T05:38:02+00:00",
  "sources": [
   {
    "source": "otodom",
@@ -12,8 +12,8 @@
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Bfilter_float_price%3Ato%5D=800000&search%5Border%5D=created_at%3Adesc",
-   "found": 50,
-   "matched": 14,
+   "found": 51,
+   "matched": 15,
    "error": null,
    "search": "Mieszkania"
   },
@@ -62,7 +62,7 @@
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Border%5D=created_at%3Adesc",
-   "found": 52,
+   "found": 48,
    "matched": 0,
    "error": null,
    "search": "Rynek (do median)",
@@ -86,34 +86,21 @@
    "error": null
   }
  ],
- "new": 3,
- "drops": 2,
+ "new": 1,
+ "drops": 0,
  "new_keys": [
-  "otodom:68584667",
-  "olx:1108933224",
-  "morizon:mzn2048303075"
+  "olx:1101862807"
  ],
- "drop_events": [
-  {
-   "key": "morizon:mzn2048096507",
-   "old": 640000.0,
-   "new": 610000.0
-  },
-  {
-   "key": "morizon:mzn2047047704",
-   "old": 660000.0,
-   "new": 649000.0
-  }
- ],
+ "drop_events": [],
  "new_deals": [
-  "otodom:68584667"
+  "olx:1101862807"
  ],
  "details": {
   "checked": 10,
   "errors": 0
  },
  "groups_rated": 76,
- "market_size": 7269,
+ "market_size": 7274,
  "requests": 19,
  "notifications": {}
 }
