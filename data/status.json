@@ -1,19 +1,19 @@
 {
- "run_at": "2026-10-31T23:22:52+00:00",
+ "run_at": "2026-11-01T05:59:51+00:00",
  "sources": [
   {
    "source": "otodom",
    "url": "https://www.otodom.pl/pl/wyniki/sprzedaz/mieszkanie/mazowieckie/warszawa/warszawa/warszawa?priceMax=800000&by=LATEST&direction=DESC",
    "found": 36,
-   "matched": 4,
+   "matched": 5,
    "error": null,
    "search": "Mieszkania"
   },
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Bfilter_float_price%3Ato%5D=800000&search%5Border%5D=created_at%3Adesc",
-   "found": 47,
-   "matched": 14,
+   "found": 51,
+   "matched": 16,
    "error": null,
    "search": "Mieszkania"
   },
@@ -21,7 +21,7 @@
    "source": "gratka",
    "url": "https://gratka.pl/nieruchomosci/mieszkania/warszawa?cena-calkowita%3Amax=800000&sort=newest",
    "found": 36,
-   "matched": 11,
+   "matched": 6,
    "error": null,
    "search": "Mieszkania"
   },
@@ -62,7 +62,7 @@
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Border%5D=created_at%3Adesc",
-   "found": 50,
+   "found": 49,
    "matched": 0,
    "error": null,
    "search": "Rynek (do median)",
@@ -71,7 +71,7 @@
   {
    "source": "morizon",
    "url": "https://www.morizon.pl/mieszkania/warszawa/",
-   "found": 36,
+   "found": 37,
    "matched": 0,
    "error": null,
    "search": "Rynek (do median)",
@@ -81,28 +81,34 @@
    "source": "komornik",
    "search": "Licytacje komornicze",
    "url": "https://licytacje.komornik.pl/wyszukiwarka-licytacji",
-   "found": 349,
+   "found": 347,
    "matched": 58,
    "error": null
   }
  ],
- "new": 2,
+ "new": 8,
  "drops": 0,
  "new_keys": [
-  "olx:1101841337",
-  "olx:1109088133"
+  "otodom:68585966",
+  "olx:1109100466",
+  "gratka:49492711",
+  "gratka:49492695",
+  "gratka:49492687",
+  "morizon:mzn2048308796",
+  "morizon:mzn2048308788",
+  "morizon:mzn2048308715"
  ],
  "drop_events": [],
  "new_deals": [
-  "olx:1101841337",
-  "olx:1109088133"
+  "otodom:68585966",
+  "olx:1109100466"
  ],
  "details": {
   "checked": 10,
   "errors": 0
  },
  "groups_rated": 76,
- "market_size": 7513,
+ "market_size": 7571,
  "requests": 19,
  "notifications": {}
 }
