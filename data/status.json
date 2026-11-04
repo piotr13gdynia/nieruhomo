@@ -1,11 +1,11 @@
 {
- "run_at": "2026-11-04T02:19:23+00:00",
+ "run_at": "2026-11-04T12:06:35+00:00",
  "sources": [
   {
    "source": "otodom",
    "url": "https://www.otodom.pl/pl/wyniki/sprzedaz/mieszkanie/mazowieckie/warszawa/warszawa/warszawa?priceMax=800000&by=LATEST&direction=DESC",
-   "found": 36,
-   "matched": 12,
+   "found": 20,
+   "matched": 6,
    "error": null,
    "search": "Mieszkania"
   },
@@ -13,23 +13,23 @@
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Bfilter_float_price%3Ato%5D=800000&search%5Border%5D=created_at%3Adesc",
    "found": 51,
-   "matched": 11,
+   "matched": 14,
    "error": null,
    "search": "Mieszkania"
   },
   {
    "source": "gratka",
    "url": "https://gratka.pl/nieruchomosci/mieszkania/warszawa?cena-calkowita%3Amax=800000&sort=newest",
-   "found": 34,
-   "matched": 10,
+   "found": 35,
+   "matched": 13,
    "error": null,
    "search": "Mieszkania"
   },
   {
    "source": "morizon",
    "url": "https://www.morizon.pl/mieszkania/warszawa/?ps%5Bprice_to%5D=800000",
-   "found": 36,
-   "matched": 10,
+   "found": 37,
+   "matched": 14,
    "error": null,
    "search": "Mieszkania"
   },
@@ -53,7 +53,7 @@
   {
    "source": "otodom",
    "url": "https://www.otodom.pl/pl/wyniki/sprzedaz/dom/mazowieckie/warszawa/warszawa/warszawa?by=LATEST&direction=DESC",
-   "found": 35,
+   "found": 36,
    "matched": 0,
    "error": null,
    "search": "Rynek (do median)",
@@ -81,36 +81,62 @@
    "source": "komornik",
    "search": "Licytacje komornicze",
    "url": "https://licytacje.komornik.pl/wyszukiwarka-licytacji",
-   "found": 371,
-   "matched": 61,
+   "found": 363,
+   "matched": 60,
    "error": null
   }
  ],
- "new": 6,
+ "new": 30,
  "drops": 0,
  "new_keys": [
-  "otodom:68598137",
-  "olx:1109744814",
-  "gratka:49534991",
-  "gratka:49534765",
-  "morizon:mzn2048329232",
-  "morizon:mzn2048329119"
+  "otodom:68599570",
+  "otodom:68599507",
+  "otodom:68599497",
+  "otodom:68599467",
+  "otodom:68599457",
+  "otodom:68599395",
+  "olx:1109862952",
+  "olx:1095555246",
+  "olx:1109840279",
+  "olx:1084031074",
+  "olx:1102744964",
+  "olx:1084170726",
+  "olx:1041650253",
+  "olx:1109817230",
+  "gratka:49544907",
+  "gratka:49543997",
+  "gratka:49543763",
+  "gratka:49543757",
+  "gratka:49543755",
+  "gratka:49543745",
+  "gratka:49543203",
+  "gratka:49543191",
+  "gratka:49543119",
+  "morizon:mzn2048202257",
+  "morizon:mzn2048333210",
+  "morizon:mzn2048332958",
+  "morizon:mzn2048332880",
+  "morizon:mzn2048332877",
+  "morizon:mzn2048332875",
+  "morizon:mzn2048332871"
  ],
  "drop_events": [],
  "new_deals": [
-  "otodom:68598137",
-  "olx:1109744814",
-  "gratka:49534991",
-  "gratka:49534765",
-  "morizon:mzn2048329232",
-  "morizon:mzn2048329119"
+  "otodom:68599570",
+  "otodom:68599467",
+  "otodom:68599457",
+  "olx:1109840279",
+  "gratka:49544907",
+  "gratka:49543203",
+  "gratka:49543191",
+  "morizon:mzn2048333210"
  ],
  "details": {
   "checked": 10,
   "errors": 0
  },
- "groups_rated": 78,
- "market_size": 8647,
+ "groups_rated": 80,
+ "market_size": 8819,
  "requests": 19,
  "notifications": {}
 }
