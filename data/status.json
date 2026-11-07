@@ -1,19 +1,19 @@
 {
- "run_at": "2026-11-07T01:54:34+00:00",
+ "run_at": "2026-11-07T08:45:34+00:00",
  "sources": [
   {
    "source": "otodom",
    "url": "https://www.otodom.pl/pl/wyniki/sprzedaz/mieszkanie/mazowieckie/warszawa/warszawa/warszawa?priceMax=800000&by=LATEST&direction=DESC",
    "found": 36,
-   "matched": 13,
+   "matched": 15,
    "error": null,
    "search": "Mieszkania"
   },
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Bfilter_float_price%3Ato%5D=800000&search%5Border%5D=created_at%3Adesc",
-   "found": 51,
-   "matched": 15,
+   "found": 52,
+   "matched": 10,
    "error": null,
    "search": "Mieszkania"
   },
@@ -21,7 +21,7 @@
    "source": "gratka",
    "url": "https://gratka.pl/nieruchomosci/mieszkania/warszawa?cena-calkowita%3Amax=800000&sort=newest",
    "found": 36,
-   "matched": 11,
+   "matched": 10,
    "error": null,
    "search": "Mieszkania"
   },
@@ -29,7 +29,7 @@
    "source": "morizon",
    "url": "https://www.morizon.pl/mieszkania/warszawa/?ps%5Bprice_to%5D=800000",
    "found": 37,
-   "matched": 16,
+   "matched": 15,
    "error": null,
    "search": "Mieszkania"
   },
@@ -62,7 +62,7 @@
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Border%5D=created_at%3Adesc",
-   "found": 51,
+   "found": 52,
    "matched": 0,
    "error": null,
    "search": "Rynek (do median)",
@@ -81,28 +81,37 @@
    "source": "komornik",
    "search": "Licytacje komornicze",
    "url": "https://licytacje.komornik.pl/wyszukiwarka-licytacji",
-   "found": 367,
+   "found": 364,
    "matched": 62,
    "error": null
   }
  ],
- "new": 3,
- "drops": 0,
+ "new": 5,
+ "drops": 1,
  "new_keys": [
-  "otodom:68610491",
-  "olx:1110390363",
-  "morizon:mzn2048346230"
+  "otodom:68610758",
+  "otodom:68610747",
+  "otodom:68610684",
+  "olx:1110422267",
+  "olx:1110411784"
  ],
- "drop_events": [],
+ "drop_events": [
+  {
+   "key": "olx:1102698149",
+   "old": 790000.0,
+   "new": 785000.0
+  }
+ ],
  "new_deals": [
-  "otodom:68610491"
+  "otodom:68610684",
+  "olx:1110411784"
  ],
  "details": {
   "checked": 10,
   "errors": 0
  },
- "groups_rated": 85,
- "market_size": 9814,
+ "groups_rated": 86,
+ "market_size": 9876,
  "requests": 19,
  "notifications": {}
 }
