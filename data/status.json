@@ -1,18 +1,18 @@
 {
- "run_at": "2026-11-17T22:20:59+00:00",
+ "run_at": "2026-11-18T07:25:04+00:00",
  "sources": [
   {
    "source": "otodom",
    "url": "https://www.otodom.pl/pl/wyniki/sprzedaz/mieszkanie/mazowieckie/warszawa/warszawa/warszawa?priceMax=800000&by=LATEST&direction=DESC",
    "found": 36,
-   "matched": 10,
+   "matched": 12,
    "error": null,
    "search": "Mieszkania"
   },
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Bfilter_float_price%3Ato%5D=800000&search%5Border%5D=created_at%3Adesc",
-   "found": 51,
+   "found": 52,
    "matched": 12,
    "error": null,
    "search": "Mieszkania"
@@ -21,7 +21,7 @@
    "source": "gratka",
    "url": "https://gratka.pl/nieruchomosci/mieszkania/warszawa?cena-calkowita%3Amax=800000&sort=newest",
    "found": 37,
-   "matched": 12,
+   "matched": 11,
    "error": null,
    "search": "Mieszkania"
   },
@@ -29,7 +29,7 @@
    "source": "morizon",
    "url": "https://www.morizon.pl/mieszkania/warszawa/?ps%5Bprice_to%5D=800000",
    "found": 37,
-   "matched": 11,
+   "matched": 13,
    "error": null,
    "search": "Mieszkania"
   },
@@ -37,14 +37,14 @@
    "source": "otodom",
    "url": "https://www.otodom.pl/pl/wyniki/sprzedaz/dom/mazowieckie/warszawa/warszawa/warszawa?priceMax=1500000&by=LATEST&direction=DESC",
    "found": 36,
-   "matched": 20,
+   "matched": 19,
    "error": null,
    "search": "Domy"
   },
   {
    "source": "otodom",
    "url": "https://www.otodom.pl/pl/wyniki/sprzedaz/mieszkanie/mazowieckie/warszawa/warszawa/warszawa?by=LATEST&direction=DESC",
-   "found": 36,
+   "found": 34,
    "matched": 0,
    "error": null,
    "search": "Rynek (do median)",
@@ -62,7 +62,7 @@
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Border%5D=created_at%3Adesc",
-   "found": 52,
+   "found": 51,
    "matched": 0,
    "error": null,
    "search": "Rynek (do median)",
@@ -81,83 +81,42 @@
    "source": "komornik",
    "search": "Licytacje komornicze",
    "url": "https://licytacje.komornik.pl/wyszukiwarka-licytacji",
-   "found": 377,
-   "matched": 56,
+   "found": 355,
+   "matched": 51,
    "error": null
   }
  ],
- "new": 33,
+ "new": 7,
  "drops": 1,
  "new_keys": [
-  "otodom:68645864",
-  "otodom:68645859",
-  "otodom:68645514",
-  "otodom:68645476",
-  "otodom:68645470",
-  "otodom:68645451",
-  "otodom:68645413",
-  "otodom:68645346",
-  "otodom:68645280",
-  "otodom:68644604",
-  "olx:1112872603",
-  "olx:1112871227",
-  "olx:1112862042",
-  "olx:1112827071",
-  "olx:1099026687",
-  "olx:1099026727",
-  "olx:1112790697",
-  "gratka:49717791",
-  "gratka:49717767",
-  "gratka:49717529",
-  "gratka:49717517",
-  "gratka:49717477",
-  "gratka:49717343",
-  "gratka:49715161",
-  "morizon:mzn2048405480",
-  "morizon:mzn2048405474",
-  "morizon:mzn2044098685",
-  "morizon:mzn2048405376",
-  "morizon:mzn2048405371",
-  "morizon:mzn2048405353",
-  "morizon:mzn2048386229",
-  "morizon:mzn2048405310",
-  "morizon:mzn2047929206"
+  "otodom:68646259",
+  "otodom:68646234",
+  "otodom:68646202",
+  "otodom:68646201",
+  "otodom:68646176",
+  "gratka:49722637",
+  "morizon:mzn2048407600"
  ],
  "drop_events": [
   {
-   "key": "olx:1109320489",
-   "old": 750000.0,
-   "new": 699000.0
+   "key": "olx:1100773368",
+   "old": 640000.0,
+   "new": 595000.0
   }
  ],
  "new_deals": [
-  "otodom:68645864",
-  "otodom:68645859",
-  "otodom:68645514",
-  "otodom:68645470",
-  "otodom:68645413",
-  "otodom:68645346",
-  "olx:1112872603",
-  "olx:1112871227",
-  "olx:1112862042",
-  "olx:1112827071",
-  "olx:1099026687",
-  "olx:1112790697",
-  "gratka:49717791",
-  "gratka:49717529",
-  "gratka:49715161",
-  "morizon:mzn2048405480",
-  "morizon:mzn2044098685",
-  "morizon:mzn2048405376",
-  "morizon:mzn2048386229",
-  "morizon:mzn2047929206"
+  "otodom:68646259",
+  "otodom:68646201",
+  "otodom:68646176",
+  "gratka:49722637",
+  "morizon:mzn2048407600"
  ],
  "details": {
   "checked": 10,
   "errors": 0
  },
  "groups_rated": 89,
- "market_size": 13544,
+ "market_size": 13598,
  "requests": 19,
  "notifications": {}
 }
