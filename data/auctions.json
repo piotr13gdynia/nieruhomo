@@ -15,7 +15,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "89347": {
   "id": "89347",
@@ -33,7 +33,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "89331": {
   "id": "89331",
@@ -71,42 +71,6 @@
   "first_seen": "2026-10-18T22:59:54+00:00",
   "last_seen": "2026-11-19T00:21:20+00:00"
  },
- "89288": {
-  "id": "89288",
-  "title": "1/2 ułamkowej części",
-  "url": "https://licytacje.komornik.pl/licytacje/89288",
-  "price": 356250.0,
-  "estimate": 475000.0,
-  "date": "2026-11-19T11:00:00+01:00",
-  "end": "2026-11-26T11:00:00+01:00",
-  "address": "Leona Berensona 12/10, 03-287 Warszawa",
-  "city": "Warszawa",
-  "province": "mazowieckie",
-  "category": "mieszkanie",
-  "electronic": true,
-  "share": true,
-  "status": "CREATED",
-  "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-11-17T22:20:59+00:00"
- },
- "89187": {
-  "id": "89187",
-  "title": "nieruchomość gruntowa zabudowana - udział 1/4 ułamkowej części",
-  "url": "https://licytacje.komornik.pl/licytacje/89187",
-  "price": 217666.67,
-  "estimate": 326500.0,
-  "date": "2026-11-19T12:00:00+01:00",
-  "end": "2026-11-26T12:00:00+01:00",
-  "address": "Gąsiorowskiej 14, 03-107 Warszawa",
-  "city": "Warszawa",
-  "province": "mazowieckie",
-  "category": "dom",
-  "electronic": true,
-  "share": true,
-  "status": "CREATED",
-  "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-11-17T22:20:59+00:00"
- },
  "89183": {
   "id": "89183",
   "title": "lokal mieszkalny",
@@ -123,7 +87,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "89182": {
   "id": "89182",
@@ -141,7 +105,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "89179": {
   "id": "89179",
@@ -159,7 +123,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "89040": {
   "id": "89040",
@@ -177,7 +141,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "89009": {
   "id": "89009",
@@ -195,7 +159,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "89007": {
   "id": "89007",
@@ -213,7 +177,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "89004": {
   "id": "89004",
@@ -249,7 +213,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "88495": {
   "id": "88495",
@@ -267,7 +231,7 @@
   "share": true,
   "status": "CREATED",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "88494": {
   "id": "88494",
@@ -285,7 +249,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "88459": {
   "id": "88459",
@@ -303,7 +267,7 @@
   "share": true,
   "status": "CREATED",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "87771": {
   "id": "87771",
@@ -321,43 +285,7 @@
   "share": true,
   "status": "CREATED",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
- },
- "87451": {
-  "id": "87451",
-  "title": "lokal",
-  "url": "https://licytacje.komornik.pl/licytacje/87451",
-  "price": 503333.33,
-  "estimate": 755000.0,
-  "date": "2026-11-19T12:00:00+01:00",
-  "end": "2026-11-26T12:00:00+01:00",
-  "address": "Myśliborska 98E/141, 03-185 Warszawa",
-  "city": "Warszawa",
-  "province": "mazowieckie",
-  "category": "mieszkanie",
-  "electronic": true,
-  "share": false,
-  "status": "CREATED",
-  "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-11-17T22:20:59+00:00"
- },
- "87445": {
-  "id": "87445",
-  "title": "lokal mieszkalny",
-  "url": "https://licytacje.komornik.pl/licytacje/87445",
-  "price": 557250.0,
-  "estimate": 743000.0,
-  "date": "2026-11-19T10:00:00+01:00",
-  "end": "2026-11-26T10:00:00+01:00",
-  "address": "ul. Obrońców Tobruku 19/71, 01-494 Warszawa",
-  "city": "Warszawa",
-  "province": "mazowieckie",
-  "category": "mieszkanie",
-  "electronic": true,
-  "share": false,
-  "status": "CREATED",
-  "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-11-17T22:20:59+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "85601": {
   "id": "85601",
@@ -375,7 +303,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "76122": {
   "id": "76122",
@@ -393,7 +321,7 @@
   "share": true,
   "status": "CREATED",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "74705": {
   "id": "74705",
@@ -411,7 +339,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-18T22:59:54+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "90188": {
   "id": "90188",
@@ -429,7 +357,7 @@
   "share": true,
   "status": "CREATED",
   "first_seen": "2026-10-19T13:11:10+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "90657": {
   "id": "90657",
@@ -447,25 +375,7 @@
   "share": true,
   "status": "CREATED",
   "first_seen": "2026-10-21T13:47:09+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
- },
- "90797": {
-  "id": "90797",
-  "title": "lokal mieszkalny",
-  "url": "https://licytacje.komornik.pl/licytacje/90797",
-  "price": 390309.75,
-  "estimate": 520413.0,
-  "date": "2026-11-19T13:00:00+01:00",
-  "end": "2026-11-26T13:00:00+01:00",
-  "address": "ul. Osmańczyka 28/51, 01-494 Warszawa",
-  "city": "Warszawa",
-  "province": "mazowieckie",
-  "category": "mieszkanie",
-  "electronic": true,
-  "share": false,
-  "status": "CREATED",
-  "first_seen": "2026-10-21T23:18:02+00:00",
-  "last_seen": "2026-11-17T02:55:09+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "90877": {
   "id": "90877",
@@ -483,7 +393,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-22T11:49:45+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "90806": {
   "id": "90806",
@@ -501,7 +411,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-22T11:49:45+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "90954": {
   "id": "90954",
@@ -519,7 +429,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-22T17:09:25+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "90937": {
   "id": "90937",
@@ -537,7 +447,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-22T17:09:25+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "91133": {
   "id": "91133",
@@ -555,7 +465,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-23T13:25:10+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "91125": {
   "id": "91125",
@@ -573,7 +483,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-23T13:25:10+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "91145": {
   "id": "91145",
@@ -609,7 +519,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-26T12:59:03+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "91325": {
   "id": "91325",
@@ -627,7 +537,7 @@
   "share": true,
   "status": "CREATED",
   "first_seen": "2026-10-26T19:56:28+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "91391": {
   "id": "91391",
@@ -645,7 +555,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-27T12:08:49+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "91424": {
   "id": "91424",
@@ -663,7 +573,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-27T17:59:24+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "91647": {
   "id": "91647",
@@ -681,7 +591,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-28T16:37:27+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "91637": {
   "id": "91637",
@@ -699,25 +609,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-28T16:37:27+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
- },
- "91539": {
-  "id": "91539",
-  "title": "lokal mieszkalny",
-  "url": "https://licytacje.komornik.pl/licytacje/91539",
-  "price": 485700.0,
-  "estimate": 647600.0,
-  "date": "2026-11-19T11:00:00+01:00",
-  "end": "2026-11-26T11:00:00+01:00",
-  "address": "ul. Żytnia 31/33/30, 01-191 Warszawa",
-  "city": "Warszawa",
-  "province": "mazowieckie",
-  "category": "mieszkanie",
-  "electronic": true,
-  "share": false,
-  "status": "CREATED",
-  "first_seen": "2026-10-28T16:37:27+00:00",
-  "last_seen": "2026-11-17T22:20:59+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "91939": {
   "id": "91939",
@@ -735,7 +627,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-30T12:52:15+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "92053": {
   "id": "92053",
@@ -753,7 +645,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-10-30T19:20:46+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "92221": {
   "id": "92221",
@@ -771,7 +663,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-11-02T23:29:10+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "92344": {
   "id": "92344",
@@ -789,7 +681,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-11-03T16:14:16+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "92252": {
   "id": "92252",
@@ -807,7 +699,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-11-03T16:14:16+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "92657": {
   "id": "92657",
@@ -825,7 +717,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-11-04T19:43:36+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "92789": {
   "id": "92789",
@@ -843,7 +735,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-11-05T18:00:19+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "92862": {
   "id": "92862",
@@ -861,7 +753,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-11-06T15:54:47+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "92904": {
   "id": "92904",
@@ -879,7 +771,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-11-06T21:29:00+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "93040": {
   "id": "93040",
@@ -897,7 +789,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-11-09T20:42:46+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "93145": {
   "id": "93145",
@@ -915,7 +807,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-11-10T12:37:25+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "93086": {
   "id": "93086",
@@ -933,7 +825,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-11-10T12:37:25+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "93082": {
   "id": "93082",
@@ -951,7 +843,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-11-10T12:37:25+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "93277": {
   "id": "93277",
@@ -969,7 +861,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-11-12T09:49:04+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "93573": {
   "id": "93573",
@@ -987,7 +879,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-11-13T17:43:59+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "93575": {
   "id": "93575",
@@ -1005,7 +897,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-11-13T23:31:22+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "93707": {
   "id": "93707",
@@ -1023,7 +915,7 @@
   "share": true,
   "status": "CREATED",
   "first_seen": "2026-11-16T18:31:01+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "93820": {
   "id": "93820",
@@ -1041,7 +933,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-11-17T13:22:28+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "94121": {
   "id": "94121",
@@ -1059,7 +951,7 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-11-18T17:14:07+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  },
  "94051": {
   "id": "94051",
@@ -1077,6 +969,6 @@
   "share": false,
   "status": "CREATED",
   "first_seen": "2026-11-18T17:14:07+00:00",
-  "last_seen": "2026-11-20T03:12:02+00:00"
+  "last_seen": "2026-11-20T12:52:49+00:00"
  }
 }
