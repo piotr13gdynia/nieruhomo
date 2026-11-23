@@ -1,5 +1,5 @@
 {
- "run_at": "2026-11-22T23:35:42+00:00",
+ "run_at": "2026-11-23T07:34:10+00:00",
  "sources": [
   {
    "source": "otodom",
@@ -13,23 +13,23 @@
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Bfilter_float_price%3Ato%5D=800000&search%5Border%5D=created_at%3Adesc",
    "found": 49,
-   "matched": 21,
+   "matched": 18,
    "error": null,
    "search": "Mieszkania"
   },
   {
    "source": "gratka",
    "url": "https://gratka.pl/nieruchomosci/mieszkania/warszawa?cena-calkowita%3Amax=800000&sort=newest",
-   "found": 33,
-   "matched": 15,
+   "found": 34,
+   "matched": 7,
    "error": null,
    "search": "Mieszkania"
   },
   {
    "source": "morizon",
    "url": "https://www.morizon.pl/mieszkania/warszawa/?ps%5Bprice_to%5D=800000",
-   "found": 36,
-   "matched": 12,
+   "found": 37,
+   "matched": 17,
    "error": null,
    "search": "Mieszkania"
   },
@@ -62,7 +62,7 @@
   {
    "source": "olx",
    "url": "https://www.olx.pl/nieruchomosci/mieszkania/sprzedaz/warszawa/?search%5Border%5D=created_at%3Adesc",
-   "found": 50,
+   "found": 51,
    "matched": 0,
    "error": null,
    "search": "Rynek (do median)",
@@ -71,7 +71,7 @@
   {
    "source": "morizon",
    "url": "https://www.morizon.pl/mieszkania/warszawa/",
-   "found": 35,
+   "found": 37,
    "matched": 0,
    "error": null,
    "search": "Rynek (do median)",
@@ -86,47 +86,30 @@
    "error": null
   }
  ],
- "new": 17,
+ "new": 6,
  "drops": 1,
  "new_keys": [
-  "otodom:68662515",
-  "otodom:68662243",
-  "otodom:68662206",
-  "otodom:68662041",
-  "otodom:68661877",
-  "olx:1100951588",
-  "olx:1016174524",
-  "olx:1114129872",
-  "olx:1114115343",
-  "olx:1114106217",
-  "gratka:49778177",
-  "morizon:mzn2048431329",
-  "morizon:mzn2048431307",
-  "morizon:mzn2048431201",
-  "morizon:mzn2048431212",
-  "morizon:mzn2048431205",
-  "otodom:68661898"
+  "gratka:49778477",
+  "gratka:49778431",
+  "gratka:49778419",
+  "gratka:49778167",
+  "morizon:mzn2048432703",
+  "morizon:mzn2048417764"
  ],
  "drop_events": [
   {
-   "key": "morizon:mzn2048378078",
-   "old": 769000.0,
-   "new": 739000.0
+   "key": "olx:1104900407",
+   "old": 664000.0,
+   "new": 660000.0
   }
  ],
- "new_deals": [
-  "otodom:68662515",
-  "otodom:68662243",
-  "otodom:68662206",
-  "olx:1016174524",
-  "olx:1114106217"
- ],
+ "new_deals": [],
  "details": {
   "checked": 10,
   "errors": 0
  },
  "groups_rated": 92,
- "market_size": 15139,
+ "market_size": 15169,
  "requests": 19,
  "notifications": {}
 }
